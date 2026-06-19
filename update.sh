@@ -26,7 +26,8 @@ while IFS=$'\t' read -r id branch; do
     || { echo "  skip $id ($branch/plugin.json fetch 실패)" >&2; continue; }
   echo "$pj" | jq -e . >/dev/null 2>&1 || { echo "  skip $id (invalid json)" >&2; continue; }
   [ "$(echo "$pj" | jq -r '.template // false')" = "true" ] && { echo "  skip $id (template)" >&2; continue; }
-  entry=$(echo "$pj" | jq -c '{id,name,version,description,author,repo} | with_entries(select(.value!=null))')
+  # branch 명시 — plugin.json 이 선언하면 그것, 아니면 감지된 기본 브랜치(설치 시 default 가정 금지).
+  entry=$(echo "$pj" | jq -c --arg br "$branch" '{id,name,version,description,author,repo, branch: (.branch // $br)} | with_entries(select(.value!=null))')
   out=$(echo "$out" | jq -c ". + [$entry]")
 done <<< "$repos"
 
