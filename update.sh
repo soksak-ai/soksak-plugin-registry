@@ -7,15 +7,16 @@
 # (공개 레지스트리는 설치 가능한 공개 플러그인만 싣는다). 새 plugin 은 org 에 공개 repo 가 생기면
 # 다음 실행에서 자동 편입된다.
 #
-# 배포 게이트(인터페이스 기반): 각 후보 플러그인을 soksak-plugin-doctor 로 검사한다. 무결성(테마 계약·
-# 권한·명명) 미통과 플러그인은 카탈로그에서 제외 — 설치 불가 = 사실상 미배포. 플러그인은 코어 계약에
-# conform 만 하면 되고, 검증은 배포 경계(여기)에서 외부로 수행한다(플러그인은 doctor 에 종속되지 않는다).
+# 배포 게이트(2층, 외부 강제): 카탈로그에 들어오려면 두 게이트를 모두 통과해야 한다 — 우회 불가
+# (저자 로컬 hook 과 달리 배포 경계에서 강제). 플러그인은 코어 계약에 conform 만 하면 된다:
+#  1) 매니페스트 스키마(@soksak-ai/plugin-spec soksak-validate): plugin.json 필드·타입·id 패턴·권한.
+#  2) contract 무결성(soksak-plugin-doctor): 테마 계약·권한·명명·유령변수(코어 발행 contract.json 대조).
 #
-# 사용: ./update.sh  (gh 인증 + curl + jq + node + git 필요)
+# 사용: ./update.sh  (gh 인증 + curl + jq + node/npx + git 필요)
 set -euo pipefail
 cd "$(dirname "$0")"
 
-# 배포 게이트 준비 — doctor 를 한 번 clone(코어 발행 contract.json 을 vendoring 한 게이트).
+# 게이트 2 준비 — doctor 를 한 번 clone(코어 발행 contract.json 을 vendoring 한 게이트).
 DOCTOR_ROOT=$(mktemp -d)
 trap 'rm -rf "$DOCTOR_ROOT"' EXIT
 git clone -q --depth 1 https://github.com/soksak-ai/soksak-plugin-doctor "$DOCTOR_ROOT/doctor" \
@@ -39,7 +40,15 @@ while IFS=$'\t' read -r id branch; do
   echo "$pj" | jq -e . >/dev/null 2>&1 || { echo "  skip $id (invalid json)" >&2; continue; }
   [ "$(echo "$pj" | jq -r '.template // false')" = "true" ] && { echo "  skip $id (template)" >&2; continue; }
 
-  # 배포 게이트 — doctor 무결성 검사. main.js(entry) 를 받아 임시 디렉토리(이름=id, 명명 검사용)에서 검사.
+  # 게이트 1 — 매니페스트 스키마(단일진실 @soksak-ai/plugin-spec). soksak-validate 는 dirName(=폴더명)으로
+  # id 일치도 보므로 $id 폴더에 임시 기록 후 검증한다. 스키마 미통과는 등재 거부.
+  vtmp=$(mktemp -d); mkdir -p "$vtmp/$id"; printf '%s' "$pj" > "$vtmp/$id/plugin.json"
+  if ! npx --yes --package=@soksak-ai/plugin-spec soksak-validate "$vtmp/$id/plugin.json" >&2; then
+    echo "  skip $id (매니페스트 스키마 검증 실패 — 등재 거부)" >&2; rm -rf "$vtmp"; continue
+  fi
+  rm -rf "$vtmp"
+
+  # 게이트 2 — contract 무결성(doctor). entry(main.js) 를 받아 임시 디렉토리(이름=id, 명명 검사용)에서 검사.
   entry_file=$(echo "$pj" | jq -r '.entry // "main.js"')
   pdir="$DOCTOR_ROOT/$id"; mkdir -p "$pdir"
   printf '%s' "$pj" > "$pdir/plugin.json"
@@ -57,4 +66,4 @@ while IFS=$'\t' read -r id branch; do
 done <<< "$repos"
 
 echo "$out" | jq 'sort_by(.id) | {spec: "soksak-registry@1", plugins: .}' > registry.json
-echo "registry.json 갱신: $(jq '.plugins | length' registry.json)종 (PUBLIC, doctor 게이트 통과분만)" >&2
+echo "registry.json 갱신: $(jq '.plugins | length' registry.json)종 (PUBLIC, 스키마+doctor 게이트 통과분만)" >&2
