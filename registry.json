@@ -139,6 +139,66 @@
       "commands": []
     },
     {
+      "id": "soksak-plugin-browser-chromium",
+      "name": {
+        "ko": "브라우저 (Chromium)",
+        "en": "Browser (Chromium)"
+      },
+      "version": "0.1.0",
+      "description": {
+        "ko": "콘텐츠 뷰로 브라우저를 렌더 — 번들 Chromium 엔진 사이드카를 앱 프로세스에 로드해 네이티브 child 로 구동(app.sidecar 채널). 네이티브 Chromium 속도, URL 바·북마크 내장. OS 웹뷰가 아니라 어디서나 동일한 번들 Chromium 엔진.",
+        "en": "Renders the browser as a content view — loads the bundled Chromium engine sidecar into the app process and drives a native child over the app.sidecar channel. Native Chromium speed, built-in URL bar and bookmarks. A uniform bundled Chromium engine, not the OS webview."
+      },
+      "repo": "https://github.com/soksak-ai/soksak-plugin-browser-chromium.git",
+      "branch": "main",
+      "commands": [
+        "back",
+        "devtools",
+        "devtools-inline",
+        "devtools-tab",
+        "forward",
+        "navigate",
+        "open",
+        "ping",
+        "reload",
+        "stats"
+      ]
+    },
+    {
+      "id": "soksak-plugin-browser-native",
+      "name": {
+        "ko": "브라우저 (Webview)",
+        "en": "Browser (Webview)"
+      },
+      "version": "2.0.0",
+      "description": {
+        "ko": "콘텐츠 뷰로 브라우저를 렌더 — 코어 네이티브 child webview(OS 웹뷰) 를 직접 구동. URL 바·즐겨찾기·북마크·devtools 토글 내장.",
+        "en": "Renders the browser as a content view — drives the core native child webview (OS webview) directly. Built-in URL bar, bookmarks, and devtools toggle."
+      },
+      "repo": "https://github.com/soksak-ai/soksak-plugin-browser-native.git",
+      "branch": "main",
+      "commands": [
+        "back",
+        "devtools",
+        "dom.click",
+        "dom.fill",
+        "dom.html",
+        "dom.query",
+        "dom.submit",
+        "dom.text",
+        "dom.wait-for",
+        "eval",
+        "forward",
+        "list",
+        "media.extract",
+        "media.sniff",
+        "navigate",
+        "open",
+        "ping",
+        "reload"
+      ]
+    },
+    {
       "id": "soksak-plugin-clipboard",
       "name": {
         "ko": "클립",
@@ -749,6 +809,40 @@
       "commands": [
         "set",
         "state"
+      ]
+    },
+    {
+      "id": "soksak-plugin-terminal",
+      "name": {
+        "ko": "터미널",
+        "en": "Terminal"
+      },
+      "version": "0.1.0",
+      "description": {
+        "ko": "xterm.js 터미널 패널 — 코어 PTY 를 직접 구동.",
+        "en": "xterm.js terminal pane driven by core PTY."
+      },
+      "repo": "https://github.com/soksak-ai/soksak-plugin-terminal.git",
+      "branch": "main",
+      "commands": [
+        "clear",
+        "ping",
+        "resume",
+        "send"
+      ]
+    },
+    {
+      "id": "soksak-plugin-workflow",
+      "name": "Workflow",
+      "version": "0.1.0",
+      "description": "드래프트 파이프라인 — 아이디어를 LLM 저작 워크플로로 칸반 노드 DAG 에 발행하고, 코어 스케줄러 reconcile 로 실행·추적한다. item=exec-one 검증(badge o/x/f), task=exec-stage(generate/hunt/classify/audit 실행·자식 발행), blockedBy 의존.",
+      "branch": "main",
+      "commands": [
+        "issuerize",
+        "ping",
+        "reconcile",
+        "research",
+        "run"
       ]
     }
   ]
