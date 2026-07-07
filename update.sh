@@ -61,8 +61,9 @@ while IFS=$'\t' read -r id branch; do
   fi
 
   # branch 명시 — plugin.json 이 선언하면 그것, 아니면 감지된 기본 브랜치(설치 시 default 가정 금지).
-  # commands = 매니페스트 선언 명령 이름(설치 전 능력 조회용) — 값을 새로 만들지 않는다(투영만).
-  entry=$(echo "$pj" | jq -c --arg br "$branch" '{id,name,version,description,author,repo, branch: (.branch // $br), commands: ([.contributes.commands[]?.name] | sort)} | with_entries(select(.value!=null))')
+  # commands = 매니페스트 선언 명령(이름+다국어 제목+위험 분류 — 설치 전 능력 조회용).
+  # 값을 새로 만들지 않는다(투영만) — title 이 곧 사람용 설명(매니페스트 단일진실).
+  entry=$(echo "$pj" | jq -c --arg br "$branch" '{id,name,version,description,author,repo, branch: (.branch // $br), commands: ([.contributes.commands[]? | {name, title} + (if .danger != null then {danger} else {} end)] | sort_by(.name))} | with_entries(select(.value!=null))')
   out=$(echo "$out" | jq -c ". + [$entry]")
 done <<< "$repos"
 
