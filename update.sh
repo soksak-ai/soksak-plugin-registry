@@ -49,12 +49,18 @@ while IFS=$'\t' read -r id branch; do
   fi
   rm -rf "$vtmp"
 
-  # 게이트 2 — contract 무결성(doctor). entry(main.js) 를 받아 임시 디렉토리(이름=id, 명명 검사용)에서 검사.
-  entry_file=$(echo "$pj" | jq -r '.entry // "main.js"')
+  # 게이트 2 — contract 무결성(doctor). 일반 플러그인은 entry(main.js) 산출물을 받아 검사한다.
+  # 서비스 플러그인(entry:null + service 선언 — 웹뷰 진입 없이 로직을 사이드카 서비스가 소유,
+  # PLUGIN-SERVICE.md)은 진입 파일 자체가 없다 — entry fetch 를 건너뛰고 매니페스트만 검사한다
+  # (entry 부재는 빌드 누락이 아니라 부류의 정의다 — 모든 플러그인에 main.js 가정 금지).
+  is_service=$(echo "$pj" | jq -r 'if (.entry == null) and (.service != null) then "yes" else "no" end')
   pdir="$DOCTOR_ROOT/$id"; mkdir -p "$pdir"
   printf '%s' "$pj" > "$pdir/plugin.json"
-  curl -fsSL "https://raw.githubusercontent.com/soksak-ai/$id/$branch/$entry_file" > "$pdir/$entry_file" 2>/dev/null \
-    || { echo "  skip $id ($entry_file fetch 실패 — 빌드 산출물 없음)" >&2; continue; }
+  if [ "$is_service" != "yes" ]; then
+    entry_file=$(echo "$pj" | jq -r '.entry // "main.js"')
+    curl -fsSL "https://raw.githubusercontent.com/soksak-ai/$id/$branch/$entry_file" > "$pdir/$entry_file" 2>/dev/null \
+      || { echo "  skip $id ($entry_file fetch 실패 — 빌드 산출물 없음)" >&2; continue; }
+  fi
   if ! node "$DOCTOR" "$pdir" >"$pdir/.doctor.log" 2>&1; then
     echo "  skip $id (doctor 무결성 미통과 — 카탈로그 제외):" >&2
     sed 's/^/    /' "$pdir/.doctor.log" >&2
