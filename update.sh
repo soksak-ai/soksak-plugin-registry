@@ -33,6 +33,7 @@ repos=$(gh repo list soksak-ai --limit 200 --json name,visibility,defaultBranchR
         | "\(.name)\t\(.defaultBranchRef.name // "main")"')
 
 out="[]"
+dep_edges=""  # 카탈로그된 플러그인의 의존 엣지(id<TAB>depId) — 발행 후 그래프 무결성 검증용
 while IFS=$'\t' read -r id branch; do
   [ -z "$id" ] && continue
   pj=$(curl -fsSL "https://raw.githubusercontent.com/soksak-ai/$id/$branch/plugin.json" 2>/dev/null) \
@@ -65,7 +66,31 @@ while IFS=$'\t' read -r id branch; do
   # 값을 새로 만들지 않는다(투영만) — title 이 곧 사람용 설명(매니페스트 단일진실).
   entry=$(echo "$pj" | jq -c --arg br "$branch" '{id,name,version,description,author,repo, branch: (.branch // $br), commands: ([.contributes.commands[]? | {name, title} + (if .danger != null then {danger} else {} end)] | sort_by(.name))} | with_entries(select(.value!=null))')
   out=$(echo "$out" | jq -c ". + [$entry]")
+  # 이 플러그인의 의존 대상(플러그인↔플러그인)을 엣지로 기록 — 발행 후 그래프 검증.
+  while IFS= read -r depId; do
+    [ -n "$depId" ] && dep_edges+="${id}"$'\t'"${depId}"$'\n'
+  done < <(echo "$pj" | jq -r '.dependencies // {} | keys[]')
 done <<< "$repos"
 
-echo "$out" | jq 'sort_by(.id) | {spec: "soksak-registry@0.0.1", plugins: .}' > registry.json
-echo "registry.json 갱신: $(jq '.plugins | length' registry.json)종 (PUBLIC, 스키마+doctor 게이트 통과분만)" >&2
+# 최종 카탈로그(아직 미기록) — 의존 그래프 검증을 통과해야만 registry.json 에 기록한다.
+final=$(echo "$out" | jq -c 'sort_by(.id) | {spec: "soksak-registry@0.0.1", plugins: .}')
+
+# 의존 그래프 무결성 — 카탈로그된 플러그인의 의존 대상이 카탈로그에 함께 있는가. 없으면 카탈로그가
+# 동작 못 하는 플러그인을 광고하는 상태다. per-plugin 스킵(고립 결함)과 달리 이건 크로스-플러그인
+# 무결성 위반이라 카탈로그 전체를 큰 소리로 실패시킨다(무음 캐스케이드=은폐 금지 — 대상을 함께
+# 발행하거나 참조를 정정하게 강제). 버전(semver) 세부는 코어 dependency-graph-scan 이 본다.
+catalog_ids=$(echo "$final" | jq -r '.plugins[].id')
+graph_violations=""
+while IFS=$'\t' read -r who dep; do
+  [ -z "$who" ] && continue
+  grep -qxF "$dep" <<< "$catalog_ids" || graph_violations+="  ✗ ${who} → ${dep} (배포 카탈로그에 없음)"$'\n'
+done < <(printf '%b' "$dep_edges")
+if [ -n "$graph_violations" ]; then
+  echo "의존 그래프 위반 — 카탈로그된 플러그인이 미배포 대상을 의존한다(registry.json 미기록):" >&2
+  printf '%s' "$graph_violations" >&2
+  echo "대상을 함께 발행하거나(예: 라이브러리 플러그인) 의존 참조를 실제 id 로 정정하라." >&2
+  exit 1
+fi
+
+echo "$final" | jq '.' > registry.json
+echo "registry.json 갱신: $(jq '.plugins | length' registry.json)종 (PUBLIC, 스키마+doctor+의존그래프 게이트 통과분만)" >&2
