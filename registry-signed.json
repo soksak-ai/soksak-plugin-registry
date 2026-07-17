@@ -1,0 +1,869 @@
+{
+  "spec": "soksak-spec-registry@0.0.1",
+  "registryId": "official",
+  "sequence": 1,
+  "issuedAt": "2026-07-17T09:34:42Z",
+  "expiresAt": "2027-07-17T09:34:42Z",
+  "units": [
+    {
+      "id": "soksak-plugin-activity",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "60700fce389be45b2d7c4e8d8135ef83d7d40d851da69ff9100324879adc2dac",
+        "url": "https://github.com/soksak-ai/soksak-plugin-activity/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "5ff37b06495d367cbaef574abb1d9d5a61822d3678c486fa668e8872d6e085e9",
+          "url": "https://github.com/soksak-ai/soksak-plugin-activity/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "1134ce34095dbe5f0808bbf007b0ae64c5dae85d5f9f43256d7f3cdda2264b45",
+          "url": "https://github.com/soksak-ai/soksak-plugin-activity/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-agent-claude",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "598c440da9a54b2a083a2c4a498c41339b2630fa5b9987f41278735b24a47ea9",
+        "url": "https://github.com/soksak-ai/soksak-plugin-agent-claude/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "eabcd038c388c3316efeee1cbbe7faff19bbc94bea1a30f5bdc901fb8174c6ee",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agent-claude/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "613f0011d3b9ee05cdea269cf2f0cbe5682ed1e5c8d55fa36f0ec40c49fa9b63",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agent-claude/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-agent-claude-gui",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "d54cb4b4c6aa9ffc68a8a7f86b9ae16ad3c6c358ea20b26fd01f2aa2a8a1560b",
+        "url": "https://github.com/soksak-ai/soksak-plugin-agent-claude-gui/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "42e76ee000714938f3cd1ff074cc80c8860f621a56dce50029d8c5105a1a2c9f",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agent-claude-gui/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "e85087265dc31cdc951e7400c674f97a288bb1b1ac6e623a893ea52c0f0a29b9",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agent-claude-gui/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-agent-codex",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "9ea0308dc9f0d182e13b8df1756fb429dd451a15221f421631b62e1d33a37c7d",
+        "url": "https://github.com/soksak-ai/soksak-plugin-agent-codex/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "241280d7522362f1f73407342248f4ed4ee1ad955ff3e63c5cbb0a338c5c390a",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agent-codex/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "47ddfa621c0380881b1cdf14d8880210c65e9c0a924b359a30f31838a7cb353a",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agent-codex/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-agents-acp",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "2e9bfc61e8e9dfe798932632507a47cef4efd2ed717add985def0058a4a02423",
+        "url": "https://github.com/soksak-ai/soksak-plugin-agents-acp/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "89af18a2b541da7a5e0cf1df1de6d8f03aaeaaa5100173245dda02556a1e12fe",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agents-acp/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "103e080fe7c40086a0dcc85637a9b2c0ccf3ee74419f4cb3fb1e010573a4873b",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agents-acp/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-agents-clubhouse",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "f84ae678538f01014dbbcd44e76b600e1bd7f049437ac222c44fb454a8707968",
+        "url": "https://github.com/soksak-ai/soksak-plugin-agents-clubhouse/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "abd9a0864f4e6b0bd58a48bbde93a670554849b979a503d3dc29cd66ec9521be",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agents-clubhouse/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "98350df92b685c79e449edb662744aa71e70077b9ebddd0bb69734f94b0f7eed",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agents-clubhouse/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-agents-hooks",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "32406c445c6bb5d0fed9e6fb8b24520158a6163ca460c08f0c8d1a0b6a52df43",
+        "url": "https://github.com/soksak-ai/soksak-plugin-agents-hooks/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "a83978571add5a7fcb44a5025a98c5a4f578be3049f3113275ab5dd5a4d1fd63",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agents-hooks/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "d4328ff9c32056dbb00ce43d8858eabd624140b2b00cd398c68c0523ad81931c",
+          "url": "https://github.com/soksak-ai/soksak-plugin-agents-hooks/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-browser-bookmarks",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "bbe63f014338d023290ce93b76b237d48190351d6159a5025c6c4c8812bc3d87",
+        "url": "https://github.com/soksak-ai/soksak-plugin-browser-bookmarks/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "5e83968ef8bca55e5b4427683cc5b238c7819f64e8064ada51144a1925f41cf0",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-bookmarks/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "4c040bface5c86b649ae47691c116bb0cb39a86aa2ab9e8485ff8bc1588beb01",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-bookmarks/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-browser-chromium",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "94b87b0b521be210d1f7efba47a819cfcf719721280546ecdd3352b1a694a3fd",
+        "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "889ddd9d66d910a7582a251d1724927691ed86e6f3749cd1bc27c9921164d9f3",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "fb54b2827eb1a7b19d155464aa38c97cfcb928263d5d1021a33cc98b23028578",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-browser-chromium-offscreen",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "e5d4e1ab38e21d1f311ddd784702f610facd453fc8fac2a147801403b76c484d",
+        "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium-offscreen/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "f044f2f6b8a0e924da62c615e5c614413a882b39eef5823ccb514a9da6045ffa",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium-offscreen/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "10307a1ef729e3c606609795f6c64e46ae6e83443792399d041954292dbeabb7",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium-offscreen/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-browser-dom-picker",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b944d3b270d254b1b2cb612b4653e02779d112fc3f706aee541bba1917f1bdf6",
+        "url": "https://github.com/soksak-ai/soksak-plugin-browser-dom-picker/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "170bb812ff32f4fb0e197b3458b3808c15218b6973e1b40df9130a3761a44b72",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-dom-picker/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "739a234a7589ea5ead02a717937dda0df0e3101f14a9929bc7748c119abfd1d2",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-dom-picker/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-browser-native",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b8b95509d8336d30b2a8cf70c1e966649614dbbecb301ef1c893bd0b1b7db052",
+        "url": "https://github.com/soksak-ai/soksak-plugin-browser-native/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "c33be0e980eef2f8da3e1db9f7c2a9abe29e20711717cfb4c0a2d77b052b2357",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-native/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "e21a27c381d41cbb76272c0036417645f21799b24d5ac35e8b53cfa57e71165d",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-native/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-clipboard",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "31df41527869ac194be9729dd93f39e9a23c9f61ddf6172966189ee8581e7e09",
+        "url": "https://github.com/soksak-ai/soksak-plugin-clipboard/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "ec00735310be1f3284f82a91deaebc48fb5ec49bc48191a9099eaa33a09bf9c9",
+          "url": "https://github.com/soksak-ai/soksak-plugin-clipboard/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "1a407aebf4f16959ce9587650ea15029c4261e3526b71ceaf4c7cb7c494c62c2",
+          "url": "https://github.com/soksak-ai/soksak-plugin-clipboard/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-design-astryx",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b96b1fc3eeff238eeea49b070fcbadaeb9f3e01237bd2f110f8f590fc20e6b5c",
+        "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "96f9784bb05621cd5a8a8e352b4f7d279cf766409fab470766c1cbd46216471e",
+          "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "66b51a68aca9ea7594296ee1b3c23e27947ee4a672fee29f76169a9e9d11ea7a",
+          "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-editor-codemirror",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "66f1e513359b43e0598891e521584e9ad413b59fbb7e676fa00ea71a63a67060",
+        "url": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "c9cc216d308901fbc8bb49d7f7b089d954f815adb22264874e4303f4c339f6f4",
+          "url": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "a5a1bf6e1ed79d0735c5700ba2a163afaca42147ef593fed13cc85f57bfae7bc",
+          "url": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-editor-codemirror-todo",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "6ed24bae40fded07d93edc51df6cc69483dd4813e9f9c808971c73eeb966da29",
+        "url": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror-todo/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "63007acb00fc41c8b3600f6b17595baf79b10ae5d358e3bea731cfb9a6e36a1b",
+          "url": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror-todo/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "6be9ce821b75326cfe52e5774cfd4737f12cb8476c5e2fd04d980b74d0dcdaf4",
+          "url": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror-todo/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-editor-format-json",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "4dc25be790aa6ea599d057defba046f6784d29a4b6cc5d9ffc84882cf47f9905",
+        "url": "https://github.com/soksak-ai/soksak-plugin-editor-format-json/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "72d9e50a258f751b760a034d283b2f8672d4b2e2468c48036a82afdf0f6191af",
+          "url": "https://github.com/soksak-ai/soksak-plugin-editor-format-json/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "c7285abbb7fa81118c95692a3504b4eff423b4c0477f9a04fe3bb9a98c6f85fe",
+          "url": "https://github.com/soksak-ai/soksak-plugin-editor-format-json/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-erd",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b7a36ed7a6c4965c736c06258da422954d634c476f18fab892728d26d3875c5d",
+        "url": "https://github.com/soksak-ai/soksak-plugin-erd/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4a7e4615b1eebd00243ac1db679a617da36a658fbc84b1ee3f2131e646515144",
+          "url": "https://github.com/soksak-ai/soksak-plugin-erd/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "07925fc2cc2ace9972fcd1b877ffb29e16a65cc6275d3cedc4a29448dd2e6418",
+          "url": "https://github.com/soksak-ai/soksak-plugin-erd/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-file-tree",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "1f5f1015beca02f052c9a9e768626f2bb910047ca9db8b9cb21e1d440b5e5ae6",
+        "url": "https://github.com/soksak-ai/soksak-plugin-file-tree/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "a5a080f900a3d331936a836016c99090307e6c3892e5572728d24fd361fa1244",
+          "url": "https://github.com/soksak-ai/soksak-plugin-file-tree/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "167202fb6a28977b887deb0b101523cdf5ba2bd38bdf32d79c6bc378ca36ea37",
+          "url": "https://github.com/soksak-ai/soksak-plugin-file-tree/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-folderpop",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "5803ded83af17d5f205f2e59c33abbc29f70544587f4bc39e285c0ce99fc107d",
+        "url": "https://github.com/soksak-ai/soksak-plugin-folderpop/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "569e00678a32a5882fbd1608a350919720d39bb52b6bfbc04458b2bba5278baa",
+          "url": "https://github.com/soksak-ai/soksak-plugin-folderpop/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "db0cc1aaa2fbc88f704cb9f6503f6dfd2f9fec4570f680669c02336d9757b442",
+          "url": "https://github.com/soksak-ai/soksak-plugin-folderpop/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-core",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b092be953148a301aa40c9f84f43e597359b653a5369850accd5cc721480ec7c",
+        "url": "https://github.com/soksak-ai/soksak-plugin-git-core/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "2ff38712215e209e82f320eade75841cf63006022ba81e4c97bcb81bde35100e",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-core/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "fbeb91077192d77e9c45a363fdadc9f34e40a717a1b95bda45271e3be3ba5127",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-core/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-diff",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "a431ed8096e67d785d5dee898dad628dc8fa6ca180d8c1c041be7374ca1959d0",
+        "url": "https://github.com/soksak-ai/soksak-plugin-git-diff/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "b2d1697f8fa23534304ba78d74771d3ab55b9c62b4c74069d56a23fa8940b05f",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-diff/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "482c9106cdbdc1ae56a6b918350368d64312867dbe65f85f922f596f0c770930",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-diff/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-history",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "baf1cf185f3b171c808ca2259b40c238d92a56d30af177e0f86352d1669cf9ce",
+        "url": "https://github.com/soksak-ai/soksak-plugin-git-history/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4eb979cbc1222889143de93c1fbe1152d89bbe5b74bf2be806639ccab778aa01",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-history/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "7e9e54ebe41b7e27f599e99ddd301e8bb2714b02a5de65723fb47bbb67ef705f",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-history/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-init",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "32a1b2520224baa8a838d9dc185d2c83787d76ec17d9e328fd6ff2b4a2f1e77b",
+        "url": "https://github.com/soksak-ai/soksak-plugin-git-init/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "0cd6e41abe13d4264f3f4bc4759e82187af32255756171831c6f3ce11610dda0",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-init/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "2861d94c9f3d855a4275d840cca5154a704d4e8b2e1f2217695c58295f61eb24",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-init/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-review",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "48344b8f4db7432d49aae2fcf980d60dc7f8ab2a856f0b64706ef02129423eb1",
+        "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "43b95e8be0db78e2b52658e2caf03dfd66bede72c1e24587fb23a0f891be481c",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "ec1e7719cb21de45a5144b9d5069f503b45215cc8ce96e2ba5bda07ddd01187b",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-workspace",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "a0b5495943896a0d75847280a0a8f5e54ee307379836bcce10bdbfefa26a1fb2",
+        "url": "https://github.com/soksak-ai/soksak-plugin-git-workspace/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4fcc3d05003b73e2838e29edf1a802353e6892ef931018767480d827eced7ca6",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-workspace/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "69fdfeadb6e6bc59d8126e1cf9c4e9a9f9ed2b53265bf2aa63420f157b3e5253",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-workspace/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-icons-codicons",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "decbdf785f3fb4a4d5bc4c0152800623c644d6723429b2beb04c875c0058c650",
+        "url": "https://github.com/soksak-ai/soksak-plugin-icons-codicons/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "6740e4ef52960bc795f21e9e3928b44577817c6a556608bb9c59171355880a56",
+          "url": "https://github.com/soksak-ai/soksak-plugin-icons-codicons/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "8a544f730b7930ec7c256ac4b2001b394b2e4131ec15f837a6292822d2a24322",
+          "url": "https://github.com/soksak-ai/soksak-plugin-icons-codicons/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-icons-tabler",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "09a5eb95fca172a3e4e91775abb3df7b3375147234be01d0719a3fca8edad4d7",
+        "url": "https://github.com/soksak-ai/soksak-plugin-icons-tabler/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "656a75374b8c05f1a59038205075c864a2f46e8c27421037adb14f1d0a618f94",
+          "url": "https://github.com/soksak-ai/soksak-plugin-icons-tabler/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "3aac51248dd100e19ff17a7c33597ac237c1b2e0053fe6aac3b50415db3746b8",
+          "url": "https://github.com/soksak-ai/soksak-plugin-icons-tabler/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-kanban",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "462951cc2439afd595b0fea074796afc86c75a11163923a1fb4555cf2f2f3c17",
+        "url": "https://github.com/soksak-ai/soksak-plugin-kanban/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "a3fcd1b2f4ebd064e9944f676878f155f693a384651a664182d9f24a228178d4",
+          "url": "https://github.com/soksak-ai/soksak-plugin-kanban/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "f1b36b509fb0a100659affbe02d04f69fad6614405c5081c43d32a98b4e93619",
+          "url": "https://github.com/soksak-ai/soksak-plugin-kanban/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-lgtv-remote",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "7974c053910185ced8ca55972031d2b61d3a05c001f1187b2762e4b697b9874b",
+        "url": "https://github.com/soksak-ai/soksak-plugin-lgtv-remote/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "e45e037cc6aa4703aa5126b24b90336e7dd06af810d9a6af8962a090ee539e8c",
+          "url": "https://github.com/soksak-ai/soksak-plugin-lgtv-remote/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "d09cc67786947e47ee1f25e8252e82eba175e63006faf015b41b3739cd1528b8",
+          "url": "https://github.com/soksak-ai/soksak-plugin-lgtv-remote/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-mailbox",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b7f951295966b0b31c9f2a36b199b35ca0ad6ddbcc7d46dec1830d79cbae5076",
+        "url": "https://github.com/soksak-ai/soksak-plugin-mailbox/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "ced61966355c0904fb716f1ef039d3b1e9fe01d5580428d72113530adf5927bd",
+          "url": "https://github.com/soksak-ai/soksak-plugin-mailbox/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "d9ab40f6880bfa7b336cb57a5d50dc0b7b52b9ac179d3017724b54d8e1295502",
+          "url": "https://github.com/soksak-ai/soksak-plugin-mailbox/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-mascot",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "c19be47070a5ae5f24fbc9adb14bf09b761292bd81ce29896a43192f09442883",
+        "url": "https://github.com/soksak-ai/soksak-plugin-mascot/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "2b04bfbe2cb41a16af5ecde04994139d9ff6f1059aea4e49d087f6d45a44f180",
+          "url": "https://github.com/soksak-ai/soksak-plugin-mascot/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "31a41219ffc87db28b30f4a8dc7b093ccf267440946915e8f8535ce058c88626",
+          "url": "https://github.com/soksak-ai/soksak-plugin-mascot/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-media-viewer",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "d07711a6ce23df2e4b74873b9a75fddec2d8825c55f2a9e37d8ac8833aee30f7",
+        "url": "https://github.com/soksak-ai/soksak-plugin-media-viewer/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "e281fa6c6c29cccbaddfbac65fc9ff6ccadef8909b0022f57995cb8c62323e98",
+          "url": "https://github.com/soksak-ai/soksak-plugin-media-viewer/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "ed835b45a54ccf74e7750efee1cac1647c4085c288a6e3efb0e5fd8a8940ffff",
+          "url": "https://github.com/soksak-ai/soksak-plugin-media-viewer/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-memo",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "0456ff422365e13d60633222e310b5f1bf53e697b1a42de2f51d164887e0c2ec",
+        "url": "https://github.com/soksak-ai/soksak-plugin-memo/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4edd9af39cd9e010a81b46b48d4673c1e8703fa4b3cf9795be20e07667482722",
+          "url": "https://github.com/soksak-ai/soksak-plugin-memo/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "14bccccdfbbf84e66b4140dbe1b22e9f6129e072bb8de5a34a3178549589f171",
+          "url": "https://github.com/soksak-ai/soksak-plugin-memo/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-overlay-draw",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "071667fe3f8ee213d279d3854dea4e3a7df2334aa2ad48d92538e7c27b6358f0",
+        "url": "https://github.com/soksak-ai/soksak-plugin-overlay-draw/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "71012decb67c080424b7d6efe486e255dca1f87fde4431118ffa5315fb3d3c18",
+          "url": "https://github.com/soksak-ai/soksak-plugin-overlay-draw/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "1dec28194f368e34e88d1060ee5065e5dc77e04db707207f92e95b2287fa0430",
+          "url": "https://github.com/soksak-ai/soksak-plugin-overlay-draw/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-overlay-sakura",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "a7f1d8bd28718fa230a3c1b671524831a778eff8de1006f6da71667d00ceaebc",
+        "url": "https://github.com/soksak-ai/soksak-plugin-overlay-sakura/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "7c488d2a1134d04eb6320b1e14f5655614589f9339a3666048134a535f1e3221",
+          "url": "https://github.com/soksak-ai/soksak-plugin-overlay-sakura/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "9e7b2f369e51f824c56820c235dd9feb2c41b2de73f71c1769eb39c023b70b0c",
+          "url": "https://github.com/soksak-ai/soksak-plugin-overlay-sakura/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-overlay-shark",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "74795210b5d581bdf747912d8ac1f9ecae0f2762535851ed3b34756c817a6f36",
+        "url": "https://github.com/soksak-ai/soksak-plugin-overlay-shark/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "1ee400d360b48d34534fe9e849e7d30dbdc99e1fcd41632aedad1fe90ddc0923",
+          "url": "https://github.com/soksak-ai/soksak-plugin-overlay-shark/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "9b10635ecb21541a286b8e60fd0f4f29f05db3b056823604aee172a407d55f46",
+          "url": "https://github.com/soksak-ai/soksak-plugin-overlay-shark/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-playbox",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "4861785de95d94adb2fd7830ee43c8021bce7be87e90531a1d772e3e97944f1a",
+        "url": "https://github.com/soksak-ai/soksak-plugin-playbox/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "93103bfe154bcf61ec12ec3d16566b24c757861aa90e250c6087f300415cd33e",
+          "url": "https://github.com/soksak-ai/soksak-plugin-playbox/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "902e9a76f2ae6ea833aaa690e12d946dee169d0a0c98e916831128636c5c9755",
+          "url": "https://github.com/soksak-ai/soksak-plugin-playbox/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-runbook",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "fd677160685cebf8b994c71fe731b49847a6ff107712c3a7bcb0c1012920142f",
+        "url": "https://github.com/soksak-ai/soksak-plugin-runbook/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "ea4f06aa5f564a52385b5f798054cb0f5a1454be6a7489020cda7eacf05305c0",
+          "url": "https://github.com/soksak-ai/soksak-plugin-runbook/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "7ec8e2fb0636723807029cb9c75af239897857e31224ccffb3d32fb54d6b628a",
+          "url": "https://github.com/soksak-ai/soksak-plugin-runbook/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-sidebar-sky",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "ebc9769352776532bb79d5850100923d98439b5c3cfc45e61a0c288ec16cce60",
+        "url": "https://github.com/soksak-ai/soksak-plugin-sidebar-sky/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "a6799772fe2fd667c83c97c2ff01095debff891af6df7dd2448bd3b171f1ed47",
+          "url": "https://github.com/soksak-ai/soksak-plugin-sidebar-sky/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "c017bc633cfead5a2e6512b5d65c25bdb94eaeaa54d8d0a2c6ff5b460553834f",
+          "url": "https://github.com/soksak-ai/soksak-plugin-sidebar-sky/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-skeleton",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "dd29d5bd2ef94c828b0c70d3f29de2c4b79e7de8d1684c55608be826f997867e",
+        "url": "https://github.com/soksak-ai/soksak-plugin-skeleton/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "13d41d16d2e14a852612b20247f2ec86b075f9770e62bd59de529b467b2b2cb7",
+          "url": "https://github.com/soksak-ai/soksak-plugin-skeleton/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "d1b06034c4e18d4380ff320bd782df4c7d17d01556daf92074f3f2ed90d08297",
+          "url": "https://github.com/soksak-ai/soksak-plugin-skeleton/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-terminal-ghostty",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "65c65b8f09fa959ef22815ebe14d73da91ccd94c12245feee4e3df9ffee1d1e1",
+        "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "8655c9925afbb090915b308b73c33a7f3d2aa07d5c7e2ed5dc239b7641757fcf",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "b19e4b2155f3d2871fd335a27d002e276a1c4ac2149bf8cb86666258b8aad507",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-terminal-xterm",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "4e87fcaccfa0d4fa95ab6b32f0239055800c79a9b2308358aad066781bafe82c",
+        "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4ffc78077a12df85f19d2d95f38d60b98a32a8e6a14dbe3b925a4e0cf915a8a6",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "fe0bd3ce2761bf38f2d14efea01d4caef8c4bb502ea050af1f03786ebac00e9e",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-tmux-fake",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "0081b4b1c17a1898180591c634925f9a1a91e81e7e6445359413647ed8f55a9a",
+        "url": "https://github.com/soksak-ai/soksak-plugin-tmux-fake/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "ea7f8e3398004d4533bae485376c391fbe9320e2e3c6d8bb69ed3b9574f300e6",
+          "url": "https://github.com/soksak-ai/soksak-plugin-tmux-fake/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "f7be0c7a484e89ce40f63e81ade3b1dcc134ce6c648d029a565c2b8241d64f3f",
+          "url": "https://github.com/soksak-ai/soksak-plugin-tmux-fake/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-workflow",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "d88a0a49b61210f9cb7381a80c5a15d0458c054e5f14a0b1ce5f70febe12a6c1",
+        "url": "https://github.com/soksak-ai/soksak-plugin-workflow/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "e3020df525f91cde6b7ba248bfd644360e273433155778e7e900b1de3803b414",
+          "url": "https://github.com/soksak-ai/soksak-plugin-workflow/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "0ae68f178e86656bbbfd30bd46d445d69ff8970c02d2be9218d0cb2530d8f331",
+          "url": "https://github.com/soksak-ai/soksak-plugin-workflow/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    }
+  ],
+  "signature": {
+    "algorithm": "ed25519",
+    "keyId": "906dbfa9f13a0a75b305f0bda733e681",
+    "value": "kdB9YKZ3jLMY/hsYQhWViIoGyRf9d60SKymLttX0MvhyTXZ963EbiQ/42GYyE8ffHhTl8RTHO+RDPzagZmjfBQ=="
+  }
+}
