@@ -1,9 +1,9 @@
 {
   "spec": "soksak-spec-registry@0.0.1",
   "registryId": "official",
-  "sequence": 2,
-  "issuedAt": "2026-07-18T05:56:40Z",
-  "expiresAt": "2027-07-18T05:56:40Z",
+  "sequence": 3,
+  "issuedAt": "2026-07-18T06:25:25Z",
+  "expiresAt": "2027-07-18T06:25:25Z",
   "units": [
     {
       "id": "soksak-plugin-activity",
@@ -473,6 +473,10 @@
         {
           "sha256": "43b95e8be0db78e2b52658e2caf03dfd66bede72c1e24587fb23a0f891be481c",
           "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "ec1e7719cb21de45a5144b9d5069f503b45215cc8ce96e2ba5bda07ddd01187b",
+          "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/conformance-release.json"
         }
       ]
     },
@@ -802,19 +806,19 @@
     {
       "id": "soksak-plugin-terminal-xterm",
       "kind": "plugin",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "manifest": {
-        "sha256": "4e87fcaccfa0d4fa95ab6b32f0239055800c79a9b2308358aad066781bafe82c",
-        "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.1/release.json"
+        "sha256": "b88ca9295cb21b87db433f4a5c4ee58fb3a0c638a46ce31d86a507aefed6ef6c",
+        "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.2/release.json"
       },
       "reports": [
         {
-          "sha256": "4ffc78077a12df85f19d2d95f38d60b98a32a8e6a14dbe3b925a4e0cf915a8a6",
-          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.1/conformance-plugin.json"
+          "sha256": "8b7d0052175ac0c27f7a724815497a93e46ca704370aaa40c4c18f58b1b159a0",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.2/conformance-plugin.json"
         },
         {
-          "sha256": "fe0bd3ce2761bf38f2d14efea01d4caef8c4bb502ea050af1f03786ebac00e9e",
-          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.1/conformance-release.json"
+          "sha256": "35b8d63c69794f7126190d3f36b9535015fdbc245190202313045827ad301480",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.2/conformance-release.json"
         }
       ]
     },
@@ -975,6 +979,6 @@
   "signature": {
     "algorithm": "ed25519",
     "keyId": "906dbfa9f13a0a75b305f0bda733e681",
-    "value": "I/jVlwtuW/rr59o/7woX99qlY5w2rv6qHuJ+UvdrwJN9dG9WJKz7hvqfFkqmOWPnL+1Vr9beHmNsYWuD8vU3Cg=="
+    "value": "sdRFuwUcCc6invlzHgmiqg61PLdRmjVL5OCzw2rJmnouxv8id0fPcUdWmXc+NUVxoPsljHb7fYJ5AT1eOfVsBw=="
   }
 }
