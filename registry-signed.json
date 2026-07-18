@@ -1,9 +1,9 @@
 {
   "spec": "soksak-spec-registry@0.0.1",
   "registryId": "official",
-  "sequence": 1,
-  "issuedAt": "2026-07-17T09:34:42Z",
-  "expiresAt": "2027-07-17T09:34:42Z",
+  "sequence": 2,
+  "issuedAt": "2026-07-18T05:56:40Z",
+  "expiresAt": "2027-07-18T05:56:40Z",
   "units": [
     {
       "id": "soksak-plugin-activity",
@@ -473,10 +473,6 @@
         {
           "sha256": "43b95e8be0db78e2b52658e2caf03dfd66bede72c1e24587fb23a0f891be481c",
           "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/conformance-plugin.json"
-        },
-        {
-          "sha256": "ec1e7719cb21de45a5144b9d5069f503b45215cc8ce96e2ba5bda07ddd01187b",
-          "url": "https://github.com/soksak-ai/soksak-plugin-git-review/releases/download/v0.0.1/conformance-release.json"
         }
       ]
     },
@@ -859,11 +855,126 @@
           "url": "https://github.com/soksak-ai/soksak-plugin-workflow/releases/download/v0.0.1/conformance-release.json"
         }
       ]
+    },
+    {
+      "id": "soksak-sidecar-terminal-alacritty",
+      "kind": "sidecar",
+      "version": "0.0.3",
+      "manifest": {
+        "sha256": "16bc70cea5f28111ebf81184a64aba34be3bb3c3415a0b607cd8ceb244b53393",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.3/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "df5eca9d9f4ee8e8f6d25708eda449592ce2da0e28571cac107270928b7d0b65",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.3/conformance-interface.json"
+        },
+        {
+          "sha256": "1f81fdfabc545e8c17682ea293565bc9333a0690f796dfd8805e8d0b47b4f910",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.3/conformance-release.json"
+        },
+        {
+          "sha256": "e16032c24c52d866f7dd6d1b0b510cf0e3391b2139b9302f983ba1216734c296",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.3/conformance-sidecar.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-sidecar-terminal-ghostty",
+      "kind": "sidecar",
+      "version": "0.0.3",
+      "manifest": {
+        "sha256": "14dea582c95abe1201510fb3f2ca2763b2397edbbea19282deca83c91bba6449",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.3/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "1f24573a7136cc7516ebef291844334dc4fd9d76a8a4c9f2b8bae2e5e953fd4c",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.3/conformance-interface.json"
+        },
+        {
+          "sha256": "b4b427ea9074fd7156f5245544589c531af35ac3149d6552a044cf87761915c5",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.3/conformance-release.json"
+        },
+        {
+          "sha256": "437880e71cf70735c4c5856eb7421a6861a32db42dca7dc142c9ddf0de429658",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.3/conformance-sidecar.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-sidecar-terminal-vt100",
+      "kind": "sidecar",
+      "version": "0.0.3",
+      "manifest": {
+        "sha256": "0483851405a414f0773939d21c30781ae2d0360455cca000343dcd67b11461fb",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.3/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4f787a70757644562c483ed66bcb69007b123fdae4b60447b76396f9d79a54bf",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.3/conformance-interface.json"
+        },
+        {
+          "sha256": "7a7e6b75252ee8856095244875eec71b88b52d43b11bd129c1e483dc7848b298",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.3/conformance-release.json"
+        },
+        {
+          "sha256": "dc51984ea2f90b71e49bd199853b5f9c2760e2276edf8b152cdeae6635757097",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.3/conformance-sidecar.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-sidecar-terminal-wezterm",
+      "kind": "sidecar",
+      "version": "0.0.3",
+      "manifest": {
+        "sha256": "4bbe2dfc67c38b26f501db005d9b4d79ce40e08618240d43633a63a7ba09047b",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.3/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "e34d83eea3101c0c3ed1a237a5fa45563376f7bbd3fbf7b4b411010e157835b4",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.3/conformance-interface.json"
+        },
+        {
+          "sha256": "d3b6c5d27ff81796ce2003c349f4f9e43b28a9464aff890baf55e4bb4700190f",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.3/conformance-release.json"
+        },
+        {
+          "sha256": "eeb3def989d93531a3257409648abbb8d33e2af38929a4de754a2d2aca92b244",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.3/conformance-sidecar.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-sidecar-workflow",
+      "kind": "sidecar",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "b6e2300f456104ce6f654f6a7856055dc286385d01e390ba280857e86976d058",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-workflow/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "4384cec9ce9fc851201191cc647cc99be5c9a0833c085de09f0fb82f4ed25a09",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-workflow/releases/download/v0.0.1/conformance-interface.json"
+        },
+        {
+          "sha256": "5a85bf9affbf9057d984c838b761f317567c69a58cce2f1c340eac5ff35bef45",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-workflow/releases/download/v0.0.1/conformance-release.json"
+        },
+        {
+          "sha256": "29150088b413049f4c2af3b72066a70397efb9bb458dce86e0831385bd6c0bf0",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-workflow/releases/download/v0.0.1/conformance-sidecar.json"
+        }
+      ]
     }
   ],
   "signature": {
     "algorithm": "ed25519",
     "keyId": "906dbfa9f13a0a75b305f0bda733e681",
-    "value": "kdB9YKZ3jLMY/hsYQhWViIoGyRf9d60SKymLttX0MvhyTXZ963EbiQ/42GYyE8ffHhTl8RTHO+RDPzagZmjfBQ=="
+    "value": "I/jVlwtuW/rr59o/7woX99qlY5w2rv6qHuJ+UvdrwJN9dG9WJKz7hvqfFkqmOWPnL+1Vr9beHmNsYWuD8vU3Cg=="
   }
 }
