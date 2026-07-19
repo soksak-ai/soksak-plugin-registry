@@ -1,9 +1,9 @@
 {
   "spec": "soksak-spec-registry@0.0.1",
   "registryId": "official",
-  "sequence": 4,
-  "issuedAt": "2026-07-19T10:14:55Z",
-  "expiresAt": "2027-07-19T10:14:55Z",
+  "sequence": 5,
+  "issuedAt": "2026-07-19T10:45:19Z",
+  "expiresAt": "2027-07-19T10:45:19Z",
   "units": [
     {
       "id": "soksak-plugin-activity",
@@ -899,6 +899,52 @@
       ]
     },
     {
+      "id": "soksak-sidecar-browser-chromium",
+      "kind": "sidecar",
+      "version": "0.0.2",
+      "manifest": {
+        "sha256": "4f439ec954c4ae7e7e2c2bc1dd1b4e334b6c319c0f4d5dd02030c250a3e12e6e",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-browser-chromium/releases/download/v0.0.2/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "86eba1b86a8179b3d7215bb51afd404634dae69e53fc5f08f17a99898e68987f",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-browser-chromium/releases/download/v0.0.2/conformance-interface.json"
+        },
+        {
+          "sha256": "5da57a2c16c8d0f221f71da1cb82d10310b4d9de887072d9b64152dcdf66880b",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-browser-chromium/releases/download/v0.0.2/conformance-release.json"
+        },
+        {
+          "sha256": "2421a792e78a90816a5b5306bf33cfad22edf0c0d64b3268c62bc9464bb5356e",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-browser-chromium/releases/download/v0.0.2/conformance-sidecar.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-sidecar-speech-sherpa",
+      "kind": "sidecar",
+      "version": "0.0.4",
+      "manifest": {
+        "sha256": "97770b77af4f2e370467e25e86852504249a938ca2de98e08c46d65dfa1afd12",
+        "url": "https://github.com/soksak-ai/soksak-sidecar-speech-sherpa/releases/download/v0.0.4/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "17516ae5af83794e1cbabbd0cb175d7f682f2b8df042c92dee0c4ae00e7f0980",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-speech-sherpa/releases/download/v0.0.4/conformance-interface.json"
+        },
+        {
+          "sha256": "bf8c0d20173108997acf3acd071e381ac9c2a5ade1d9063779fa312a7f59786e",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-speech-sherpa/releases/download/v0.0.4/conformance-release.json"
+        },
+        {
+          "sha256": "3a3796acdad0aa72f9527759bd07403c29931e020f55cd61e44874efed7e83f9",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-speech-sherpa/releases/download/v0.0.4/conformance-sidecar.json"
+        }
+      ]
+    },
+    {
       "id": "soksak-sidecar-terminal-alacritty",
       "kind": "sidecar",
       "version": "0.0.3",
@@ -1017,6 +1063,6 @@
   "signature": {
     "algorithm": "ed25519",
     "keyId": "906dbfa9f13a0a75b305f0bda733e681",
-    "value": "4vxjV3UjmzweLNhlAbW5/kIbp1Gwyz1oVps8LuR17nswZeoruKjUHXwCTCdmHYaJU3ozcaTyoRiJSfVktMWjCQ=="
+    "value": "SwvKXMDOEFCqBFeKKaK/Bs1ZSDQsWjVr5oAI4OWdP76tpQJK/qFo2j9HKSPnf3mcTn2x9m7D2Xio5d7lQG/OAg=="
   }
 }
