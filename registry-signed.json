@@ -1,9 +1,9 @@
 {
   "spec": "soksak-spec-registry@0.0.1",
   "registryId": "official",
-  "sequence": 5,
-  "issuedAt": "2026-07-19T10:45:19Z",
-  "expiresAt": "2027-07-19T10:45:19Z",
+  "sequence": 6,
+  "issuedAt": "2026-07-19T11:16:13Z",
+  "expiresAt": "2027-07-19T11:16:13Z",
   "units": [
     {
       "id": "soksak-plugin-activity",
@@ -160,19 +160,19 @@
     {
       "id": "soksak-plugin-browser-chromium",
       "kind": "plugin",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "manifest": {
-        "sha256": "94b87b0b521be210d1f7efba47a819cfcf719721280546ecdd3352b1a694a3fd",
-        "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.1/release.json"
+        "sha256": "8af04020ee6e83cca200e0d14b2c154d006495debee963e4d1be5091a0206097",
+        "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.2/release.json"
       },
       "reports": [
         {
-          "sha256": "889ddd9d66d910a7582a251d1724927691ed86e6f3749cd1bc27c9921164d9f3",
-          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.1/conformance-plugin.json"
+          "sha256": "0d0193e069c8bdbec917374b646c3812e6109f796c818c1ffabf44ad10fce8f0",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.2/conformance-plugin.json"
         },
         {
-          "sha256": "fb54b2827eb1a7b19d155464aa38c97cfcb928263d5d1021a33cc98b23028578",
-          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.1/conformance-release.json"
+          "sha256": "616412a6732b2d291bcdfb162e1d7efb55ace5c93d3433801007a90c90ac4353",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-chromium/releases/download/v0.0.2/conformance-release.json"
         }
       ]
     },
@@ -255,38 +255,19 @@
     {
       "id": "soksak-plugin-design-astryx",
       "kind": "plugin",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "manifest": {
-        "sha256": "b96b1fc3eeff238eeea49b070fcbadaeb9f3e01237bd2f110f8f590fc20e6b5c",
-        "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/release.json"
+        "sha256": "efec00717b0ac6fc05cc75fe4b4de8b512a48da0a9457f344e4f0316e213f606",
+        "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.2/release.json"
       },
       "reports": [
         {
-          "sha256": "96f9784bb05621cd5a8a8e352b4f7d279cf766409fab470766c1cbd46216471e",
-          "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/conformance-plugin.json"
+          "sha256": "4bfa9169b95327a9093c15c3e383b5ef7ac7c7e17d1b19a3273226d3f3df3520",
+          "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.2/conformance-plugin.json"
         },
         {
-          "sha256": "66b51a68aca9ea7594296ee1b3c23e27947ee4a672fee29f76169a9e9d11ea7a",
-          "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/conformance-release.json"
-        }
-      ]
-    },
-    {
-      "id": "soksak-plugin-design-studio",
-      "kind": "plugin",
-      "version": "0.0.1",
-      "manifest": {
-        "sha256": "196a0663321d41ebe8fe8f9a635632a17e40df53865f5e3aa3fe82ecfb4a4e19",
-        "url": "https://github.com/soksak-ai/soksak-plugin-design-studio/releases/download/v0.0.1/release.json"
-      },
-      "reports": [
-        {
-          "sha256": "15ddcbe99dd478bdabd0e0da18ddbab801bf133b76551ed73a0ae48f812ac86e",
-          "url": "https://github.com/soksak-ai/soksak-plugin-design-studio/releases/download/v0.0.1/conformance-plugin.json"
-        },
-        {
-          "sha256": "50fd59e19b70ef2d8df76ff3a0c4953564b0d4673f123574c3e372c7b1f49ae8",
-          "url": "https://github.com/soksak-ai/soksak-plugin-design-studio/releases/download/v0.0.1/conformance-release.json"
+          "sha256": "07ed8398505d165c6191d6fb4055d16659f1d0b13c44c9b78cbd32840f228112",
+          "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.2/conformance-release.json"
         }
       ]
     },
@@ -1063,6 +1044,6 @@
   "signature": {
     "algorithm": "ed25519",
     "keyId": "906dbfa9f13a0a75b305f0bda733e681",
-    "value": "SwvKXMDOEFCqBFeKKaK/Bs1ZSDQsWjVr5oAI4OWdP76tpQJK/qFo2j9HKSPnf3mcTn2x9m7D2Xio5d7lQG/OAg=="
+    "value": "UPdNz0HWn+VZtOb2aKhbJFjnpzNC3EWkc+LvDcPqqLFipUT6MF3IhlG5gnrbEE8mhpPr6SgIoHQV64B0iHqPBA=="
   }
 }
