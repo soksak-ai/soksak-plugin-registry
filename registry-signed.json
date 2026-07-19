@@ -1,9 +1,9 @@
 {
   "spec": "soksak-spec-registry@0.0.1",
   "registryId": "official",
-  "sequence": 3,
-  "issuedAt": "2026-07-18T06:25:25Z",
-  "expiresAt": "2027-07-18T06:25:25Z",
+  "sequence": 4,
+  "issuedAt": "2026-07-19T10:14:55Z",
+  "expiresAt": "2027-07-19T10:14:55Z",
   "units": [
     {
       "id": "soksak-plugin-activity",
@@ -268,6 +268,25 @@
         {
           "sha256": "66b51a68aca9ea7594296ee1b3c23e27947ee4a672fee29f76169a9e9d11ea7a",
           "url": "https://github.com/soksak-ai/soksak-plugin-design-astryx/releases/download/v0.0.1/conformance-release.json"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-design-studio",
+      "kind": "plugin",
+      "version": "0.0.1",
+      "manifest": {
+        "sha256": "196a0663321d41ebe8fe8f9a635632a17e40df53865f5e3aa3fe82ecfb4a4e19",
+        "url": "https://github.com/soksak-ai/soksak-plugin-design-studio/releases/download/v0.0.1/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "15ddcbe99dd478bdabd0e0da18ddbab801bf133b76551ed73a0ae48f812ac86e",
+          "url": "https://github.com/soksak-ai/soksak-plugin-design-studio/releases/download/v0.0.1/conformance-plugin.json"
+        },
+        {
+          "sha256": "50fd59e19b70ef2d8df76ff3a0c4953564b0d4673f123574c3e372c7b1f49ae8",
+          "url": "https://github.com/soksak-ai/soksak-plugin-design-studio/releases/download/v0.0.1/conformance-release.json"
         }
       ]
     },
@@ -728,6 +747,25 @@
       ]
     },
     {
+      "id": "soksak-plugin-reminder-demo",
+      "kind": "plugin",
+      "version": "0.0.2",
+      "manifest": {
+        "sha256": "0d20abac5278224fc454a55cc94bab4dd0e2347e2268308a4146cdf4db407619",
+        "url": "https://github.com/soksak-ai/soksak-plugin-reminder-demo/releases/download/v0.0.2/release.json"
+      },
+      "reports": [
+        {
+          "sha256": "23026ce19e3a880452a2173190156274e4c010e64411b153cbaa4e7c11b7a1f4",
+          "url": "https://github.com/soksak-ai/soksak-plugin-reminder-demo/releases/download/v0.0.2/conformance-plugin.json"
+        },
+        {
+          "sha256": "932799a1410e603cf68ac8b918eb2b1e2b34fbc171ba99226124758fc1014db1",
+          "url": "https://github.com/soksak-ai/soksak-plugin-reminder-demo/releases/download/v0.0.2/conformance-release.json"
+        }
+      ]
+    },
+    {
       "id": "soksak-plugin-runbook",
       "kind": "plugin",
       "version": "0.0.1",
@@ -979,6 +1017,6 @@
   "signature": {
     "algorithm": "ed25519",
     "keyId": "906dbfa9f13a0a75b305f0bda733e681",
-    "value": "sdRFuwUcCc6invlzHgmiqg61PLdRmjVL5OCzw2rJmnouxv8id0fPcUdWmXc+NUVxoPsljHb7fYJ5AT1eOfVsBw=="
+    "value": "4vxjV3UjmzweLNhlAbW5/kIbp1Gwyz1oVps8LuR17nswZeoruKjUHXwCTCdmHYaJU3ozcaTyoRiJSfVktMWjCQ=="
   }
 }
