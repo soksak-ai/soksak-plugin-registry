@@ -7,12 +7,11 @@
         "en": "Activity",
         "ko": "활동"
       },
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": {
         "en": "The activity log in a project-window sidebar — the same hub stream the orchestrator feed shows. Entries whose spec carries tts are read aloud by the mascot (toggleable).",
         "ko": "프로젝트 창 사이드바의 활동로그 — 오케스트레이터 피드와 동일한 허브 스트림. 스펙에 tts가 실린 엔트리는 마스코트가 소리 내어 읽는다(토글 가능)."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-activity.git",
       "branch": "main",
       "commands": [
         {
@@ -44,12 +43,11 @@
         "en": "Claude Code",
         "ko": "Claude Code"
       },
-      "version": "1.2.0",
+      "version": "0.0.1",
       "description": {
         "ko": "새 탭(+) 메뉴 에이전트 카테고리에 Claude Code 를 추가 — 미설치면 공식 설치 명령을 터미널에서 실행한 뒤 사용",
         "en": "Adds Claude Code under the Agents category of the new-tab (+) menu — runs the official installer in a terminal if missing"
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-agent-claude.git",
       "branch": "main",
       "commands": [
         {
@@ -67,12 +65,11 @@
         "en": "Claude GUI",
         "ko": "Claude GUI"
       },
-      "version": "0.1.1",
+      "version": "0.0.1",
       "description": {
         "en": "When claude (Claude Code CLI) runs in a terminal, a GUI entry appears in the panel statusbar; clicking it opens a bubble-UI overlay showing the conversation and active subagents in real time.",
         "ko": "터미널에서 claude(Claude Code CLI)가 실행되면 패널 상태바에 GUI 항목이 뜨고, 누르면 대화를 버블 UI로 보여주는 오버레이가 열린다. 활성 세션과 서브에이전트를 실시간 표시."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-agent-claude-gui.git",
       "branch": "main",
       "commands": [
         {
@@ -139,12 +136,11 @@
         "en": "Codex",
         "ko": "Codex"
       },
-      "version": "1.2.0",
+      "version": "0.0.1",
       "description": {
         "ko": "새 탭(+) 메뉴 에이전트 카테고리에 Codex CLI 를 추가 — 미설치면 공식 설치 명령을 터미널에서 실행한 뒤 사용",
         "en": "Adds Codex CLI under the Agents category of the new-tab (+) menu — runs the official installer in a terminal if missing"
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-agent-codex.git",
       "branch": "main",
       "commands": [
         {
@@ -169,12 +165,11 @@
         "en": "ACP Core",
         "ko": "ACP Core"
       },
-      "version": "0.1.0",
+      "version": "0.0.2",
       "description": {
         "en": "Library plugin (no UI) for managing AI coding agents. Runs ACP agents (Claude, Codex, Gemini) as subprocesses and exposes the ACP communication engine via commands and events.",
         "ko": "AI 코딩 에이전트를 다루는 라이브러리 플러그인(UI 없음). Claude·Codex·Gemini 같은 ACP 에이전트를 서브프로세스로 실행하고, 표준 프로토콜(ACP)로 통신하는 엔진을 커맨드·이벤트로 노출한다."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-agents-acp.git",
       "branch": "main",
       "commands": [
         {
@@ -241,12 +236,11 @@
         "en": "Agents Clubhouse",
         "ko": "에이전트 클럽하우스"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "en": "A hub that brings multiple AI coding agents (Claude, Codex, Gemini) together in one workspace — select 1–3 via checkboxes, discuss in turn-based, free, or simultaneous mode, and mention a peer directly with '@name'. Conversation by default; the agents touch real files only when you ask. Runs agents through the agents-acp runtime.",
         "ko": "여러 AI 코딩 에이전트(Claude·Codex·Gemini)를 한 워크스페이스에 모아주는 허브 — 체크박스로 1~3 선택, 탭 순서대로 턴제·자유·동시 모드로 함께 논의. 본문 '@이름' 으로 동료 직접 호출. 기본은 대화이고, 사용자가 요청할 때만 실파일 작업. 에이전트 실행은 agents-acp 런타임 경유."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-agents-clubhouse.git",
       "branch": "main",
       "commands": [
         {
@@ -315,17 +309,97 @@
       ]
     },
     {
+      "id": "soksak-plugin-agents-hooks",
+      "name": {
+        "en": "Agent Hooks",
+        "ko": "에이전트 훅"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "Installs native hooks into agent CLIs so a blocked moment — a permission prompt an agent cannot announce for itself — surfaces on the human's screen the instant it happens, without waiting on a file watcher. Hooks relay through the core turn.signal sink into the activity hub.",
+        "ko": "에이전트 CLI에 네이티브 훅을 설치한다. 에이전트가 스스로 알릴 수 없는 블록된 순간(권한 대기)을 파일 관찰 지연 없이 발생 즉시 사람 화면에 표면화한다. 훅은 코어 turn.signal 싱크를 거쳐 활동 허브로 흐른다."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "blocks",
+          "title": {
+            "en": "Report pending blocked moments + recent signals",
+            "ko": "대기 블록·최근 신호 상태"
+          }
+        },
+        {
+          "name": "blocks.ack",
+          "title": {
+            "en": "Acknowledge pending blocked moments (clear badge)",
+            "ko": "대기 블록 확인 (배지 해제)"
+          }
+        },
+        {
+          "name": "consent.grant",
+          "title": {
+            "en": "Grant consent to install hooks",
+            "ko": "훅 설치 동의 승인"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "consent.revoke",
+          "title": {
+            "en": "Revoke hook-install consent",
+            "ko": "훅 설치 동의 철회"
+          }
+        },
+        {
+          "name": "consent.status",
+          "title": {
+            "en": "Report hook-install consent state",
+            "ko": "훅 설치 동의 상태"
+          }
+        },
+        {
+          "name": "install",
+          "title": {
+            "en": "Install hooks into an agent CLI's settings",
+            "ko": "에이전트 CLI 설정에 훅 설치"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "ping",
+          "title": {
+            "en": "Health check — load/version probe",
+            "ko": "상태 점검 — 로드·버전 프로브"
+          }
+        },
+        {
+          "name": "remove",
+          "title": {
+            "en": "Remove this plugin's installed hooks",
+            "ko": "설치한 훅 제거"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "signal",
+          "title": {
+            "en": "Emit a turn signal through the core sink",
+            "ko": "코어 싱크로 턴 신호 발행"
+          }
+        }
+      ]
+    },
+    {
       "id": "soksak-plugin-browser-bookmarks",
       "name": {
         "en": "Bookmarks",
         "ko": "즐겨찾기"
       },
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": {
         "en": "Browser bookmarks panel — click to open, ✕ to remove.",
         "ko": "브라우저 즐겨찾기 목록 패널 — 클릭으로 열고 ✕ 로 제거."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-browser-bookmarks.git",
       "branch": "main",
       "commands": [
         {
@@ -340,6 +414,13 @@
           "title": {
             "en": "Lists bookmarks",
             "ko": "즐겨찾기를 조회합니다"
+          }
+        },
+        {
+          "name": "open",
+          "title": {
+            "en": "Opens a bookmark",
+            "ko": "즐겨찾기를 엽니다"
           }
         },
         {
@@ -358,12 +439,11 @@
         "ko": "브라우저 (Chromium)",
         "en": "Browser (Chromium)"
       },
-      "version": "0.1.0",
+      "version": "0.0.2",
       "description": {
         "ko": "콘텐츠 뷰로 브라우저를 렌더 — 번들 Chromium 엔진 사이드카를 앱 프로세스에 로드해 네이티브 child 로 구동(app.sidecar 채널). 네이티브 Chromium 속도, URL 바·북마크 내장. OS 웹뷰가 아니라 어디서나 동일한 번들 Chromium 엔진.",
         "en": "Renders the browser as a content view — loads the bundled Chromium engine sidecar into the app process and drives a native child over the app.sidecar channel. Native Chromium speed, built-in URL bar and bookmarks. A uniform bundled Chromium engine, not the OS webview."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-browser-chromium.git",
       "branch": "main",
       "commands": [
         {
@@ -396,11 +476,13 @@
         },
         {
           "name": "dom.click",
-          "title": "요소 클릭"
+          "title": "요소 클릭",
+          "danger": "inject"
         },
         {
           "name": "dom.fill",
-          "title": "입력 채우기"
+          "title": "입력 채우기",
+          "danger": "inject"
         },
         {
           "name": "dom.html",
@@ -412,7 +494,8 @@
         },
         {
           "name": "dom.submit",
-          "title": "폼 제출"
+          "title": "폼 제출",
+          "danger": "inject"
         },
         {
           "name": "dom.text",
@@ -424,7 +507,8 @@
         },
         {
           "name": "eval",
-          "title": "페이지 JS 실행"
+          "title": "페이지 JS 실행",
+          "danger": "inject"
         },
         {
           "name": "forward",
@@ -492,17 +576,97 @@
       ]
     },
     {
+      "id": "soksak-plugin-browser-dom-picker",
+      "name": {
+        "en": "DOM Picker",
+        "ko": "DOM 피커"
+      },
+      "version": "0.0.1",
+      "description": {
+        "ko": "연필로 자유곡선을 그어 닫힌 다각형 내부 DOM 묶음을 선택한다. 셸 문서와 임베디드 브라우저 페이지 둘 다 대상. 선택 묶음은 저장되어 CLI·MCP로 송수신하고, 같은 창 bus 이벤트로 AI 챗을 호출한다.",
+        "en": "Draw a freehand curve to select a bundle of DOM nodes inside the closed polygon. Works on both shell documents and embedded browser pages. Selections are persisted and exchangeable via CLI/MCP; same-window bus events can trigger AI chat."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "activate",
+          "title": {
+            "ko": "DOM 피커 켜기",
+            "en": "Activate DOM Picker"
+          }
+        },
+        {
+          "name": "ask",
+          "title": {
+            "ko": "선택으로 질문",
+            "en": "Ask with Selection"
+          }
+        },
+        {
+          "name": "context.get",
+          "title": {
+            "ko": "선택 컨텍스트",
+            "en": "Get Context"
+          }
+        },
+        {
+          "name": "deactivate",
+          "title": {
+            "ko": "DOM 피커 끄기",
+            "en": "Deactivate DOM Picker"
+          }
+        },
+        {
+          "name": "probe",
+          "title": {
+            "ko": "좌표 합성 선택",
+            "en": "Probe by Coordinates"
+          },
+          "danger": "inject"
+        },
+        {
+          "name": "selection.clear",
+          "title": {
+            "ko": "선택 삭제",
+            "en": "Clear Selection"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "selection.get",
+          "title": {
+            "ko": "선택 묶음 조회",
+            "en": "Get Selection"
+          }
+        },
+        {
+          "name": "selection.list",
+          "title": {
+            "ko": "선택 이력",
+            "en": "List Selections"
+          }
+        },
+        {
+          "name": "selection.set",
+          "title": {
+            "ko": "selector 선택 주입",
+            "en": "Inject Selector"
+          },
+          "danger": "inject"
+        }
+      ]
+    },
+    {
       "id": "soksak-plugin-browser-native",
       "name": {
         "ko": "브라우저 (Webview)",
         "en": "Browser (Webview)"
       },
-      "version": "2.0.0",
+      "version": "0.0.1",
       "description": {
         "ko": "콘텐츠 뷰로 브라우저를 렌더 — 코어 네이티브 child webview(OS 웹뷰) 를 직접 구동. URL 바·즐겨찾기·북마크·devtools 토글 내장.",
         "en": "Renders the browser as a content view — drives the core native child webview (OS webview) directly. Built-in URL bar, bookmarks, and devtools toggle."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-browser-native.git",
       "branch": "main",
       "commands": [
         {
@@ -652,12 +816,11 @@
         "ko": "클립",
         "en": "Clip"
       },
-      "version": "0.3.0",
+      "version": "0.0.1",
       "description": {
         "ko": "클립보드 복사 이력과 영구 메모를 카테고리로 묶어 관리한다. 클립은 즐겨찾기·메모가 아니면 설정한 보존일(기본 3일) 후 자동 삭제, 메모는 영구. 같은 내용은 합쳐 복사 횟수를 센다. 우측 사이드바 탭.",
         "en": "Manages clipboard history and permanent memos grouped by category. Clips are auto-deleted after the configured retention period (default 3 days) unless starred or saved as memos; memos are permanent. Duplicate entries are merged and copy counts are tracked. Right sidebar tab."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-clipboard.git",
       "branch": "main",
       "commands": [
         {
@@ -789,98 +952,16 @@
       ]
     },
     {
-      "id": "soksak-plugin-editor-codemirror",
+      "id": "soksak-plugin-db-studio",
       "name": {
-        "ko": "에디터 (CodeMirror)",
-        "en": "Editor (CodeMirror)"
+        "en": "DB Studio",
+        "ko": "DB Studio"
       },
-      "version": "0.1.0",
-      "description": {
-        "ko": "코드·텍스트·마크다운·SVG 파일 에디터(CodeMirror). 찾기/바꾸기·저장·구문 강조. soksak 파일 뷰어로 등록(엔진 중립 — 코어는 매칭만).",
-        "en": "Code, text, markdown, and SVG file editor (CodeMirror). Find/replace, save, syntax highlighting. Registers as a soksak file viewer (engine-neutral — the core only routes)."
-      },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror.git",
-      "branch": "main",
-      "commands": [
-        {
-          "name": "find",
-          "title": {
-            "ko": "찾기",
-            "en": "Find"
-          }
-        },
-        {
-          "name": "format",
-          "title": {
-            "ko": "문서 서식",
-            "en": "Format Document"
-          }
-        },
-        {
-          "name": "ping",
-          "title": {
-            "ko": "적재/버전 확인(E2E)",
-            "en": "Ping (load/version check)"
-          }
-        },
-        {
-          "name": "replace",
-          "title": {
-            "ko": "바꾸기",
-            "en": "Replace"
-          }
-        },
-        {
-          "name": "save",
-          "title": {
-            "ko": "파일 저장",
-            "en": "Save File"
-          }
-        }
-      ]
-    },
-    {
-      "id": "soksak-plugin-editor-codemirror-todo",
-      "name": {
-        "en": "CodeMirror TODO highlight",
-        "ko": "코드미러 TODO 강조"
-      },
-      "version": "0.1.0",
-      "description": {
-        "en": "CodeMirror extension: highlights TODO/FIXME/XXX tokens and maps mjs/cjs/svelte extensions to syntax modes, via the editor plugin's extension protocol.",
-        "ko": "코드미러 확장: TODO/FIXME/XXX 토큰 강조 + mjs/cjs/svelte 확장자 문법 매핑 — 에디터 플러그인의 확장 프로토콜 경유."
-      },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-editor-codemirror-todo.git",
-      "branch": "main",
-      "commands": []
-    },
-    {
-      "id": "soksak-plugin-editor-format-json",
-      "name": {
-        "en": "JSON Formatter",
-        "ko": "JSON 포메터"
-      },
-      "version": "0.1.0",
-      "description": {
-        "en": "Formats JSON files with 2-space indentation. An editor extension (registers a formatter with the editor plugin). On parse failure, emits a clear error instead of corrupted text.",
-        "ko": "JSON 파일을 2칸 들여쓰기로 정리하는 포매터. 에디터 확장(에디터 플러그인에 포매터 등록). 파싱 실패 시 깨진 텍스트 대신 명확한 에러를 냅니다."
-      },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-editor-format-json.git",
-      "branch": "main",
-      "commands": []
-    },
-    {
-      "id": "soksak-plugin-erd",
-      "name": {
-        "en": "ERD",
-        "ko": "ERD"
-      },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "en": "Multi-DB ERD editor — schema design, migration, and SQL generation via GUI and CLI/MCP.",
         "ko": "멀티-DB ERD 에디터 — 스키마 설계·마이그레이션·SQL 생성을 GUI 와 CLI/MCP 로."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-erd.git",
       "branch": "main",
       "commands": [
         {
@@ -923,6 +1004,116 @@
           "title": {
             "en": "Create table",
             "ko": "테이블 생성"
+          }
+        },
+        {
+          "name": "db-audit",
+          "title": {
+            "en": "Read the audit log",
+            "ko": "감사 로그"
+          }
+        },
+        {
+          "name": "db-connect",
+          "title": {
+            "en": "Connect",
+            "ko": "접속"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "db-create",
+          "title": {
+            "en": "Create database",
+            "ko": "DB 생성"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "db-disconnect",
+          "title": {
+            "en": "Disconnect",
+            "ko": "접속 해제"
+          }
+        },
+        {
+          "name": "db-exec",
+          "title": {
+            "en": "Execute a write",
+            "ko": "쓰기 실행"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "db-introspect",
+          "title": {
+            "en": "Introspect schema",
+            "ko": "스키마 조회"
+          }
+        },
+        {
+          "name": "db-migrate",
+          "title": {
+            "en": "Apply a migration",
+            "ko": "마이그레이션 적용"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "db-profile-add",
+          "title": {
+            "en": "Add connection profile",
+            "ko": "접속 프로필 추가"
+          }
+        },
+        {
+          "name": "db-profile-list",
+          "title": {
+            "en": "List connection profiles",
+            "ko": "접속 프로필 목록"
+          }
+        },
+        {
+          "name": "db-profile-remove",
+          "title": {
+            "en": "Remove connection profile",
+            "ko": "접속 프로필 삭제"
+          }
+        },
+        {
+          "name": "db-pull-apply",
+          "title": {
+            "en": "Reverse sync into model",
+            "ko": "리버스 동기화"
+          }
+        },
+        {
+          "name": "db-push-plan",
+          "title": {
+            "en": "Forward sync plan",
+            "ko": "포워드 동기화 플랜"
+          }
+        },
+        {
+          "name": "db-rekey",
+          "title": {
+            "en": "Rotate encryption key",
+            "ko": "암호화 키 회전"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "db-status",
+          "title": {
+            "en": "Connection status",
+            "ko": "접속 상태"
+          }
+        },
+        {
+          "name": "db-test",
+          "title": {
+            "en": "Test a connection",
+            "ko": "접속 테스트"
           }
         },
         {
@@ -1031,6 +1222,20 @@
           }
         },
         {
+          "name": "history-status",
+          "title": {
+            "en": "Undo/redo history status",
+            "ko": "이력 상태"
+          }
+        },
+        {
+          "name": "hover-row",
+          "title": {
+            "en": "Highlight column row",
+            "ko": "행 강조"
+          }
+        },
+        {
           "name": "import-dbml",
           "title": {
             "en": "Import DBML",
@@ -1073,6 +1278,13 @@
           }
         },
         {
+          "name": "migration-applied",
+          "title": {
+            "en": "Applied migrations",
+            "ko": "적용된 마이그레이션"
+          }
+        },
+        {
           "name": "migration-apply",
           "title": {
             "en": "Apply migration",
@@ -1108,6 +1320,14 @@
           }
         },
         {
+          "name": "migration-run",
+          "title": {
+            "en": "Run file migrations",
+            "ko": "파일 마이그레이션 실행"
+          },
+          "danger": "destructive"
+        },
+        {
           "name": "migration-show",
           "title": {
             "en": "Show migration",
@@ -1129,10 +1349,59 @@
           }
         },
         {
+          "name": "notifications",
+          "title": {
+            "en": "Recent action-feedback log",
+            "ko": "알림 로그"
+          }
+        },
+        {
+          "name": "palette",
+          "title": {
+            "en": "Command palette",
+            "ko": "명령 팔레트"
+          }
+        },
+        {
+          "name": "persist-flush",
+          "title": {
+            "en": "Flush durable persistence now",
+            "ko": "영속 즉시 저장"
+          }
+        },
+        {
+          "name": "persist-status",
+          "title": {
+            "en": "Durable persistence status",
+            "ko": "영속 상태 확인"
+          }
+        },
+        {
           "name": "ping",
           "title": {
             "en": "Plugin load / version check (E2E)",
             "ko": "플러그인 적재/버전 확인(E2E)"
+          }
+        },
+        {
+          "name": "prefs-flush",
+          "title": {
+            "en": "Flush chrome preferences now",
+            "ko": "환경설정 즉시 저장"
+          }
+        },
+        {
+          "name": "prefs-status",
+          "title": {
+            "en": "Chrome-preference persistence status",
+            "ko": "환경설정 상태 확인"
+          }
+        },
+        {
+          "name": "query-run",
+          "title": {
+            "en": "Run a query",
+            "ko": "쿼리 실행"
           }
         },
         {
@@ -1168,6 +1437,13 @@
           "title": {
             "en": "Set color",
             "ko": "색상 설정"
+          }
+        },
+        {
+          "name": "set-notation",
+          "title": {
+            "en": "Set notation style",
+            "ko": "표기법 설정"
           }
         },
         {
@@ -1236,17 +1512,536 @@
       ]
     },
     {
+      "id": "soksak-plugin-design-astryx",
+      "name": {
+        "en": "Astryx Design",
+        "ko": "Astryx 디자인"
+      },
+      "version": "0.0.2",
+      "description": {
+        "en": "Design by talking — build pages as a tree (component tree, comp.* editable) or as tsx (verbatim 'use client' source, seeded from 619 shipped Astryx templates and edited by page.code.set), render them live in an in-app canvas view, and export TSX. Headless: every capability is a command, driven from CLI/MCP.",
+        "ko": "말로 하는 디자인 — 페이지를 트리(컴포넌트 트리, comp.* 편집) 또는 tsx(원본 'use client' 소스 — 619개 shipped Astryx 템플릿에서 시드해 page.code.set 으로 편집)로 조립하고 앱 내 캔버스 뷰로 라이브 렌더하고 TSX 로 내보낸다. 헤드리스: 모든 기능이 명령이라 CLI/MCP 로 구동한다."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "canvas.select",
+          "title": {
+            "en": "Select node",
+            "ko": "노드 선택"
+          }
+        },
+        {
+          "name": "canvas.set",
+          "title": {
+            "en": "Set canvas framing",
+            "ko": "캔버스 프레이밍 설정"
+          }
+        },
+        {
+          "name": "catalog.doc",
+          "title": {
+            "en": "Component catalog doc",
+            "ko": "컴포넌트 카탈로그 문서"
+          }
+        },
+        {
+          "name": "catalog.list",
+          "title": {
+            "en": "List catalog components",
+            "ko": "카탈로그 컴포넌트 목록"
+          }
+        },
+        {
+          "name": "comp.add",
+          "title": {
+            "en": "Add component",
+            "ko": "컴포넌트 추가"
+          }
+        },
+        {
+          "name": "comp.find",
+          "title": {
+            "en": "Find components",
+            "ko": "컴포넌트 검색"
+          }
+        },
+        {
+          "name": "comp.get",
+          "title": {
+            "en": "Get component",
+            "ko": "컴포넌트 조회"
+          }
+        },
+        {
+          "name": "comp.move",
+          "title": {
+            "en": "Move component",
+            "ko": "컴포넌트 이동"
+          }
+        },
+        {
+          "name": "comp.remove",
+          "title": {
+            "en": "Remove component",
+            "ko": "컴포넌트 삭제"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "comp.set",
+          "title": {
+            "en": "Set component props",
+            "ko": "컴포넌트 속성 설정"
+          }
+        },
+        {
+          "name": "docs.get",
+          "title": {
+            "en": "Get doctrine topic",
+            "ko": "독트린 문서 조회"
+          }
+        },
+        {
+          "name": "docs.list",
+          "title": {
+            "en": "List doctrine topics",
+            "ko": "독트린 문서 목록"
+          }
+        },
+        {
+          "name": "export.tsx",
+          "title": {
+            "en": "Export TSX",
+            "ko": "TSX 내보내기"
+          }
+        },
+        {
+          "name": "page.code.get",
+          "title": {
+            "en": "Get page code",
+            "ko": "페이지 코드 조회"
+          }
+        },
+        {
+          "name": "page.code.set",
+          "title": {
+            "en": "Set page code",
+            "ko": "페이지 코드 설정"
+          }
+        },
+        {
+          "name": "page.create",
+          "title": {
+            "en": "Create page",
+            "ko": "페이지 생성"
+          }
+        },
+        {
+          "name": "page.duplicate",
+          "title": {
+            "en": "Duplicate page",
+            "ko": "페이지 복제"
+          }
+        },
+        {
+          "name": "page.list",
+          "title": {
+            "en": "List pages",
+            "ko": "페이지 목록"
+          }
+        },
+        {
+          "name": "page.remove",
+          "title": {
+            "en": "Remove page",
+            "ko": "페이지 삭제"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "page.rename",
+          "title": {
+            "en": "Rename page",
+            "ko": "페이지 이름 변경"
+          }
+        },
+        {
+          "name": "ping",
+          "title": {
+            "en": "Ping (load/version check)",
+            "ko": "플러그인 적재/버전 확인(E2E)"
+          }
+        },
+        {
+          "name": "preview.open",
+          "title": {
+            "en": "Open canvas",
+            "ko": "캔버스 열기"
+          }
+        },
+        {
+          "name": "preview.refresh",
+          "title": {
+            "en": "Re-render canvas",
+            "ko": "캔버스 재렌더"
+          }
+        },
+        {
+          "name": "state",
+          "title": {
+            "en": "Get document state",
+            "ko": "문서 상태 조회"
+          }
+        },
+        {
+          "name": "template.apply",
+          "title": {
+            "en": "Apply template",
+            "ko": "템플릿 적용"
+          }
+        },
+        {
+          "name": "template.list",
+          "title": {
+            "en": "List templates",
+            "ko": "템플릿 목록"
+          }
+        },
+        {
+          "name": "theme.list",
+          "title": {
+            "en": "List themes",
+            "ko": "테마 목록"
+          }
+        },
+        {
+          "name": "theme.set",
+          "title": {
+            "en": "Set theme",
+            "ko": "테마 설정"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-design-studio",
+      "name": {
+        "ko": "디자인 스튜디오",
+        "en": "Design Studio"
+      },
+      "version": "0.0.2",
+      "description": {
+        "ko": "컴포넌트 조립형 페이지 빌더 — 23종 섹션 카탈로그와 변형을 쌓아 랜딩페이지를 만들고, 템플릿 부분 교체·자연어 지시·인라인 편집·인스펙터·구조 트리·버전 히스토리로 다듬는다. 헤드리스: 모든 기능이 명령이라 CLI/MCP 로 구동한다.",
+        "en": "Component-composition page builder — stack 23 section kinds with variants into a landing page, then refine with template part-swaps, natural-language instructions, inline editing, an inspector, a structure tree, and version history. Headless: every capability is a command, driven from CLI/MCP."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "accent.set",
+          "title": {
+            "ko": "액센트 컬러를 바꿉니다",
+            "en": "Sets the accent color"
+          }
+        },
+        {
+          "name": "ai",
+          "title": {
+            "ko": "자연어 지시를 실행합니다",
+            "en": "Runs a natural-language instruction"
+          }
+        },
+        {
+          "name": "dark.set",
+          "title": {
+            "ko": "페이지 다크 모드를 바꿉니다",
+            "en": "Sets the page dark mode"
+          }
+        },
+        {
+          "name": "device.set",
+          "title": {
+            "ko": "미리보기 기기를 바꿉니다",
+            "en": "Sets the preview device"
+          }
+        },
+        {
+          "name": "flags.set",
+          "title": {
+            "ko": "사이드바·모바일 바 고정을 설정합니다",
+            "en": "Sets sidebar and mobile bar pinning"
+          }
+        },
+        {
+          "name": "history.list",
+          "title": {
+            "ko": "버전 히스토리를 나열합니다",
+            "en": "Lists version history"
+          }
+        },
+        {
+          "name": "history.restore",
+          "title": {
+            "ko": "버전을 복원합니다",
+            "en": "Restores a version"
+          }
+        },
+        {
+          "name": "layout.set",
+          "title": {
+            "ko": "페이지 레이아웃을 바꿉니다",
+            "en": "Sets the page layout"
+          }
+        },
+        {
+          "name": "page.add",
+          "title": {
+            "ko": "페이지를 추가합니다",
+            "en": "Adds a page"
+          }
+        },
+        {
+          "name": "page.list",
+          "title": {
+            "ko": "페이지를 나열합니다",
+            "en": "Lists pages"
+          }
+        },
+        {
+          "name": "page.open",
+          "title": {
+            "ko": "페이지를 엽니다",
+            "en": "Opens a page"
+          }
+        },
+        {
+          "name": "part.add",
+          "title": {
+            "ko": "섹션 내부 항목을 추가합니다",
+            "en": "Adds an item inside a section"
+          }
+        },
+        {
+          "name": "part.move",
+          "title": {
+            "ko": "섹션 내부 항목 순서를 바꿉니다",
+            "en": "Moves an item inside a section"
+          }
+        },
+        {
+          "name": "part.remove",
+          "title": {
+            "ko": "섹션 내부 항목을 삭제합니다",
+            "en": "Removes an item inside a section"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "part.update",
+          "title": {
+            "ko": "섹션 내부 항목을 수정합니다",
+            "en": "Updates an item inside a section"
+          }
+        },
+        {
+          "name": "ping",
+          "title": {
+            "ko": "플러그인 상태를 점검합니다",
+            "en": "Pings the plugin"
+          }
+        },
+        {
+          "name": "publish",
+          "title": {
+            "ko": "현재 페이지를 단일 HTML 로 발행합니다",
+            "en": "Publishes the current page as a standalone HTML file"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "redo",
+          "title": {
+            "ko": "실행취소를 되돌립니다",
+            "en": "Redoes the undone change"
+          }
+        },
+        {
+          "name": "reset",
+          "title": {
+            "ko": "현재 페이지를 비웁니다",
+            "en": "Resets the current page"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "section.add",
+          "title": {
+            "ko": "섹션을 추가합니다",
+            "en": "Adds a section"
+          }
+        },
+        {
+          "name": "section.list",
+          "title": {
+            "ko": "섹션을 나열합니다",
+            "en": "Lists sections"
+          }
+        },
+        {
+          "name": "section.move",
+          "title": {
+            "ko": "섹션 순서를 옮깁니다",
+            "en": "Moves a section"
+          }
+        },
+        {
+          "name": "section.remove",
+          "title": {
+            "ko": "섹션을 삭제합니다",
+            "en": "Removes a section"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "section.swap",
+          "title": {
+            "ko": "섹션 변형을 교체합니다",
+            "en": "Swaps a section variant"
+          }
+        },
+        {
+          "name": "section.update",
+          "title": {
+            "ko": "섹션을 수정합니다",
+            "en": "Updates a section"
+          }
+        },
+        {
+          "name": "shell.set",
+          "title": {
+            "ko": "페이지 셸(로고·브랜드·내비)을 설정합니다",
+            "en": "Sets the page shell (logo, brand, nav)"
+          }
+        },
+        {
+          "name": "state",
+          "title": {
+            "ko": "문서 상태를 조회합니다",
+            "en": "Reads the document state"
+          }
+        },
+        {
+          "name": "template.apply",
+          "title": {
+            "ko": "템플릿을 적용합니다",
+            "en": "Applies a template"
+          }
+        },
+        {
+          "name": "template.list",
+          "title": {
+            "ko": "템플릿을 나열합니다",
+            "en": "Lists templates"
+          }
+        },
+        {
+          "name": "undo",
+          "title": {
+            "ko": "실행을 취소합니다",
+            "en": "Undoes the last change"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-editor-codemirror",
+      "name": {
+        "ko": "에디터 (CodeMirror)",
+        "en": "Editor (CodeMirror)"
+      },
+      "version": "0.0.2",
+      "description": {
+        "ko": "코드·텍스트·마크다운·SVG 파일 에디터(CodeMirror). 찾기/바꾸기·저장·구문 강조. soksak 파일 뷰어로 등록(엔진 중립 — 코어는 매칭만).",
+        "en": "Code, text, markdown, and SVG file editor (CodeMirror). Find/replace, save, syntax highlighting. Registers as a soksak file viewer (engine-neutral — the core only routes)."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "find",
+          "title": {
+            "ko": "찾기",
+            "en": "Find"
+          }
+        },
+        {
+          "name": "format",
+          "title": {
+            "ko": "문서 서식",
+            "en": "Format Document"
+          }
+        },
+        {
+          "name": "ping",
+          "title": {
+            "ko": "적재/버전 확인(E2E)",
+            "en": "Ping (load/version check)"
+          }
+        },
+        {
+          "name": "replace",
+          "title": {
+            "ko": "바꾸기",
+            "en": "Replace"
+          }
+        },
+        {
+          "name": "save",
+          "title": {
+            "ko": "파일 저장",
+            "en": "Save File"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-editor-codemirror-todo",
+      "name": {
+        "en": "CodeMirror TODO highlight",
+        "ko": "코드미러 TODO 강조"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "CodeMirror extension: highlights TODO/FIXME/XXX tokens and maps mjs/cjs/svelte extensions to syntax modes, via the editor plugin's extension protocol.",
+        "ko": "코드미러 확장: TODO/FIXME/XXX 토큰 강조 + mjs/cjs/svelte 확장자 문법 매핑 — 에디터 플러그인의 확장 프로토콜 경유."
+      },
+      "branch": "main",
+      "commands": []
+    },
+    {
+      "id": "soksak-plugin-editor-format-json",
+      "name": {
+        "en": "JSON Formatter",
+        "ko": "JSON 포메터"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "Formats JSON files with 2-space indentation. An editor extension (registers a formatter with the editor plugin). On parse failure, emits a clear error instead of corrupted text.",
+        "ko": "JSON 파일을 2칸 들여쓰기로 정리하는 포매터. 에디터 확장(에디터 플러그인에 포매터 등록). 파싱 실패 시 깨진 텍스트 대신 명확한 에러를 냅니다."
+      },
+      "branch": "main",
+      "commands": []
+    },
+    {
       "id": "soksak-plugin-file-tree",
       "name": {
         "ko": "파일 트리",
         "en": "File Tree"
       },
-      "version": "0.1.0",
+      "version": "0.0.2",
       "description": {
         "ko": "좌측 사이드바 파일 탐색기 트리. 셸 cwd 추종 토글, git 데코레이션. 파일 열기는 코어 editor.open 으로 위임(에디터/미디어 뷰어가 렌더).",
         "en": "Left sidebar file explorer tree. Shell-cwd follow toggle and git decorations. Opening a file is delegated to the core editor.open command (editor / media viewers render it)."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-file-tree.git",
       "branch": "main",
       "commands": [
         {
@@ -1285,12 +2080,11 @@
         "ko": "폴더팝",
         "en": "Folderpop"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "좌측 사이드바 폴더 탐색기 — 여러 폴더를 등록하고(각 이름 변경) 선택한 폴더의 파일/폴더를 보여준다. 파일 열기는 코어 editor.open 으로 위임.",
         "en": "Left sidebar folder explorer — register multiple folders (each renamable) and browse the selected folder's files/folders. Opening a file is delegated to the core editor.open command."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-folderpop.git",
       "branch": "main",
       "commands": [
         {
@@ -1343,14 +2137,20 @@
         "ko": "git 라이브러리",
         "en": "Git library"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "git 실행 규약과 저장소 프리미티브의 단일진실. 발견(root)·init·clone, porcelain v2 status 와 git.changed 변경 이벤트, worktree 프리미티브, stage/commit/discard 를 커맨드로 노출합니다.",
         "en": "Single truth for the git execution convention and repository primitives. Exposes discovery (root), init, clone, porcelain v2 status with git.changed events, worktree primitives, and stage/commit/discard as commands."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-git-core.git",
       "branch": "main",
       "commands": [
+        {
+          "name": "branch.exists",
+          "title": {
+            "ko": "브랜치 존재 확인",
+            "en": "Check a branch exists"
+          }
+        },
         {
           "name": "clone",
           "title": {
@@ -1374,12 +2174,33 @@
           }
         },
         {
+          "name": "diff.files",
+          "title": {
+            "ko": "브랜치 변경 파일 목록",
+            "en": "List a branch's changed files"
+          }
+        },
+        {
+          "name": "diff.range",
+          "title": {
+            "ko": "브랜치 변경 내용 비교",
+            "en": "Show a branch's diff"
+          }
+        },
+        {
           "name": "discard",
           "title": {
             "ko": "변경 파기",
             "en": "Discard changes"
           },
           "danger": "destructive"
+        },
+        {
+          "name": "head",
+          "title": {
+            "ko": "현재 브랜치 확인",
+            "en": "Read the checked-out branch"
+          }
         },
         {
           "name": "init",
@@ -1394,6 +2215,14 @@
             "ko": "커밋 이력 조회",
             "en": "Read the commit log"
           }
+        },
+        {
+          "name": "merge",
+          "title": {
+            "ko": "브랜치 머지",
+            "en": "Merge a branch"
+          },
+          "danger": "destructive"
         },
         {
           "name": "root",
@@ -1497,12 +2326,11 @@
         "en": "Git Changes",
         "ko": "깃 변경"
       },
-      "version": "1.1.0",
+      "version": "0.0.1",
       "description": {
         "en": "Git view showing changed file list and unified diff. Supports staged (index) toggle.",
         "ko": "변경 파일 목록과 unified diff 를 보여주는 git 뷰. staged(index) 토글 지원."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-git-diff.git",
       "branch": "main",
       "commands": [
         {
@@ -1527,12 +2355,11 @@
         "en": "Git History",
         "ko": "깃 히스토리"
       },
-      "version": "1.1.0",
+      "version": "0.0.1",
       "description": {
         "en": "Project commit history sidebar — click a commit to show changed files and patch. Commands return the same data headlessly (log, show).",
         "ko": "프로젝트 커밋 이력 사이드바 — 커밋을 클릭하면 변경 파일 목록과 패치를 표시. 같은 데이터를 커맨드로도 헤드리스 반환(log, show)."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-git-history.git",
       "branch": "main",
       "commands": [
         {
@@ -1557,14 +2384,158 @@
         "ko": "git 자동 초기화",
         "en": "Auto git init"
       },
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": {
-        "ko": "새 프로젝트의 루트에 .git 이 없으면 자동으로 git init",
-        "en": "Runs git init automatically when a new project root has no .git"
+        "ko": "새 프로젝트의 루트에 .git 이 없으면 자동으로 git init. 정책 상태 조회·수동 실행 커맨드 제공.",
+        "en": "Runs git init automatically when a new project root has no .git. Provides commands to query the policy state and run it manually."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-git-init.git",
       "branch": "main",
-      "commands": []
+      "commands": [
+        {
+          "name": "run",
+          "title": {
+            "ko": "지금 초기화 실행",
+            "en": "Run init now"
+          }
+        },
+        {
+          "name": "status",
+          "title": {
+            "ko": "정책 상태",
+            "en": "Policy status"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-review",
+      "name": {
+        "en": "Git Review",
+        "ko": "깃 리뷰"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "Review a branch or worktree's changes: a diff surface, comments as a deterministic record contract, injecting comments into the target's terminal, and approve then local-merge. Git runs directly.",
+        "ko": "브랜치·워크트리 변경을 리뷰 — diff 표면, 결정적 레코드 계약으로서의 코멘트, 코멘트를 대상 터미널에 주입, 승인 후 로컬 머지. git 은 직접 실행."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "approve",
+          "title": {
+            "en": "Approve the target's changes",
+            "ko": "대상 변경 승인"
+          }
+        },
+        {
+          "name": "approve.revoke",
+          "title": {
+            "ko": "승인을 철회합니다",
+            "en": "Withdraws an approval"
+          }
+        },
+        {
+          "name": "comment.add",
+          "title": {
+            "en": "Add a review comment",
+            "ko": "리뷰 코멘트 추가"
+          }
+        },
+        {
+          "name": "comment.list",
+          "title": {
+            "en": "List review comments",
+            "ko": "리뷰 코멘트 목록"
+          }
+        },
+        {
+          "name": "comment.remove",
+          "title": {
+            "en": "Remove a comment",
+            "ko": "코멘트 삭제"
+          },
+          "danger": "destructive"
+        },
+        {
+          "name": "comment.reopen",
+          "title": {
+            "en": "Reopen a comment",
+            "ko": "코멘트 재개"
+          }
+        },
+        {
+          "name": "comment.resolve",
+          "title": {
+            "en": "Resolve a comment",
+            "ko": "코멘트 해소"
+          }
+        },
+        {
+          "name": "comment.send",
+          "title": {
+            "en": "Send comments to the target terminal",
+            "ko": "코멘트를 대상 터미널로 전송"
+          }
+        },
+        {
+          "name": "diff.files",
+          "title": {
+            "en": "List changed files",
+            "ko": "변경 파일 목록"
+          }
+        },
+        {
+          "name": "diff.read",
+          "title": {
+            "en": "Read the diff hunks",
+            "ko": "diff 본문 조회"
+          }
+        },
+        {
+          "name": "merge",
+          "title": {
+            "en": "Merge the approved target",
+            "ko": "승인된 대상 머지"
+          },
+          "danger": "destructive"
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-git-workspace",
+      "name": {
+        "en": "Git Workspace",
+        "ko": "깃 워크스페이스"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "One-shot worktree workspaces: a branch and worktree, its own window with a terminal at the worktree, and reclaim when done. Branches and commits survive close.",
+        "ko": "원샷 워크트리 워크스페이스 — 브랜치와 워크트리, 워크트리를 cwd 로 하는 전용 창과 터미널, 완료 시 회수. 닫아도 브랜치와 커밋은 존속."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "worktree.close",
+          "title": {
+            "en": "Close a worktree workspace",
+            "ko": "워크트리 워크스페이스 닫기"
+          }
+        },
+        {
+          "name": "worktree.list",
+          "title": {
+            "en": "List worktree workspaces",
+            "ko": "워크트리 워크스페이스 목록"
+          }
+        },
+        {
+          "name": "worktree.open",
+          "title": {
+            "en": "Open a worktree workspace",
+            "ko": "워크트리 워크스페이스 열기"
+          }
+        }
+      ]
     },
     {
       "id": "soksak-plugin-icons-codicons",
@@ -1572,12 +2543,11 @@
         "en": "Codicons Icons",
         "ko": "Codicons 아이콘"
       },
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": {
         "en": "VS Code Codicons icon set (CC-BY-4.0, microsoft/vscode-codicons) — once enabled, select it under Settings > Icon Set.",
         "ko": "VS Code Codicons 아이콘 셋(CC-BY-4.0, microsoft/vscode-codicons) — 활성화하면 설정 > 아이콘 셋에서 선택할 수 있습니다"
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-icons-codicons.git",
       "branch": "main",
       "commands": []
     },
@@ -1587,12 +2557,11 @@
         "en": "Tabler Icons",
         "ko": "Tabler 아이콘"
       },
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": {
         "en": "Tabler Icons icon set (MIT, tabler.io/icons) — once enabled, select it under Settings > Icon Set.",
         "ko": "Tabler Icons 아이콘 셋(MIT, tabler.io/icons) — 활성화하면 설정 > 아이콘 셋에서 선택할 수 있습니다"
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-icons-tabler.git",
       "branch": "main",
       "commands": []
     },
@@ -1602,12 +2571,11 @@
         "ko": "칸반",
         "en": "Kanban"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "트리(아웃라이너) 기반 이슈 추적 — 한 트리를 칸반·간트·타임라인·트리·테이블·캘린더 여섯 뷰로. 노드는 parentId+order 로 무한 깊이. CLI/MCP 로 조작.",
         "en": "Tree (outliner) based issue tracking — one tree projected as kanban, gantt, timeline, tree, table, and calendar. Nodes have infinite depth via parentId+order. Operated via CLI/MCP."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-kanban.git",
       "branch": "main",
       "commands": [
         {
@@ -1788,12 +2756,11 @@
         "ko": "LG TV 리모컨",
         "en": "LG TV Remote"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "en": "LG webOS TV remote — control power/volume/channel/d-pad/input/media/keyboard via modal overlay and CLI/MCP commands. Direct SSAP WebSocket connection + Wake-on-LAN (net.udp.send).",
         "ko": "LG webOS TV 리모컨 — 전원/볼륨/채널/방향키/입력/미디어/키보드를 모달 오버레이와 CLI/MCP 명령으로 조작한다. SSAP WebSocket 직결 + Wake-on-LAN(net.udp.send)."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-lgtv-remote.git",
       "branch": "main",
       "commands": [
         {
@@ -2090,12 +3057,11 @@
         "ko": "메시지함",
         "en": "Mailbox"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "프로젝트별 메시지함 — CLI/MCP/API 로 메시지를 보내고, 푸시 알림(소리·딥링크·이미지)으로 받는다. '스스로 구독'하면 턴 종료 시 기계적으로 메시지를 받는다. 좌측 사이드바 탭에 읽지않음 표시.",
         "en": "Per-project message inbox — send messages via CLI/MCP/API and receive them as push notifications (sound, deep-link, image). Self-subscribe to receive messages automatically at turn end. Unread badge shown on the left sidebar tab."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-mailbox.git",
       "branch": "main",
       "commands": [
         {
@@ -2200,12 +3166,11 @@
         "en": "Mascot",
         "ko": "마스코트"
       },
-      "version": "1.0.0",
+      "version": "0.0.1",
       "description": {
         "en": "Character presentation engine — a Live2D mascot overlay with local neural TTS, measured lip-sync, expressions and motions. No views of its own: other plugins (activity log, chat UIs) drive it through commands (say/expression/motion/mascot).",
         "ko": "캐릭터 표현 엔진 — Live2D 마스코트 오버레이 + 로컬 신경 TTS, 실측 립싱크, 표정·모션. 자체 뷰 없음: 다른 플러그인(활동로그·대화 UI)이 커맨드(say/expression/motion/mascot)로 구동한다."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-mascot.git",
       "branch": "main",
       "commands": [
         {
@@ -2314,12 +3279,11 @@
         "ko": "미디어 뷰어",
         "en": "Media Viewer"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "이미지·PDF·영상·오디오 파일을 콘텐츠로 표시하는 뷰어. soksak 파일 뷰어로 등록(코어가 확장자로 라우팅).",
         "en": "Viewers for image, PDF, video, and audio files. Registers as soksak file viewers (the core routes by extension)."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-media-viewer.git",
       "branch": "main",
       "commands": [
         {
@@ -2344,12 +3308,11 @@
         "en": "Memo",
         "ko": "메모"
       },
-      "version": "1.0.1",
+      "version": "0.0.1",
       "description": {
         "en": "Per-project memo — a simple notepad panel stored separately per project root.",
         "ko": "프로젝트별 메모 — 프로젝트 루트마다 분리 저장되는 간단한 메모장 패널"
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-memo.git",
       "branch": "main",
       "commands": [
         {
@@ -2374,12 +3337,11 @@
         "en": "Pin Doodle",
         "ko": "Pin 낙서"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "en": "Freehand drawing overlay on top of the screen. In draw mode use the pen to doodle; outside draw mode clicks pass through but the drawing stays visible and appears in screenshots. Color, width, eraser, undo, clear.",
         "ko": "화면 위에 연필로 자유롭게 적고 그리는 낙서 오버레이. 그리기 모드를 켜면 펜으로 낙서하고, 끄면 클릭은 통과하되 낙서는 화면에 남아 스크린샷에도 잡힌다. 색·굵기·지우개·되돌리기·지우기."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-overlay-draw.git",
       "branch": "main",
       "commands": [
         {
@@ -2453,12 +3415,11 @@
         "en": "Sakura Petals",
         "ko": "sakura 벚꽃"
       },
-      "version": "1.0.2",
+      "version": "0.0.1",
       "description": {
         "en": "Cherry blossom petals drift over the app — swaying side to side, tumbling in 3D, and drifting sideways on the breeze. Density, fall speed, and wind are adjustable.",
         "ko": "앱 위로 벚꽃 잎이 흩날린다 — 좌우로 흔들리며 3D로 텀블해 떨어지고 바람에 옆으로 흐른다. 밀도·낙하속도·바람 조절."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-overlay-sakura.git",
       "branch": "main",
       "commands": [
         {
@@ -2497,12 +3458,11 @@
         "en": "shork shark",
         "ko": "shork shark"
       },
-      "version": "1.0.2",
+      "version": "0.0.1",
       "description": {
         "en": "A shork shark lazily swimming across the app — the SOKSAK wordmark is the shark itself (S=head, K=tail). Shark count and liveliness are adjustable.",
         "ko": "앱 위를 유유자적 헤엄쳐 다니는 shork shark — SOKSAK 워드마크가 곧 상어(S=머리, K=꼬리). 마릿수·활기 조절."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-overlay-shark.git",
       "branch": "main",
       "commands": [
         {
@@ -2541,12 +3501,11 @@
         "ko": "플레이박스",
         "en": "Playbox"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "비디오 라이브러리·플레이어 — 즐겨찾기·클립. YouTube·로컬 파일·직접 미디어 URL·임의 웹페이지(yt-dlp 경유)를 재생하고, 보호된 HLS 는 코어 미디어 프록시로 스트리밍.",
         "en": "Video library and player — favorites and clips. Plays YouTube, local files, direct media URLs, and arbitrary web pages (via yt-dlp); protected HLS is streamed through the core media proxy."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-playbox.git",
       "branch": "main",
       "commands": [
         {
@@ -2669,17 +3628,67 @@
       ]
     },
     {
+      "id": "soksak-plugin-reminder-demo",
+      "name": {
+        "ko": "리마인더 데모",
+        "en": "Reminder Demo"
+      },
+      "version": "0.0.2",
+      "description": {
+        "ko": "코어 범용 스케줄러(app.scheduler) 범용성 데모 — 칸반과 무관한 시간 트리거(at/every/cron)로 알림을 예약한다. 워크플로가 reconcile 로 쓰는 그 엔진을 회의 알림이 그대로 쓴다는 증명.",
+        "en": "Demo of the core general scheduler (app.scheduler) — schedules notifications via time triggers (at/every/cron) unrelated to kanban. Proves meeting reminders use the same engine the workflow uses for reconcile."
+      },
+      "branch": "main",
+      "commands": []
+    },
+    {
+      "id": "soksak-plugin-remote-iroh",
+      "name": {
+        "en": "Remote (iroh)",
+        "ko": "원격 제어 (iroh)"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "Library plugin (no UI) that drives a paired phone or remote device over an end-to-end encrypted channel (Noise KK + Ed25519 capability assertions) on iroh QUIC P2P (or loopback TCP). Runs our own vendored sidecar binary over the process capability; the sidecar relays commands to the core over the socket and routes destructive actions through the desktop human confirm modal.",
+        "ko": "페어링된 폰이나 원격 기기를 종단간 암호화 채널(Noise KK + Ed25519 capability assertion) 위에서 구동하는 라이브러리 플러그인(UI 없음). iroh QUIC P2P(또는 루프백 TCP) 전송. 우리 소유 사이드카 바이너리를 process capability 로 띄우고, 사이드카가 소켓으로 코어에 명령을 중계하며 파괴적 작업은 데스크톱 사람 confirm 모달을 거친다."
+      },
+      "author": "max <max@blue.tools>",
+      "branch": "main",
+      "commands": [
+        {
+          "name": "start",
+          "title": {
+            "en": "Start remote transport",
+            "ko": "원격 전송 시작"
+          }
+        },
+        {
+          "name": "status",
+          "title": {
+            "en": "Remote transport status",
+            "ko": "원격 전송 상태"
+          }
+        },
+        {
+          "name": "stop",
+          "title": {
+            "en": "Stop remote transport",
+            "ko": "원격 전송 중지"
+          }
+        }
+      ]
+    },
+    {
       "id": "soksak-plugin-runbook",
       "name": {
         "ko": "런북",
         "en": "Runbook"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "재사용 가능한 작업(런북)을 저장하고 실행한다. 작업은 파라미터·환경변수·시크릿·다른 작업 출력을 Reference 로 엮으며, 링킹은 순수 해석 + 의존 그래프 + 순환 검출로 안전하게 풀린다.",
         "en": "Store and run reusable commands (runbooks). Commands reference parameters, env vars, secrets, and other command outputs; linking resolves safely via pure evaluation, dependency graph, and cycle detection."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-runbook.git",
       "branch": "main",
       "commands": [
         {
@@ -2893,12 +3902,11 @@
         "ko": "창밖 풍경",
         "en": "Window"
       },
-      "version": "1.2.0",
+      "version": "0.0.1",
       "description": {
         "ko": "좌측 사이드바 하단의 창밖 풍경 — 시간대에 따라 변하고, 나무가 흔들리고 낮엔 구름이 흐르며 밤엔 별이 반짝인다.",
         "en": "A window to the sky in the left sidebar — shifts with the time of day; trees sway, clouds drift by day, stars twinkle at night."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-sidebar-sky.git",
       "branch": "main",
       "commands": [
         {
@@ -2923,7 +3931,7 @@
         "ko": "터미널(고스티)",
         "en": "Terminal (Ghostty)"
       },
-      "version": "0.1.0",
+      "version": "0.0.1",
       "description": {
         "ko": "Ghostty VT 엔진 기반 터미널 — 기존 터미널과 나란히 추가되는 두 번째 터미널 프로그램.",
         "en": "Terminal powered by the Ghostty VT engine — a second terminal program alongside the existing one."
@@ -2931,10 +3939,52 @@
       "branch": "main",
       "commands": [
         {
+          "name": "clear",
+          "title": {
+            "ko": "지우기",
+            "en": "Clear"
+          }
+        },
+        {
+          "name": "close-pane",
+          "title": {
+            "ko": "탭 내 pane 닫기",
+            "en": "Close Pane (Within-Tab)"
+          }
+        },
+        {
+          "name": "panes",
+          "title": {
+            "ko": "탭 내 pane 목록",
+            "en": "List Panes (Within-Tab)"
+          }
+        },
+        {
           "name": "ping",
           "title": {
             "ko": "핑",
             "en": "Ping"
+          }
+        },
+        {
+          "name": "resume",
+          "title": {
+            "ko": "세션 이어가기",
+            "en": "Resume Session"
+          }
+        },
+        {
+          "name": "send",
+          "title": {
+            "ko": "텍스트 전송",
+            "en": "Send Text"
+          }
+        },
+        {
+          "name": "split-pane",
+          "title": {
+            "ko": "탭 내 분할",
+            "en": "Split Pane (Within-Tab)"
           }
         }
       ]
@@ -2945,12 +3995,11 @@
         "ko": "터미널",
         "en": "Terminal"
       },
-      "version": "0.1.0",
+      "version": "0.0.3",
       "description": {
         "ko": "xterm.js 터미널 패널 — 코어 PTY 를 직접 구동.",
         "en": "xterm.js terminal pane driven by core PTY."
       },
-      "repo": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm.git",
       "branch": "main",
       "commands": [
         {
@@ -2958,6 +4007,20 @@
           "title": {
             "ko": "지우기",
             "en": "Clear"
+          }
+        },
+        {
+          "name": "close-pane",
+          "title": {
+            "ko": "탭 내 pane 닫기",
+            "en": "Close Pane (Within-Tab)"
+          }
+        },
+        {
+          "name": "panes",
+          "title": {
+            "ko": "탭 내 pane 목록",
+            "en": "List Panes (Within-Tab)"
           }
         },
         {
@@ -2994,16 +4057,89 @@
             "ko": "텍스트 전송",
             "en": "Send Text"
           }
+        },
+        {
+          "name": "split-pane",
+          "title": {
+            "ko": "탭 내 분할",
+            "en": "Split Pane (Within-Tab)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "soksak-plugin-tmux-fake",
+      "name": {
+        "en": "tmux fake",
+        "ko": "tmux 가짜"
+      },
+      "version": "0.0.1",
+      "description": {
+        "en": "Fake tmux — answers a TUI's tmux pane commands (split, send, read, kill) natively inside soksak. No real tmux required.",
+        "ko": "가짜 tmux — TUI가 호출하는 tmux pane 명령(분할·입력·읽기·종료)을 soksak 안에서 네이티브로 실행한다. 실제 tmux 불필요."
+      },
+      "branch": "main",
+      "commands": [
+        {
+          "name": "masq.dispatch",
+          "title": {
+            "en": "Fake tmux dispatch",
+            "ko": "가짜 tmux 디스패치"
+          },
+          "danger": "inject"
+        },
+        {
+          "name": "masq.env",
+          "title": {
+            "en": "Start fake-tmux team",
+            "ko": "가짜 tmux 팀 시작"
+          }
+        },
+        {
+          "name": "masq.teams",
+          "title": {
+            "en": "List fake-tmux teams",
+            "ko": "가짜 tmux 팀 목록"
+          }
         }
       ]
     },
     {
       "id": "soksak-plugin-workflow",
       "name": "Workflow",
-      "version": "0.1.0",
-      "description": "드래프트 파이프라인 — 아이디어를 LLM 저작 워크플로로 칸반 노드 DAG 에 발행하고, 코어 스케줄러 reconcile 로 실행·추적한다. item=exec-one 검증(badge o/x/f), task=exec-stage(generate/hunt/classify/audit 실행·자식 발행), blockedBy 의존.",
+      "version": "0.0.1",
+      "description": "드래프트 파이프라인 — 아이디어를 LLM 저작 워크플로로 이슈 보드의 노드 DAG 에 발행하고, 코어 스케줄러 reconcile 로 실행·추적한다. item=exec-one 검증(badge o/x/f), task=exec-stage(generate/hunt/classify/audit 실행·자식 발행), blockedBy 의존.",
       "branch": "main",
       "commands": [
+        {
+          "name": "board.sync",
+          "title": {
+            "ko": "원장을 이슈 보드에 투영합니다",
+            "en": "Projects the ledger onto the issue board"
+          }
+        },
+        {
+          "name": "drift.check",
+          "title": {
+            "ko": "원장과 저장소의 어긋남을 보고합니다",
+            "en": "Reports ledger-vs-repository drift"
+          }
+        },
+        {
+          "name": "entry.add",
+          "title": {
+            "ko": "이슈를 원장에 등록합니다",
+            "en": "Puts an issue on the ledger"
+          }
+        },
+        {
+          "name": "entry.remove",
+          "title": {
+            "ko": "원장 항목을 삭제합니다",
+            "en": "Drops a ledger entry"
+          },
+          "danger": "destructive"
+        },
         {
           "name": "export",
           "title": {
@@ -3012,10 +4148,52 @@
           }
         },
         {
+          "name": "gate.dispatch",
+          "title": {
+            "ko": "리스 보유를 디스패치 게이트로 검사합니다",
+            "en": "Gates a dispatch on a live lease"
+          }
+        },
+        {
+          "name": "gate.transition",
+          "title": {
+            "ko": "증적을 완료 전이 게이트로 검사합니다",
+            "en": "Gates a transition on evidence"
+          }
+        },
+        {
           "name": "issuerize",
           "title": {
             "ko": "계획을 개발 이슈로 승격합니다",
             "en": "Promotes plans to issues"
+          }
+        },
+        {
+          "name": "lease.acquire",
+          "title": {
+            "ko": "이슈 디스패치 리스를 취득합니다",
+            "en": "Takes the dispatch lease on an issue"
+          }
+        },
+        {
+          "name": "lease.list",
+          "title": {
+            "ko": "원장 항목을 조회합니다",
+            "en": "Lists the ledger entries"
+          }
+        },
+        {
+          "name": "lease.release",
+          "title": {
+            "ko": "보유한 리스를 해제합니다",
+            "en": "Releases a lease you hold"
+          }
+        },
+        {
+          "name": "lease.renew",
+          "title": {
+            "ko": "보유한 리스를 갱신합니다",
+            "en": "Extends a lease you hold"
           }
         },
         {
@@ -3030,6 +4208,13 @@
           "title": {
             "ko": "프로바이더 상태를 점검합니다",
             "en": "Probes the provider"
+          }
+        },
+        {
+          "name": "receipt.add",
+          "title": {
+            "ko": "검증 가능한 증적을 기록합니다",
+            "en": "Records verifiable evidence"
           }
         },
         {
