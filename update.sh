@@ -9,12 +9,19 @@
 #
 # 배포 게이트(2층, 외부 강제): 카탈로그에 들어오려면 두 게이트를 모두 통과해야 한다 — 우회 불가
 # (저자 로컬 hook 과 달리 배포 경계에서 강제). 플러그인은 코어 계약에 conform 만 하면 된다:
-#  1) 매니페스트 스키마(@soksak-ai/plugin-spec soksak-validate): plugin.json 필드·타입·id 패턴·권한.
+#  1) 매니페스트 스키마(코어 packages/plugin-spec — 앱이 강제하는 단일진실): plugin.json 필드·타입·id 패턴·권한.
 #  2) contract 무결성(soksak-plugin-doctor): 테마 계약·권한·명명·유령변수(코어 발행 contract.json 대조).
 #
-# 사용: ./update.sh  (gh 인증 + curl + jq + node/npx + git 필요)
+# 사용: ./update.sh  (gh 인증 + curl + jq + node + git + 코어 체크아웃[형제 ../core 또는 CORE=<경로>] 필요)
 set -euo pipefail
 cd "$(dirname "$0")"
+
+# 게이트 1 준비 — 매니페스트 스키마 검증기는 코어 packages/plugin-spec(앱이 강제하는 그 단일진실)이다.
+# npm 발행본에 기대지 않는다 — org 패키지는 퍼블릭 npm 에 없고, 동명의 낡은 패키지가 있으면 그 스키마가
+# 현재 계약모델(consumes 등)을 몰라 유효 매니페스트를 전부 튕겨낸다(카탈로그 전멸). 형제 ../core 기본.
+CORE="${CORE:-$(cd .. && pwd)/core}"
+VALIDATE="$CORE/packages/plugin-spec/bin/validate.mjs"
+[ -f "$VALIDATE" ] || { echo "게이트① 검증기 없음: $VALIDATE  (CORE=<코어 repo 경로> 로 지정)" >&2; exit 1; }
 
 # 게이트 2 준비 — doctor 를 한 번 clone(코어 발행 contract.json 을 vendoring 한 게이트).
 DOCTOR_ROOT=$(mktemp -d)
@@ -41,10 +48,10 @@ while IFS=$'\t' read -r id branch; do
   echo "$pj" | jq -e . >/dev/null 2>&1 || { echo "  skip $id (invalid json)" >&2; continue; }
   [ "$(echo "$pj" | jq -r '.template // false')" = "true" ] && { echo "  skip $id (template)" >&2; continue; }
 
-  # 게이트 1 — 매니페스트 스키마(단일진실 @soksak-ai/plugin-spec). soksak-validate 는 dirName(=폴더명)으로
+  # 게이트 1 — 매니페스트 스키마(단일진실 = 코어 packages/plugin-spec). 검증기는 dirName(=폴더명)으로
   # id 일치도 보므로 $id 폴더에 임시 기록 후 검증한다. 스키마 미통과는 등재 거부.
   vtmp=$(mktemp -d); mkdir -p "$vtmp/$id"; printf '%s' "$pj" > "$vtmp/$id/plugin.json"
-  if ! npx --yes --package=@soksak-ai/plugin-spec soksak-validate "$vtmp/$id/plugin.json" >&2; then
+  if ! node "$VALIDATE" plugin "$vtmp/$id/plugin.json" >&2; then
     echo "  skip $id (매니페스트 스키마 검증 실패 — 등재 거부)" >&2; rm -rf "$vtmp"; continue
   fi
   rm -rf "$vtmp"
