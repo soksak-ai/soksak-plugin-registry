@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-func TestRegistryDoesNotExecuteUnitSourceTrees(t *testing.T) {
+func TestRegistryDoesNotExecuteOwnerSourceTrees(t *testing.T) {
 	root, err := os.Getwd()
 	if err != nil {
 		t.Fatal(err)
@@ -38,7 +38,7 @@ func TestRegistryDoesNotExecuteUnitSourceTrees(t *testing.T) {
 			line++
 			for _, token := range tokens {
 				if strings.Contains(scanner.Text(), token) {
-					t.Errorf("%s:%d executes or reads unit source through %s", path, line, token)
+					t.Errorf("%s:%d executes or reads owner source through %s", path, line, token)
 				}
 			}
 		}
