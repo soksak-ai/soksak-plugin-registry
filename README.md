@@ -1,17 +1,17 @@
 # soksak-plugin-registry
 
-The official Soksak plugin install catalogue. The public format and signing rules are owned by
-soksak-contract-registry@0.0.1.
+The official Soksak release catalogue. The public format and signing rules are owned by
+`soksak-spec` and enforced by `soksak-contract-registry@0.0.1`.
 
-Users select plugins. Plugin releases reference exact sidecar and kit dependencies. Sidecars and
-kits are dependency nodes rather than independent catalogue products. Owner repositories build and
-verify their own release archives, composition manifests and conformance reports. This repository
-never reads or builds an owner source tree.
+The catalogue publishes direct plugin, sidecar, kit, contract, and spec releases. Owner repositories
+build and verify their own release archives and conformance reports. Runtime requirements remain in
+owner manifests; user provider selection remains in settings. This repository never reads or builds
+an owner source tree.
 
 ## Registering
 
-A PR edits `registry-source.json` with immutable release references, exact dependency identities,
-target archive digests, conformance report digests and a plugin install profile. Run:
+A PR edits `registry-source.json` with immutable release references, target archive sizes and
+digests, and conformance report digests. Run:
 
 ```sh
 go test ./...
