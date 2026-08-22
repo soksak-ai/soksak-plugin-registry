@@ -21,5 +21,6 @@ go vet ./...
 go run ./cmd/verify
 ```
 
-CI signs the complete source and publishes `registry-signed.json`. The Ed25519 private key is a CI
-secret and is never stored in this repository.
+The source catalogue is not yet signed or published as `registry-signed.json`. See
+[SIGNING.md](SIGNING.md) for the required trust-root operation. Until that operation is completed,
+the official signed-registry installation path is not operational.

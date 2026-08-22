@@ -48,3 +48,19 @@ func TestRegistryDoesNotExecuteOwnerSourceTrees(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+func TestREADMEStatesTheActualSigningStatus(t *testing.T) {
+	body, err := os.ReadFile("README.md")
+	if err != nil {
+		t.Fatal(err)
+	}
+	text := string(body)
+	if strings.Contains(text, "CI signs the complete source") {
+		t.Fatal("README claims a signing workflow that does not exist")
+	}
+	for _, required := range []string{"not yet signed", "SIGNING.md", "not operational"} {
+		if !strings.Contains(text, required) {
+			t.Errorf("README omits signing status: %s", required)
+		}
+	}
+}
