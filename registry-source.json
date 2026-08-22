@@ -38,6 +38,40 @@
     },
     {
       "plugin": {
+        "id": "soksak-plugin-terminal-alacritty",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty",
+        "commit": "e858bb65958497e1db5d432a9dafe8cb799c07d1"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.2/soksak-plugin-terminal-alacritty-0.0.2-any.tgz",
+          "size": 11699,
+          "sha256": "1205d28d6c6367f9c03b9e8d79e96b3565677ec108d9b6a556c087ec82befad6",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.2/conformance-contract-01.json",
+          "sha256": "44376d4c57314739aaa331bf17d003141a034e210094e03631cf18a97c565bf6"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.2/conformance-plugin.json",
+          "sha256": "c51c210621f84cecd5121ce12853983ad84d75716acb3b32b87336bb6498c101"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "9d5d1c04b42ce51e83cca82af6222b3d32c13b1a33b1a1688d4237f63f65055a"
+        }
+      ]
+    },
+    {
+      "plugin": {
         "id": "soksak-plugin-terminal-ghostty",
         "version": "0.0.2"
       },
@@ -67,6 +101,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.2/conformance-release.json",
           "sha256": "47e8195668c23378b072103276d426ed83cbcc064fa3a8ceb43ab67e1eb48a30"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-ghostty",
+        "version": "0.0.3"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty",
+        "commit": "7af6384a813745bfb194dc4141e688325797f327"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.3/soksak-plugin-terminal-ghostty-0.0.3-any.tgz",
+          "size": 11694,
+          "sha256": "cb76721d1aaf2ec4d86f8a16d74826c40d900d28d4c5d9ba67eb44299cfb61fa",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.3/conformance-contract-01.json",
+          "sha256": "76f45c23bb516f650c8f9057b80bcd7b73b9de94aed17e1c8028670604799163"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.3/conformance-plugin.json",
+          "sha256": "3bc3e7b421f0e09fd4d31515fe89aa3ef84d0966f628dd4f0bda2304aa5897da"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.3/conformance-release.json",
+          "sha256": "a7eb6a7be77e0e054c61ce7476c64f5d6ef7cc7a1597bdc9b947e682c797e9c6"
         }
       ]
     },
@@ -106,6 +174,40 @@
     },
     {
       "plugin": {
+        "id": "soksak-plugin-terminal-kitty",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty",
+        "commit": "fa66e6ba9b3838cfe8b46c393cd2755b5fb071ce"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.2/soksak-plugin-terminal-kitty-0.0.2-any.tgz",
+          "size": 11692,
+          "sha256": "f7e586318a39b30594df9ce4955150cb58e79a39c6109007e191ae8c4c8e6ac7",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.2/conformance-contract-01.json",
+          "sha256": "e4472833dca2270f67dbc916cc3b92fb4784b150f93c263730de6e746ad348e7"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.2/conformance-plugin.json",
+          "sha256": "ac13ffd8b40cc325f9a919a1693448d96e27ff228ca0f857ed8dff2cbe7eacce"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "c2a52e01b17539b58f470010c2a98d00116e41d6d80f042b1cf51a82cb567f53"
+        }
+      ]
+    },
+    {
+      "plugin": {
         "id": "soksak-plugin-terminal-shitty",
         "version": "0.0.1"
       },
@@ -135,6 +237,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.1/conformance-release.json",
           "sha256": "3d838fa319882a6033d1e9c49ea2d21ae948d20b62962b2e0fd0534c1d60d996"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-shitty",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty",
+        "commit": "e39dd754a03070c5a5b349993195845657b602c2"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.2/soksak-plugin-terminal-shitty-0.0.2-any.tgz",
+          "size": 11692,
+          "sha256": "949ebc1502631fb24d0333992bcb1f0241210d5cf0fdb737bdd2266b8a20592e",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.2/conformance-contract-01.json",
+          "sha256": "e4b9c1921ffef42612d1c9eae582894d00984ebcac1a4e8ea0942ca65b9896e3"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.2/conformance-plugin.json",
+          "sha256": "484343cab2a8a7c2b04bd0bcca2fc6776c9325cc82c63e8ef0420f4b6e4dd326"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "49909c9d6ad3340509baf0905e19edecb6516d7b0d4287465bafa57f46ad12f4"
         }
       ]
     },
@@ -174,6 +310,40 @@
     },
     {
       "plugin": {
+        "id": "soksak-plugin-terminal-vt100",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100",
+        "commit": "4bf8ff1290366fd036271bebfaf305ca547d5b14"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.2/soksak-plugin-terminal-vt100-0.0.2-any.tgz",
+          "size": 11692,
+          "sha256": "5f75001192021769126b898ec5840170fb8b3626860aed44426c698c5635f164",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.2/conformance-contract-01.json",
+          "sha256": "6f1c11dae92456b36b458780baf79873e00265c94c32471669018d0e1c7aa047"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.2/conformance-plugin.json",
+          "sha256": "544609fb58cff19b5fac9e4318fd78b8498d201506cbf2008e9773682b20cc98"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "99f1ce12aea51678be49984d1a31b2b540f18261cb4522f1336fbf3e3e7b987e"
+        }
+      ]
+    },
+    {
+      "plugin": {
         "id": "soksak-plugin-terminal-wezterm",
         "version": "0.0.1"
       },
@@ -208,6 +378,40 @@
     },
     {
       "plugin": {
+        "id": "soksak-plugin-terminal-wezterm",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm",
+        "commit": "2650e2cec19de8dcaf3bdae0027eb807b4a6e657"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.2/soksak-plugin-terminal-wezterm-0.0.2-any.tgz",
+          "size": 11692,
+          "sha256": "4f88f109cb6bf8f070e22d39182be104bd4b16483721faa519a20d79943f1d5a",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.2/conformance-contract-01.json",
+          "sha256": "de7063daefd72631a863584c552a1e3462000bcc84650c1721da49a2b0eb9e0a"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.2/conformance-plugin.json",
+          "sha256": "9dcc353dcbe18c0bc55ec7ba325688f9f92bb43c5337a701a07dce93e26b063e"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "d64a026d9567f188ef0f869e59e2e8dc3f6031e0bf025329e080aae6dc6c019e"
+        }
+      ]
+    },
+    {
+      "plugin": {
         "id": "soksak-plugin-terminal-xterm",
         "version": "0.0.3"
       },
@@ -237,6 +441,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.3/conformance-release.json",
           "sha256": "e43644d27c73094ae3b05d1cf43ffdfb34e1e52297b78630c209709379d2bf56"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-xterm",
+        "version": "0.0.4"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm",
+        "commit": "19e9ca99b8f40c1ef42bb3280b23b033a11d77b1"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.4/soksak-plugin-terminal-xterm-0.0.4-any.tgz",
+          "size": 92297,
+          "sha256": "23996785da24f90826afcf6a07309111fc7ab3e5fa208cd612bf583c2ef57a50",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.4/conformance-contract-01.json",
+          "sha256": "5de0c2879c8567300db835afec3e0f809f10698b52c5d8d26469e396d45a188e"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.4/conformance-plugin.json",
+          "sha256": "218bc0ae3287379077f5ae6dea6599ca34354a6ace3d336900a1af03dfaa49a2"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.4/conformance-release.json",
+          "sha256": "e60b5cc8c8883d7357433d18bc6a769f91251601e767431b8b22c54700f434cf"
         }
       ]
     }
@@ -442,6 +680,72 @@
     },
     {
       "sidecar": {
+        "id": "soksak-sidecar-terminal-alacritty",
+        "version": "0.0.8"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty",
+        "commit": "5d73d803cf63bc1604cf74233a673c402c6bc436"
+      },
+      "artifacts": [
+        {
+          "target": "aarch64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/soksak-sidecar-terminal-alacritty-0.0.8-aarch64-apple-darwin.tar.gz",
+          "size": 535665,
+          "sha256": "c738fe93ba140d96a46482fbe072199899d27d68556ac0ccf4baac03a36991ab",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "aarch64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/soksak-sidecar-terminal-alacritty-0.0.8-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 571381,
+          "sha256": "ddbf9ec7367435a1ae709a30c7c4a2bd03c72254051709205d8170322a890b74",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/soksak-sidecar-terminal-alacritty-0.0.8-x86_64-apple-darwin.tar.gz",
+          "size": 571455,
+          "sha256": "e8f0dda51fddc4830a8f011ef128b18e0e1bfc4d46f4065b05c1b5310ac2e3e5",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-pc-windows-msvc",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/soksak-sidecar-terminal-alacritty-0.0.8-x86_64-pc-windows-msvc.tar.gz",
+          "size": 447196,
+          "sha256": "134686513fb0edc02667e6ddd3f0a811f72cdd6f2ae51f5772827ae524a15a5d",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/soksak-sidecar-terminal-alacritty-0.0.8-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 623343,
+          "sha256": "577dc6be0420280be9108c44c5410ebef5baa454108dec93795d6cba51053276",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/conformance-interface.json",
+          "sha256": "ab049c074462b861f3aeac3cb664ae50624d16a899f9603a274a8f7af018d040"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/conformance-release.json",
+          "sha256": "b2b6e8fa4791b07d9d5375be27414519876dd3cb8a5adaf5842154ccad230c92"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-alacritty/releases/download/v0.0.8/conformance-sidecar.json",
+          "sha256": "3bfb1aa23fdec031bf95b2a338434aa0179afe36ca1b86316f9b893382fef25b"
+        }
+      ]
+    },
+    {
+      "sidecar": {
         "id": "soksak-sidecar-terminal-ghostty",
         "version": "0.0.4"
       },
@@ -574,6 +878,72 @@
     },
     {
       "sidecar": {
+        "id": "soksak-sidecar-terminal-ghostty",
+        "version": "0.0.8"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty",
+        "commit": "d7f76f7ace6939a4ed0b373a1b974b51a35f395b"
+      },
+      "artifacts": [
+        {
+          "target": "aarch64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/soksak-sidecar-terminal-ghostty-0.0.8-aarch64-apple-darwin.tar.gz",
+          "size": 786466,
+          "sha256": "388692dd02611531094728ced72296c0aadbc25ddc9976199b4f087d2785e254",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "aarch64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/soksak-sidecar-terminal-ghostty-0.0.8-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 1066331,
+          "sha256": "104be8bd7bd2906fb4093a8b6f7ffa6e9145e069dd5fb553abe870d7c4248816",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/soksak-sidecar-terminal-ghostty-0.0.8-x86_64-apple-darwin.tar.gz",
+          "size": 855999,
+          "sha256": "a4eb98fe73d3998da7f01a0fdefb072d37b993d9db2ba3ee36881bfc6a3595f8",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-pc-windows-msvc",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/soksak-sidecar-terminal-ghostty-0.0.8-x86_64-pc-windows-msvc.tar.gz",
+          "size": 959565,
+          "sha256": "bfdb5a55ab4086d88329d74c5fa2f04480deb44b3da49441ef9e29a77d703c9c",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/soksak-sidecar-terminal-ghostty-0.0.8-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 1126573,
+          "sha256": "8e2813e3963a68498a8901803b780d191c81bfeeae78c839f1b7184cdb3826c9",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/conformance-interface.json",
+          "sha256": "58dba52c6dca5c08dc1a6befe87b27e9889c6acca106a35cf644887683efae35"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/conformance-release.json",
+          "sha256": "b214e0ef24db09d1f352c16bf6317de6f0b0d6e0ad6e2fc3a5526453eb9bbfe6"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-ghostty/releases/download/v0.0.8/conformance-sidecar.json",
+          "sha256": "72ee60eceddc7ada4cf2b83f44db9a1f3902c95bd575895dd2e4e81d9d75d041"
+        }
+      ]
+    },
+    {
+      "sidecar": {
         "id": "soksak-sidecar-terminal-kitty",
         "version": "0.0.1"
       },
@@ -690,6 +1060,64 @@
     },
     {
       "sidecar": {
+        "id": "soksak-sidecar-terminal-kitty",
+        "version": "0.0.4"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty",
+        "commit": "aa70a192b71abc9fc1d7e6945dda1f3cc9218996"
+      },
+      "artifacts": [
+        {
+          "target": "aarch64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/soksak-sidecar-terminal-kitty-0.0.4-aarch64-apple-darwin.tar.gz",
+          "size": 24878864,
+          "sha256": "35ec52bc3b0352dd7d70994f540612302133343960c0964ca8efb23b501527c9",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "aarch64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/soksak-sidecar-terminal-kitty-0.0.4-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 26808033,
+          "sha256": "6f3021e94433fd80b51eeb7d699bc82a367ee8a102d51ca02ad8089a31eb7d41",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/soksak-sidecar-terminal-kitty-0.0.4-x86_64-apple-darwin.tar.gz",
+          "size": 25252508,
+          "sha256": "153e20cdb6cf42073c52b34959c2c6ed016d997454236f8346dff212182bdf2a",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/soksak-sidecar-terminal-kitty-0.0.4-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 27560357,
+          "sha256": "0b4de994644ce146cde4ebc71bcd82eae487746d22f9717a012f2cf3dbbd2275",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/conformance-interface.json",
+          "sha256": "ff8b385b3a4dcf2ba7ef2a66aa61ae45d7478a6424142811174b782d44c6f1cb"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/conformance-release.json",
+          "sha256": "3d5b1818e4af3702540fa3fa6a66f5279c0b071015e73e88a1248b8bbcef64ef"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.4/conformance-sidecar.json",
+          "sha256": "b19f9b7d8d79e25fcac9f2ed53a0e463892d1e117154730411f468cb4fa2c2a9"
+        }
+      ]
+    },
+    {
+      "sidecar": {
         "id": "soksak-sidecar-terminal-shitty",
         "version": "0.0.1"
       },
@@ -801,6 +1229,64 @@
         {
           "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.3/conformance-sidecar.json",
           "sha256": "3e6f07ee3c7fc4661e38f7458f2ddde96606d12c1286d1edbde3ad8789431ad7"
+        }
+      ]
+    },
+    {
+      "sidecar": {
+        "id": "soksak-sidecar-terminal-shitty",
+        "version": "0.0.4"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty",
+        "commit": "ae59b5a184f3e338d814632d2b0328917225bb97"
+      },
+      "artifacts": [
+        {
+          "target": "aarch64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/soksak-sidecar-terminal-shitty-0.0.4-aarch64-apple-darwin.tar.gz",
+          "size": 807828,
+          "sha256": "90365be1d89034bcb55323f3c9f7bdf25063befb9cb6aefc75fc1ac6b70e3f4d",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "aarch64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/soksak-sidecar-terminal-shitty-0.0.4-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 884145,
+          "sha256": "f3eff73a66596804bc9c01acba59aae84a37c460b48843a9c9dbd5605307ffe8",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/soksak-sidecar-terminal-shitty-0.0.4-x86_64-apple-darwin.tar.gz",
+          "size": 864565,
+          "sha256": "3f87eadc57fa22b81e27b61eaf7f206053c347497391f27ad66d5e0315c50b2b",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/soksak-sidecar-terminal-shitty-0.0.4-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 934787,
+          "sha256": "ca77572f35f7a1390cebf44160a0cb912ed66273862726e47ab1eda4b31935fa",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/conformance-interface.json",
+          "sha256": "876b8e2a829b0a6c69ce68f79ff5d01ed024912dc02abdf45995768c4370ef9e"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/conformance-release.json",
+          "sha256": "e7f7b996ad875e74063c2d51ed402490c442b573eab9a12e82a367eff7c39b1f"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-shitty/releases/download/v0.0.4/conformance-sidecar.json",
+          "sha256": "73ddec11346594b4341f313dd3c043effe71d824fd9c5a90e83cef7e0b325329"
         }
       ]
     },
@@ -938,6 +1424,72 @@
     },
     {
       "sidecar": {
+        "id": "soksak-sidecar-terminal-vt100",
+        "version": "0.0.8"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100",
+        "commit": "06463173cbb8d927ca1c5f62e0f37d4af107f0c8"
+      },
+      "artifacts": [
+        {
+          "target": "aarch64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/soksak-sidecar-terminal-vt100-0.0.8-aarch64-apple-darwin.tar.gz",
+          "size": 455300,
+          "sha256": "4d06edfb7884d1fe9b37f7f5ad4daa805f1bdfd1a3248c3be6b9865c97798c27",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "aarch64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/soksak-sidecar-terminal-vt100-0.0.8-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 482495,
+          "sha256": "fbdaf55d33af0d588638ca9dce6f781399825733714be4f2e05dcc23cfe88558",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/soksak-sidecar-terminal-vt100-0.0.8-x86_64-apple-darwin.tar.gz",
+          "size": 485007,
+          "sha256": "005f37b39b9e60e06bd9ed6a82dbfe924435a2ae4251724b18b9aaa9fdd4c1ab",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-pc-windows-msvc",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/soksak-sidecar-terminal-vt100-0.0.8-x86_64-pc-windows-msvc.tar.gz",
+          "size": 363169,
+          "sha256": "dd5a46773ae25a4762ccb436af7abb942a6fe7eed9d3478c257de2f6c82f6552",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/soksak-sidecar-terminal-vt100-0.0.8-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 510668,
+          "sha256": "fa67a68af713a850f3c6106f09d5d8bdb5d9334e61f7efaab654275514a31118",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/conformance-interface.json",
+          "sha256": "e36672fa8b0a6949a7a75ff93000917e128e9ec34862f135e38a740c1d6f19e4"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/conformance-release.json",
+          "sha256": "1b03a3732b26d0c894f386b58286dc011a6fa6de0f8637dbf3fb70067dc8eab4"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-vt100/releases/download/v0.0.8/conformance-sidecar.json",
+          "sha256": "32386c5237393b8faafbf72262471076c4b4f52d6c24caf7ce987ae60c7de08a"
+        }
+      ]
+    },
+    {
+      "sidecar": {
         "id": "soksak-sidecar-terminal-wezterm",
         "version": "0.0.4"
       },
@@ -1067,6 +1619,72 @@
           "sha256": "ce5d75e3266d130c044072807345a518b49fd27121a10fc04aa8ebc6f2b3df88"
         }
       ]
+    },
+    {
+      "sidecar": {
+        "id": "soksak-sidecar-terminal-wezterm",
+        "version": "0.0.8"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm",
+        "commit": "73a6347af669f9035e68e3955da5822ff89add03"
+      },
+      "artifacts": [
+        {
+          "target": "aarch64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/soksak-sidecar-terminal-wezterm-0.0.8-aarch64-apple-darwin.tar.gz",
+          "size": 2472107,
+          "sha256": "101a610365ffa79739bff9b17ec5c12d9247b59401b92d6afc67cfaa1b3b1d78",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "aarch64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/soksak-sidecar-terminal-wezterm-0.0.8-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 2636387,
+          "sha256": "e519de3d9dc5792ba235a8a0bb8141d022a9d95ced21ca152213244817a18f5d",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-apple-darwin",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/soksak-sidecar-terminal-wezterm-0.0.8-x86_64-apple-darwin.tar.gz",
+          "size": 2578745,
+          "sha256": "a47fc59904c3d15df52a3ccd777a6a8f50a89d7cc28c65ab9ea161b07dcb78d2",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-pc-windows-msvc",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/soksak-sidecar-terminal-wezterm-0.0.8-x86_64-pc-windows-msvc.tar.gz",
+          "size": 2259609,
+          "sha256": "415a18afe99720cd277b74a1ba270cfb9ea7c7f92d0c01f3367fcc36a3a69004",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        },
+        {
+          "target": "x86_64-unknown-linux-gnu",
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/soksak-sidecar-terminal-wezterm-0.0.8-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 2781000,
+          "sha256": "36fe6cdbd3fb40f9cb7bb131c1887c2600011fb486d86c2790d3d883561be539",
+          "format": "tar.gz",
+          "manifest": "sidecar.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/conformance-interface.json",
+          "sha256": "63d67b8149971cce8325ae1ecda9ebed0685a0ae643bdf426f29570e56457839"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/conformance-release.json",
+          "sha256": "ea738168fa0b268d3b1bd98d9d7d152b42db877acc70a0e0e7f1e8360e6bacb5"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-wezterm/releases/download/v0.0.8/conformance-sidecar.json",
+          "sha256": "602895ab2d3f71143e2f43ab324f4221858051c52bbe8f9e4c5a31972731e2c9"
+        }
+      ]
     }
   ],
   "kits": [
@@ -1097,6 +1715,36 @@
         {
           "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.1/conformance-release.json",
           "sha256": "7308c950abcbf7e09c484ba867ed483d1b213b04bc58f34506aaff665cbbbe14"
+        }
+      ]
+    },
+    {
+      "kit": {
+        "id": "soksak-kit-plugin-terminal",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-kit-plugin-terminal",
+        "commit": "bfca8d19373c478ebc8d39efa1ce2e74d7b16644"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.2/soksak-kit-plugin-terminal-0.0.2-any.tgz",
+          "size": 29204,
+          "sha256": "b40ec15dc88dd126f972938b83249b78db63701167b453d041d543bef758339c",
+          "format": "tgz",
+          "manifest": "kit.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.2/conformance-manifest.json",
+          "sha256": "d6c16a0d78140a43f15e15387a0025945c3a9f17cfa73ff81c6620a88e9a96e1"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "2fb14e10d6439b31e8d16d3c08e2fa1d544c9927e2eef4cbd162144f75bdb0e5"
         }
       ]
     },
@@ -1159,6 +1807,36 @@
           "sha256": "de848c3d456e93509b32f93b1a4d0fcedd63020fa947ff6cbc8dbaac21544a1f"
         }
       ]
+    },
+    {
+      "kit": {
+        "id": "soksak-kit-sidecar-terminal",
+        "version": "0.0.3"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-kit-sidecar-terminal",
+        "commit": "876e74628167f8e0ea6f2939a9ec6d13a300418f"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-kit-sidecar-terminal/releases/download/v0.0.3/soksak-kit-sidecar-terminal-0.0.3-any.tgz",
+          "size": 25280,
+          "sha256": "e0b664a6efd78d49654eb87335b7815bea4b56c016a48f594124af7d363508bd",
+          "format": "tgz",
+          "manifest": "kit.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-kit-sidecar-terminal/releases/download/v0.0.3/conformance-manifest.json",
+          "sha256": "edf16725be9d2d579763ca146b0a1dd163a0b46bdcc18b2bad2e543ce37b50e5"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-kit-sidecar-terminal/releases/download/v0.0.3/conformance-release.json",
+          "sha256": "93b74eee7525cad44692158b365e9e5725e72011cee87206e345e0a4ebf8fb9c"
+        }
+      ]
     }
   ],
   "contracts": [
@@ -1189,6 +1867,36 @@
         {
           "url": "https://github.com/soksak-ai/soksak-contract-plugin-terminal/releases/download/v0.0.1/conformance-release.json",
           "sha256": "87f411358ebb6defebfccaa5e54524ab5f7d3e38a26a4e7bb7d5103edcb50831"
+        }
+      ]
+    },
+    {
+      "contract": {
+        "id": "soksak-contract-plugin-terminal",
+        "version": "0.0.2"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-contract-plugin-terminal",
+        "commit": "494ffa0bbba813f5b43501a119190f395fa45e8f"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-contract-plugin-terminal/releases/download/v0.0.2/soksak-contract-plugin-terminal-0.0.2-any.tgz",
+          "size": 15338,
+          "sha256": "9e79352ae4f4347fd50cf07e01c363d9a6d9c294d7cfe462297b85b2484231d3",
+          "format": "tgz",
+          "manifest": "contract.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-contract-plugin-terminal/releases/download/v0.0.2/conformance-manifest.json",
+          "sha256": "697bc002f49544cf8b6d6810f76e9d8f21bbd0f72a2afc97e761e8f64cb6b19a"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-contract-plugin-terminal/releases/download/v0.0.2/conformance-release.json",
+          "sha256": "4af98ad7fc09e4070d6a2fc53cbdeb9d29afd13b42784a9caea2a04b8f25a8f6"
         }
       ]
     }
