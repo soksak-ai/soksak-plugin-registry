@@ -10,10 +10,12 @@ an owner source tree.
 
 ## Registering
 
-A PR edits `registry-source.json` with immutable release references, target archive sizes and
-digests, and conformance report digests. Run:
+A PR registers owner-produced immutable `release.json` documents. The command replaces the same
+exact release identity, sorts each release kind, validates the complete catalogue, and only then
+atomically updates `registry-source.json`:
 
 ```sh
+go run ./cmd/register https://github.com/soksak-ai/example/releases/download/v0.0.1/release.json
 go test ./...
 go vet ./...
 go run ./cmd/verify
