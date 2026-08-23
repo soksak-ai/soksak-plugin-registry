@@ -15,3 +15,15 @@ Enabling signing is one explicit trust-root operation:
 6. Test signature rejection, sequence rollback rejection, and key continuity through installed acceptance.
 
 No development fallback, unsigned acceptance path, or committed private key is permitted.
+
+## Expiry renewal
+
+`issuedAt` and `expiresAt` are signed bytes. Publishing new timestamps at the same sequence would
+be equivocation, so the signer refuses any sequence that does not advance beyond the published
+index. Before expiry:
+
+1. Run `go run ./cmd/renew`.
+2. Validate and commit the sequence-only `registry-source.json` change.
+3. Run the manual signing workflow with a later explicit expiry.
+
+An ordinary catalogue registration already advances sequence and needs no separate renewal.

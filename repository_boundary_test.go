@@ -93,6 +93,13 @@ func TestSigningWorkflowIsManualAndPublishesOnlyTheSignedIndex(t *testing.T) {
 			t.Errorf("signing workflow contains %s", forbidden)
 		}
 	}
+	signer, err := os.ReadFile("cmd/sign/main.go")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(signer), "requireSequenceAdvance") {
+		t.Fatal("signer does not reject same-sequence publication")
+	}
 }
 
 func TestCommittedTrustRootIsValid(t *testing.T) {

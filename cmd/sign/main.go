@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 
 	registry "github.com/soksak-ai/soksak-contract-registry"
@@ -16,6 +18,9 @@ func main() {
 	}
 	source, err := registry.Parse(body)
 	if err != nil {
+		fail(err)
+	}
+	if err := requireSequenceAdvance("registry-signed.json", source.Sequence); err != nil {
 		fail(err)
 	}
 	trustBody, err := os.ReadFile("registry-trust.json")
@@ -44,6 +49,31 @@ func main() {
 	if err := os.Rename("registry-signed.json.next", "registry-signed.json"); err != nil {
 		fail(err)
 	}
+}
+
+func requireSequenceAdvance(path string, next uint64) error {
+	body, err := os.ReadFile(path)
+	if os.IsNotExist(err) {
+		return nil
+	}
+	if err != nil {
+		return err
+	}
+	decoder := json.NewDecoder(bytes.NewReader(body))
+	var current registry.SignedRegistry
+	if err := decoder.Decode(&current); err != nil {
+		return fmt.Errorf("read published registry: %w", err)
+	}
+	if err := decoder.Decode(&struct{}{}); err != io.EOF {
+		return fmt.Errorf("published registry has trailing data")
+	}
+	if err := registry.Validate(current.Registry); err != nil {
+		return fmt.Errorf("published registry is invalid: %w", err)
+	}
+	if next <= current.Sequence {
+		return fmt.Errorf("registry sequence must advance beyond published sequence %d", current.Sequence)
+	}
+	return nil
 }
 func required(name string) string {
 	value := os.Getenv(name)
