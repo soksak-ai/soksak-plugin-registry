@@ -6,6 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
+
+	"github.com/soksak-ai/soksak-plugin-registry/internal/registrysigning"
 )
 
 func TestRegistryDoesNotExecuteOwnerSourceTrees(t *testing.T) {
@@ -90,5 +92,15 @@ func TestSigningWorkflowIsManualAndPublishesOnlyTheSignedIndex(t *testing.T) {
 		if strings.Contains(text, forbidden) {
 			t.Errorf("signing workflow contains %s", forbidden)
 		}
+	}
+}
+
+func TestCommittedTrustRootIsValid(t *testing.T) {
+	body, err := os.ReadFile("registry-trust.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := registrysigning.ParseTrustRoot(body); err != nil {
+		t.Fatal(err)
 	}
 }
