@@ -1,6 +1,6 @@
 {
   "id": "official",
-  "sequence": 3,
+  "sequence": 4,
   "plugins": [
     {
       "plugin": {
@@ -29,6 +29,36 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.1/conformance-release.json",
           "sha256": "4c81dd50518efe813b79ad50762a73b583237b16eff815b8d31bd20f9b792af1"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-browser-wails3",
+        "version": "0.0.3"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-browser-wails3",
+        "commit": "f067541638a3103e3e21b59bf8301a5fc7d7af54"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.3/soksak-plugin-browser-wails3-0.0.3-any.tgz",
+          "size": 44055,
+          "sha256": "f553def073f9859d13e909306d273191adf8638f8f6edb5aec7bfe9ecccb5819",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.3/conformance-plugin.json",
+          "sha256": "e55e7f2e00a6bfe328ac0c0ab334af7f834ffb6002d6d2c4531f9a563c548eaa"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.3/conformance-release.json",
+          "sha256": "583a806a7511d5ded635b2d183d637edb06f69121936c080b5a3f1debf7c190e"
         }
       ]
     },
