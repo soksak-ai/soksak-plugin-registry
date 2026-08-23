@@ -5,7 +5,7 @@ The official Soksak release catalogue. The public format and signing rules are o
 
 The catalogue publishes direct plugin, sidecar, kit, contract, and spec releases. Owner repositories
 build and verify their own release archives and conformance reports. Runtime requirements remain in
-owner manifests; user provider selection remains in settings. This repository never reads or builds
+owner manifests; user sidecar role bindings remain in `environment.json`. This repository never reads or builds
 an owner source tree.
 
 ## Registering

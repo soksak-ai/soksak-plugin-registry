@@ -63,4 +63,7 @@ func TestREADMEStatesTheActualSigningStatus(t *testing.T) {
 			t.Errorf("README omits signing status: %s", required)
 		}
 	}
+	if _, err := os.Stat("README.ko.md"); err != nil {
+		t.Errorf("README has no Korean translation: %v", err)
+	}
 }
