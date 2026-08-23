@@ -8,6 +8,7 @@ import (
 	"time"
 
 	registry "github.com/soksak-ai/soksak-contract-registry"
+	"github.com/soksak-ai/soksak-plugin-registry/internal/registrysigning"
 )
 
 func TestSignRegistryRequiresThePinnedTrustRoot(t *testing.T) {
@@ -16,8 +17,8 @@ func TestSignRegistryRequiresThePinnedTrustRoot(t *testing.T) {
 		t.Fatal(err)
 	}
 	source := registry.Registry{ID: "official", Sequence: 2, Plugins: []registry.PluginRelease{}, Sidecars: []registry.SidecarRelease{}, Kits: []registry.KitRelease{}, Contracts: []registry.ContractRelease{}, Specs: []registry.SpecRelease{}}
-	trust := trustRoot{Algorithm: "ed25519", KeyID: "official-1", Value: base64.StdEncoding.EncodeToString(public)}
-	document, err := signRegistry(source, trust, private, "2026-08-23T00:00:00Z", "2026-09-23T00:00:00Z")
+	trust := registrysigning.TrustRoot{Algorithm: "ed25519", KeyID: "official-1", Value: base64.StdEncoding.EncodeToString(public)}
+	document, err := registrysigning.Sign(source, trust, private, "2026-08-23T00:00:00Z", "2026-09-23T00:00:00Z")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -39,8 +40,8 @@ func TestSignRegistryRejectsASecretForAnotherTrustRoot(t *testing.T) {
 		t.Fatal(err)
 	}
 	source := registry.Registry{ID: "official", Sequence: 1, Plugins: []registry.PluginRelease{}, Sidecars: []registry.SidecarRelease{}, Kits: []registry.KitRelease{}, Contracts: []registry.ContractRelease{}, Specs: []registry.SpecRelease{}}
-	trust := trustRoot{Algorithm: "ed25519", KeyID: "official-1", Value: base64.StdEncoding.EncodeToString(public)}
-	if _, err := signRegistry(source, trust, private, "2026-08-23T00:00:00Z", "2026-09-23T00:00:00Z"); err == nil {
+	trust := registrysigning.TrustRoot{Algorithm: "ed25519", KeyID: "official-1", Value: base64.StdEncoding.EncodeToString(public)}
+	if _, err := registrysigning.Sign(source, trust, private, "2026-08-23T00:00:00Z", "2026-09-23T00:00:00Z"); err == nil {
 		t.Fatal("private key outside the pinned trust root was accepted")
 	}
 }
