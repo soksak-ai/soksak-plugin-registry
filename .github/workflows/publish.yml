@@ -19,16 +19,16 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
-        with:
-          node-version: "26.7.0"
       - name: Install the immutable Registry tool
         run: |
           mkdir -p "$RUNNER_TEMP/spec"
-          curl -fsSL https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.24/soksak-ai-plugin-spec-0.0.24.tgz -o "$RUNNER_TEMP/spec.tgz"
-          echo "b68a8bbbcd4ba5696c8a9e847201ded8f5d609ce10287525735a3f83c20f9b3d  $RUNNER_TEMP/spec.tgz" | sha256sum -c -
+          curl -fsSL https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.25/soksak-ai-plugin-spec-0.0.25.tgz -o "$RUNNER_TEMP/spec.tgz"
+          echo "2aba0fb38b99e4f646d403e4ea5ac00ec1bb5b4ba1db9283509aa31c8c6c8d57  $RUNNER_TEMP/spec.tgz" | sha256sum -c -
           tar -xzf "$RUNNER_TEMP/spec.tgz" -C "$RUNNER_TEMP/spec" --strip-components=1
           test -z "$(find "$RUNNER_TEMP/spec" -type l -print -quit)"
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version-file: ${{ runner.temp }}/spec/package.json
       - name: Derive the deterministic Registry identity
         id: identity
         run: |
