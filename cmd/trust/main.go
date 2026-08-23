@@ -1,15 +1,21 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/soksak-ai/soksak-plugin-registry/internal/registrysigning"
 )
 
 func main() {
-	private, err := registrysigning.PrivateKey(os.Getenv("SOKSAK_REGISTRY_ED25519_SEED"))
+	seed, err := bufio.NewReader(os.Stdin).ReadString('\n')
+	if err != nil {
+		fail(err)
+	}
+	private, err := registrysigning.PrivateKey(strings.TrimSpace(seed))
 	if err != nil {
 		fail(err)
 	}
