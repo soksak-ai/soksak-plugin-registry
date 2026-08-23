@@ -1,7 +1,7 @@
 {
   "id": "soksak-plugin-terminal-kitty",
-  "version": "0.0.14",
-  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.14/release.json",
+  "version": "0.0.15",
+  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.15/release.json",
   "size": 2236,
-  "sha256": "74f36c5b212fd57d3e499b73783b940b5c2a7ae5f6fb4db1586aed4bab9e8364"
+  "sha256": "a69390b94904b6aea878e9007d4299d63b3bd93d3a9deccea6163f7a3077200d"
 }
