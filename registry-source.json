@@ -1,6 +1,6 @@
 {
   "id": "official",
-  "sequence": 8,
+  "sequence": 9,
   "plugins": [
     {
       "plugin": {
@@ -153,6 +153,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.1/conformance-release.json",
           "sha256": "899242e3970f99136d32638d3bb8c1d854b30c9e61d763feab40e678573792f5"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-alacritty",
+        "version": "0.0.10"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty",
+        "commit": "9263220ff018d496a446709ecf21251635dc1f56"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.10/soksak-plugin-terminal-alacritty-0.0.10-any.tgz",
+          "size": 13148,
+          "sha256": "246e6ec25e559183d3b96cc7f2b68f8fc1dea0dc5b7befeb59b285d7dd611ed3",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.10/conformance-contract-01.json",
+          "sha256": "1a221f42339f0b98f226b9eacf04bf3d6b5981bb94a7980957b3fe9dd9f5fbe7"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.10/conformance-plugin.json",
+          "sha256": "c4b5af5424d53abd5db01a0f10b4c1b9eca9607c1b73f5cfc77915f8cecbf744"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.10/conformance-release.json",
+          "sha256": "b067d2dcdf67214b6990fcb3bceef2bdf73b96b4c66d29bb3deec35b9fc8503f"
         }
       ]
     },
@@ -329,6 +363,40 @@
     {
       "plugin": {
         "id": "soksak-plugin-terminal-ghostty",
+        "version": "0.0.11"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty",
+        "commit": "d42746c78fdd499aa6d3241bab8bb11f372ee7b8"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.11/soksak-plugin-terminal-ghostty-0.0.11-any.tgz",
+          "size": 13141,
+          "sha256": "f01c75301ad517992a2d86b087fe12c2938e49f9eab9486de76760026a0ce15e",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.11/conformance-contract-01.json",
+          "sha256": "d52ae024cea8cb6fa5af7a93f5553d6ec5c211d91696ce5f51a6c7a613ee0940"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.11/conformance-plugin.json",
+          "sha256": "6fdb4c8faec0b8a165b0713736b7abce33a42b7f755be44fa03afc518dda29a3"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.11/conformance-release.json",
+          "sha256": "b474bc5387d5b0a38585cfc68175e564fb4092e6db33b8c2ea6e087f425dbf6a"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-ghostty",
         "version": "0.0.2"
       },
       "source": {
@@ -493,6 +561,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.1/conformance-release.json",
           "sha256": "99d12106fc1a0f5d18e492525974bbb023000d659fe5e794b8ff3d519c4a0828"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-kitty",
+        "version": "0.0.10"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty",
+        "commit": "4935743d7187aee2437f53c6f3c27721bbe5aefe"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.10/soksak-plugin-terminal-kitty-0.0.10-any.tgz",
+          "size": 13140,
+          "sha256": "bbacd2585bb92bdde976f7fd5019ba5d6e6affb63d145ff41ad4b2d2ccc72c67",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.10/conformance-contract-01.json",
+          "sha256": "ec4c140b296cf4af920bb2e02d43de00ab74a38657afffc28fc693a62fdecc51"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.10/conformance-plugin.json",
+          "sha256": "69c379e102e935f59fecdf3cdcefde9f088fd3159f0b777d3b6f7190bc2f2010"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-kitty/releases/download/v0.0.10/conformance-release.json",
+          "sha256": "99c604a0da4ec9f15fc1635b01d9ac9f0f327a2241889665a4f22804672e0536"
         }
       ]
     },
@@ -669,6 +771,40 @@
     {
       "plugin": {
         "id": "soksak-plugin-terminal-shitty",
+        "version": "0.0.10"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty",
+        "commit": "7a5aeb6d94a0922af7171ea38cc4c6045fe3e09f"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.10/soksak-plugin-terminal-shitty-0.0.10-any.tgz",
+          "size": 13140,
+          "sha256": "447916fa52afb3b672cb6d939019bf069f1bea48db5314e73ddb6cbe183a93de",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.10/conformance-contract-01.json",
+          "sha256": "9efda88f285e98f6fea36bc1193a0f6948b403f586793c51cf2621e40108d901"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.10/conformance-plugin.json",
+          "sha256": "6c5f92e2f1918d250829236731aec0ab1d76301e8b32469de7a54b5b44ccc80d"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-shitty/releases/download/v0.0.10/conformance-release.json",
+          "sha256": "a562520e23a68a2ea7f6526293b47ae834263762f73ae94f1f00bd4ae855954c"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-shitty",
         "version": "0.0.2"
       },
       "source": {
@@ -839,6 +975,40 @@
     {
       "plugin": {
         "id": "soksak-plugin-terminal-vt100",
+        "version": "0.0.10"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100",
+        "commit": "099bbcfd4a8efeae1a994e1cfd28837200653a24"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.10/soksak-plugin-terminal-vt100-0.0.10-any.tgz",
+          "size": 13139,
+          "sha256": "a70a641d44dbb9dfa2ece362272876dc7dfe9ca20c1df010625f5bc2e3dda5c1",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.10/conformance-contract-01.json",
+          "sha256": "efe0ca43ae9853d9b12fa1af5d7011f4e5f756dd1dc1b623fe377e8f19be9fed"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.10/conformance-plugin.json",
+          "sha256": "f3c73527b48a432ad45cea40fa924047a41f559fa85efb9bcc0862b60d5775ff"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.10/conformance-release.json",
+          "sha256": "0fe97fd4e38eb904735730791e8c1a817909128b4898be08095533e2e59db088"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-vt100",
         "version": "0.0.2"
       },
       "source": {
@@ -1003,6 +1173,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.1/conformance-release.json",
           "sha256": "8ad6142b02a4fe88451faf70a6e54f435f668b31c2eefcbdab936e5557754a92"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-wezterm",
+        "version": "0.0.10"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm",
+        "commit": "8bf3db2f59f13e79b61e165cda0f113a602d18fd"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.10/soksak-plugin-terminal-wezterm-0.0.10-any.tgz",
+          "size": 13142,
+          "sha256": "2f996e0947df70ea65dabff9f7567f2f864997f5aae771a9736a9303696becc9",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.10/conformance-contract-01.json",
+          "sha256": "9530de0d2a63deb1614861fd15e3fe5b637f52d021f52f309a823a01a3332024"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.10/conformance-plugin.json",
+          "sha256": "dc581e6485abc0a51d36d5f6615c0817d126f473351464dfd30676b42b647de3"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.10/conformance-release.json",
+          "sha256": "6bbd409acf56ff692c8a8c1c6f6a9e6c6447ce241065d29df2a5a7cf49bb0c55"
         }
       ]
     },
@@ -3467,6 +3671,36 @@
         {
           "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.12/conformance-release.json",
           "sha256": "acfc5c08d6fa28ab45e1e08b164fa7ec4e2ee5a9600af3e5b5a581eafc85de44"
+        }
+      ]
+    },
+    {
+      "kit": {
+        "id": "soksak-kit-plugin-terminal",
+        "version": "0.0.13"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-kit-plugin-terminal",
+        "commit": "cf5df97090af0bf689ef6222bde824a8125ea439"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.13/soksak-kit-plugin-terminal-0.0.13-any.tgz",
+          "size": 39760,
+          "sha256": "ee32ee20407fc74d72f737bab3cf07af9b9c73096b62344003d37bec701054b2",
+          "format": "tgz",
+          "manifest": "kit.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.13/conformance-manifest.json",
+          "sha256": "8fdcf48c2a32d5568386f094012fc1056ec7cb8c9b5b3d8c901200ab7a0e14da"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-kit-plugin-terminal/releases/download/v0.0.13/conformance-release.json",
+          "sha256": "3b6356916756c716246992667358298a5cf64f059956e3efcb7ee5a38c8173d8"
         }
       ]
     },
