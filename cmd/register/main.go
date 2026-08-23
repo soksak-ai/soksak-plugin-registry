@@ -65,6 +65,8 @@ func readReleaseDocument(location string) ([]byte, error) {
 }
 
 func mergeReleaseDocuments(source registry.Registry, documents [][]byte) (registry.Registry, error) {
+	baseline := source
+	baseline.Sequence = 0
 	for _, document := range documents {
 		kind, err := releaseKind(document)
 		if err != nil {
@@ -102,6 +104,22 @@ func mergeReleaseDocuments(source registry.Registry, documents [][]byte) (regist
 			}
 			source.Specs = replaceSpec(source.Specs, release)
 		}
+	}
+	updated := source
+	updated.Sequence = 0
+	before, err := json.Marshal(baseline)
+	if err != nil {
+		return registry.Registry{}, err
+	}
+	after, err := json.Marshal(updated)
+	if err != nil {
+		return registry.Registry{}, err
+	}
+	if !bytes.Equal(before, after) {
+		if source.Sequence == ^uint64(0) {
+			return registry.Registry{}, fmt.Errorf("registry sequence exhausted")
+		}
+		source.Sequence++
 	}
 	if err := registry.Validate(source); err != nil {
 		return registry.Registry{}, err

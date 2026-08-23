@@ -21,12 +21,18 @@ func TestMergeReleaseDocumentsReplacesAndSortsDirectReleases(t *testing.T) {
 	if len(merged.Plugins) != 2 || merged.Plugins[0].Plugin.ID != "a-plugin" || merged.Plugins[1].Plugin.ID != "z-plugin" {
 		t.Fatalf("plugins = %+v", merged.Plugins)
 	}
+	if merged.Sequence != 2 {
+		t.Fatalf("changed catalogue sequence = %d, want 2", merged.Sequence)
+	}
 	updated, err := mergeReleaseDocuments(merged, [][]byte{releaseDocument(t, "plugin", "a-plugin")})
 	if err != nil {
 		t.Fatal(err)
 	}
 	if len(updated.Plugins) != 2 {
 		t.Fatalf("replacement duplicated release: %+v", updated.Plugins)
+	}
+	if updated.Sequence != 2 {
+		t.Fatalf("idempotent registration sequence = %d, want 2", updated.Sequence)
 	}
 }
 
