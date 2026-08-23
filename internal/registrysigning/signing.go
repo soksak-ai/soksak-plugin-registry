@@ -3,6 +3,7 @@ package registrysigning
 import (
 	"bytes"
 	"crypto/ed25519"
+	"crypto/sha256"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -26,12 +27,17 @@ func PrivateKey(seedBase64 string) (ed25519.PrivateKey, error) {
 	return ed25519.NewKeyFromSeed(seed), nil
 }
 
-func NewTrustRoot(keyID string, private ed25519.PrivateKey) (TrustRoot, error) {
-	if keyID == "" || len(private) != ed25519.PrivateKeySize {
-		return TrustRoot{}, fmt.Errorf("registry key identity is required")
+func NewTrustRoot(private ed25519.PrivateKey) (TrustRoot, error) {
+	if len(private) != ed25519.PrivateKeySize {
+		return TrustRoot{}, fmt.Errorf("registry private key is required")
 	}
 	public := private.Public().(ed25519.PublicKey)
-	return TrustRoot{Algorithm: "ed25519", KeyID: keyID, Value: base64.StdEncoding.EncodeToString(public)}, nil
+	return TrustRoot{Algorithm: "ed25519", KeyID: keyID(public), Value: base64.StdEncoding.EncodeToString(public)}, nil
+}
+
+func keyID(public ed25519.PublicKey) string {
+	digest := sha256.Sum256(public)
+	return fmt.Sprintf("%x", digest[:16])
 }
 
 func ParseTrustRoot(body []byte) (TrustRoot, error) {
@@ -45,7 +51,7 @@ func ParseTrustRoot(body []byte) (TrustRoot, error) {
 		return TrustRoot{}, fmt.Errorf("trust root has trailing data")
 	}
 	public, err := base64.StdEncoding.DecodeString(trust.Value)
-	if trust.Algorithm != "ed25519" || trust.KeyID == "" || err != nil || len(public) != ed25519.PublicKeySize {
+	if trust.Algorithm != "ed25519" || err != nil || len(public) != ed25519.PublicKeySize || trust.KeyID != keyID(public) {
 		return TrustRoot{}, fmt.Errorf("invalid registry trust root")
 	}
 	return trust, nil

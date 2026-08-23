@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
-	trust, err := registrysigning.NewTrustRoot(os.Getenv("SOKSAK_REGISTRY_KEY_ID"), private)
+	trust, err := registrysigning.NewTrustRoot(private)
 	if err != nil {
 		fail(err)
 	}
