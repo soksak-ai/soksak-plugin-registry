@@ -21,14 +21,14 @@ jobs:
           persist-credentials: false
       - name: Install the immutable Registry tool
         run: |
-          mkdir -p "$RUNNER_TEMP/spec"
-          curl -fsSL https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.25/soksak-ai-plugin-spec-0.0.25.tgz -o "$RUNNER_TEMP/spec.tgz"
-          echo "2aba0fb38b99e4f646d403e4ea5ac00ec1bb5b4ba1db9283509aa31c8c6c8d57  $RUNNER_TEMP/spec.tgz" | sha256sum -c -
-          tar -xzf "$RUNNER_TEMP/spec.tgz" -C "$RUNNER_TEMP/spec" --strip-components=1
-          test -z "$(find "$RUNNER_TEMP/spec" -type l -print -quit)"
+          mkdir -p .dependency/spec
+          curl -fsSL https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.27/soksak-ai-plugin-spec-0.0.27.tgz -o .dependency/spec.tgz
+          echo "a3991634079056d0066de9ffc1af1bac6d65ecf1eb1c72e3619f8fb136d4c513  .dependency/spec.tgz" | sha256sum -c -
+          tar -xzf .dependency/spec.tgz -C .dependency/spec --strip-components=1
+          test -z "$(find .dependency/spec -type l -print -quit)"
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version-file: ${{ runner.temp }}/spec/package.json
+          node-version-file: .dependency/spec/package.json
       - name: Derive the deterministic Registry identity
         id: identity
         run: |
@@ -52,7 +52,7 @@ jobs:
         env:
           SOKSAK_REGISTRY_ED25519_SEED: ${{ secrets.SOKSAK_REGISTRY_ED25519_SEED }}
         run: |
-          tool="$RUNNER_TEMP/spec/bin/validate.mjs"
+          tool=.dependency/spec/bin/validate.mjs
           node "$tool" registry-build plugins --id official --sequence "${{ steps.identity.outputs.sequence }}" --issued-at "${{ steps.identity.outputs.issued }}" --expires-at "${{ steps.identity.outputs.expires }}" --out "$RUNNER_TEMP/unsigned.json"
           node "$tool" registry-authenticate "$RUNNER_TEMP/unsigned.json" --out "$RUNNER_TEMP/registry.json"
           test "$(jq -r .signature.keyId "$RUNNER_TEMP/registry.json")" = c20999a2363b111b542847cfe55ccf83
@@ -67,4 +67,4 @@ jobs:
       - name: Publish the only Registry asset
         env:
           SOKSAK_RELEASE_TOKEN: ${{ steps.release-token.outputs.token }}
-        run: node "$RUNNER_TEMP/spec/bin/validate.mjs" registry-publish "$RUNNER_TEMP/registry.json" --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"
+        run: node .dependency/spec/bin/validate.mjs registry-publish "$RUNNER_TEMP/registry.json" --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"
