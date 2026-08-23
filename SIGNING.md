@@ -1,11 +1,10 @@
 # Registry signing status
 
 `registry-source.json` is the validated catalogue source. The manual signing workflow validates,
-signs, self-verifies, and publishes only `registry-signed.json`. No production trust root, Ed25519
-private-key secret, or signed index exists yet, so Core cannot treat this catalogue as an
-operational official registry.
+signs, self-verifies, and publishes only `registry-signed.json`. The production private seed exists
+only as a GitHub Actions secret; `registry-trust.json` and Core contain its public trust root.
 
-Enabling signing is one explicit trust-root operation:
+Trust rotation is one explicit operation:
 
 1. Approve rotation of the Core trust root.
 2. Generate one Ed25519 key pair in a controlled environment.

@@ -57,7 +57,7 @@ func TestREADMEStatesTheActualSigningStatus(t *testing.T) {
 		t.Fatal(err)
 	}
 	text := string(body)
-	for _, required := range []string{"not yet signed", "SIGNING.md", "not operational"} {
+	for _, required := range []string{"operational signed index", "SIGNING.md", "never an installation source"} {
 		if !strings.Contains(text, required) {
 			t.Errorf("README omits signing status: %s", required)
 		}

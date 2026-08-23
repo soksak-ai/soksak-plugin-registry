@@ -20,6 +20,6 @@ go vet ./...
 go run ./cmd/verify
 ```
 
-현재 source catalogue는 아직 `registry-signed.json`으로 서명·게시되지 않았습니다. 필요한 trust
-root 절차는 [SIGNING.ko.md](SIGNING.ko.md)에 있습니다. 이 절차가 완료되기 전에는 official signed
-registry 설치 경로를 운영 상태로 취급하지 않습니다. Unsigned fallback은 허용하지 않습니다.
+`registry-signed.json`은 현재 운영 중인 signed index입니다. Core는 대응하는 public trust root를
+고정하며 [SIGNING.ko.md](SIGNING.ko.md)는 만료 갱신과 sequence continuity를 정의합니다. Unsigned
+catalogue byte는 설치 출처로 사용하지 않습니다.

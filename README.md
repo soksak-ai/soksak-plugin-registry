@@ -21,6 +21,6 @@ go vet ./...
 go run ./cmd/verify
 ```
 
-The source catalogue is not yet signed or published as `registry-signed.json`. See
-[SIGNING.md](SIGNING.md) for the required trust-root operation. Until that operation is completed,
-the official signed-registry installation path is not operational.
+`registry-signed.json` is the operational signed index. Core pins the matching public trust root,
+and [SIGNING.md](SIGNING.md) defines expiry renewal and sequence continuity. Unsigned catalogue
+bytes are never an installation source.
