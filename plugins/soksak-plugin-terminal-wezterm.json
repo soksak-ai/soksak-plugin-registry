@@ -1,7 +1,7 @@
 {
   "id": "soksak-plugin-terminal-wezterm",
-  "version": "0.0.13",
-  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.13/release.json",
+  "version": "0.0.14",
+  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-wezterm/releases/download/v0.0.14/release.json",
   "size": 2258,
-  "sha256": "9186cb81ca52d0bf407b793f7feb907cfdb17960887332af315c93eb741d5211"
+  "sha256": "dae7421e32748c20ae70e615f189206699d469deab32a1de78fcf114c576f76d"
 }

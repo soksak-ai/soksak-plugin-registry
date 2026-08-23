@@ -1,7 +1,7 @@
 {
   "id": "soksak-plugin-terminal-xterm",
-  "version": "0.0.20",
-  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.20/release.json",
+  "version": "0.0.21",
+  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.21/release.json",
   "size": 2239,
-  "sha256": "0e73249a45f64c0cf2bee9aa1181eefa5147a71073322f8063cab31f22d4b9cd"
+  "sha256": "0bfcad93004633fd4e5725e12f5d1d59d9f439b7d5a6f2713c987f69c130f477"
 }
