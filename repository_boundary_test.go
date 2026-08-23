@@ -55,9 +55,6 @@ func TestREADMEStatesTheActualSigningStatus(t *testing.T) {
 		t.Fatal(err)
 	}
 	text := string(body)
-	if strings.Contains(text, "CI signs the complete source") {
-		t.Fatal("README claims a signing workflow that does not exist")
-	}
 	for _, required := range []string{"not yet signed", "SIGNING.md", "not operational"} {
 		if !strings.Contains(text, required) {
 			t.Errorf("README omits signing status: %s", required)
@@ -65,5 +62,33 @@ func TestREADMEStatesTheActualSigningStatus(t *testing.T) {
 	}
 	if _, err := os.Stat("README.ko.md"); err != nil {
 		t.Errorf("README has no Korean translation: %v", err)
+	}
+}
+
+func TestSigningWorkflowIsManualAndPublishesOnlyTheSignedIndex(t *testing.T) {
+	body, err := os.ReadFile(".github/workflows/sign.yml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	text := string(body)
+	for _, required := range []string{
+		"workflow_dispatch:",
+		"go-version-file: go.mod",
+		"go run ./cmd/verify",
+		"go run ./cmd/sign",
+		"SOKSAK_REGISTRY_ED25519_SEED",
+		"registry-signed.json",
+		"git diff --quiet -- registry-source.json registry-trust.json",
+		"git add -- registry-signed.json",
+		"permission-contents: write",
+	} {
+		if !strings.Contains(text, required) {
+			t.Errorf("signing workflow omits %s", required)
+		}
+	}
+	for _, forbidden := range []string{"schedule:", "push:", "SOKSAK_REGISTRY_ED25519_SEED=", "git add ."} {
+		if strings.Contains(text, forbidden) {
+			t.Errorf("signing workflow contains %s", forbidden)
+		}
 	}
 }

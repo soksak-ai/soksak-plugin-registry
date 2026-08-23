@@ -1,0 +1,55 @@
+name: sign-registry
+on:
+  workflow_dispatch:
+    inputs:
+      expiresAt:
+        description: Exact RFC3339 expiry after the signing time
+        required: true
+        type: string
+concurrency:
+  group: sign-registry
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  sign:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+        with:
+          go-version-file: go.mod
+          cache: false
+      - name: Validate and sign the exact catalogue
+        env:
+          SOKSAK_REGISTRY_ED25519_SEED: ${{ secrets.SOKSAK_REGISTRY_ED25519_SEED }}
+          SOKSAK_REGISTRY_EXPIRES_AT: ${{ inputs.expiresAt }}
+        run: |
+          set -euo pipefail
+          go test ./...
+          go vet ./...
+          go run ./cmd/verify
+          export SOKSAK_REGISTRY_ISSUED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          go run ./cmd/sign
+          git diff --quiet -- registry-source.json registry-trust.json
+      - name: Create least-privilege publication token
+        id: release-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
+        with:
+          client-id: ${{ vars.SOKSAK_RELEASE_CLIENT_ID }}
+          private-key: ${{ secrets.SOKSAK_RELEASE_PRIVATE_KEY }}
+          owner: soksak-ai
+          repositories: soksak-plugin-registry
+          permission-contents: write
+      - name: Publish only the signed registry index
+        env:
+          GH_TOKEN: ${{ steps.release-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          git add -- registry-signed.json
+          test "$(git diff --cached --name-only)" = registry-signed.json
+          git -c user.name=soksak-release -c user.email=soksak-release@users.noreply.github.com commit -m 'registry: publish signed index'
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
