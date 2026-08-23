@@ -1,25 +1,14 @@
-# soksak-plugin-registry
+# Soksak 플러그인 Registry
 
-Soksak 공식 release catalogue입니다. 공개 형식과 서명 규칙은 `soksak-spec`이 소유하고
-`soksak-contract-registry`가 검증합니다.
+공식 Registry는 데이터 저장소다. 각 `plugins/<id>.json`은 공통
+`{id, version, url, size, sha256}` 형식으로 현재 불변 plugin release 하나를 가리킨다. Plugin
+작성자는 자기 파일 하나만 변경한다. Sidecar는 owner release 내부의 runtime dependency이며 독립
+상품으로 등록하지 않는다.
 
-Catalogue는 plugin, sidecar, kit, contract, spec의 직접 release를 게시합니다. 각 owner
-repository는 자신의 immutable archive와 conformance report를 build하고 검증합니다. Runtime
-requirement는 owner manifest가 소유하며 사용자의 sidecar 역할 binding은 `environment.json`에
-있습니다. 이 repository는 owner source tree를 읽거나 build하지 않습니다.
+PR은 digest가 고정된 공개 `soksak-spec` package로 변경 entry와 전체 전이 release chain을
+검증한다. main 병합 후에는 모든 entry를 결정적으로 합성하고 `registry.json`을 인증하여
+owner-enforced immutable `registry-<sequence>` GitHub Release의 유일한 asset으로 게시한다. 생성된
+Registry byte, 서명 키, parser, publisher 구현은 이 저장소에 두지 않는다. Core가 public trust
+root를 내장한다.
 
-## 등록
-
-`cmd/register`는 owner가 게시한 `release.json`을 읽어 같은 exact identity를 교체하고 종류별로
-정렬합니다. 전체 catalogue를 검증한 뒤에만 `registry-source.json`을 atomic하게 갱신합니다.
-
-```sh
-go run ./cmd/register https://github.com/soksak-ai/example/releases/download/v0.0.1/release.json
-go test ./...
-go vet ./...
-go run ./cmd/verify
-```
-
-`registry-signed.json`은 현재 운영 중인 signed index입니다. Core는 대응하는 public trust root를
-고정하며 [SIGNING.ko.md](SIGNING.ko.md)는 만료 갱신과 sequence continuity를 정의합니다. Unsigned
-catalogue byte는 설치 출처로 사용하지 않습니다.
+[docs/REGISTRY.ko.md](docs/REGISTRY.ko.md)를 참고한다.
