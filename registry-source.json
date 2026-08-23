@@ -1,7 +1,37 @@
 {
   "id": "official",
-  "sequence": 2,
+  "sequence": 3,
   "plugins": [
+    {
+      "plugin": {
+        "id": "soksak-plugin-browser-wails3",
+        "version": "0.0.1"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-browser-wails3",
+        "commit": "ae36f8b5c15320a4abee707b73b8be6a38a853aa"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.1/soksak-plugin-browser-wails3-0.0.1-any.tgz",
+          "size": 10976,
+          "sha256": "f3a706ec730e5bd203b2e7bd64ea5300226223b059142702f3b69bd5b3358650",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.1/conformance-plugin.json",
+          "sha256": "60f130029e5bc8f60a9208e5e1faf8c5b9cd7826c3b876f03e8d3c2bb550cd92"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.1/conformance-release.json",
+          "sha256": "4c81dd50518efe813b79ad50762a73b583237b16eff815b8d31bd20f9b792af1"
+        }
+      ]
+    },
     {
       "plugin": {
         "id": "soksak-plugin-terminal-alacritty",
