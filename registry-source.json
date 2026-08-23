@@ -1,6 +1,6 @@
 {
   "id": "official",
-  "sequence": 9,
+  "sequence": 10,
   "plugins": [
     {
       "plugin": {
@@ -1411,6 +1411,40 @@
         {
           "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.16/conformance-release.json",
           "sha256": "a7e4c3b1c7e92acf1c16df903f1db8cf19a155ad01e818b94b74520cb915b308"
+        }
+      ]
+    },
+    {
+      "plugin": {
+        "id": "soksak-plugin-terminal-xterm",
+        "version": "0.0.17"
+      },
+      "source": {
+        "repository": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm",
+        "commit": "af7ab0dafea3a7f1600cf4a2e5009a47db083dee"
+      },
+      "artifacts": [
+        {
+          "target": "any",
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.17/soksak-plugin-terminal-xterm-0.0.17-any.tgz",
+          "size": 94578,
+          "sha256": "db1ed9fa0e68b140154dd72d598a64b3c4d2216362c633c67d6b84c8c6041868",
+          "format": "tgz",
+          "manifest": "plugin.json"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.17/conformance-contract-01.json",
+          "sha256": "db47d225d73a4086d6cfeed1462a725a539827d33fbfe3b06b13db176f74e278"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.17/conformance-plugin.json",
+          "sha256": "d0f31c5b266b8688361e523f747613b04f8291eec6cc9d0f299099976ec397ed"
+        },
+        {
+          "url": "https://github.com/soksak-ai/soksak-plugin-terminal-xterm/releases/download/v0.0.17/conformance-release.json",
+          "sha256": "1ae5a5ba2a0c4d732677a222f8213d4843a4cf26b88f03964ace017330762b14"
         }
       ]
     },
