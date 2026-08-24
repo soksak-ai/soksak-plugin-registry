@@ -1,0 +1,25 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@soksak-ai/plugin-spec':
+        specifier: https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz
+        version: https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz
+
+packages:
+
+  '@soksak-ai/plugin-spec@https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz':
+    resolution: {integrity: sha512-4vv16Bi+UpDHWPq9qUzLfuthUAGSv0ui3m3sKC7kDATxDF2q2pLaTKRfbPrrZIQf1WdqSUdIDG37LkZ8Z9pm+Q==, tarball: https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz}
+    version: 0.0.29
+    engines: {node: 26.7.0}
+    hasBin: true
+
+snapshots:
+
+  '@soksak-ai/plugin-spec@https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz': {}

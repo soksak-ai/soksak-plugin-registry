@@ -20,14 +20,12 @@ jobs:
           mapfile -t changed < <(git diff --name-only --diff-filter=AM "$BASE" "$HEAD")
           test "${#changed[@]}" = 1
           case "${changed[0]}" in plugins/*.json) ;; *) exit 1;; esac
-      - name: Install the immutable Registry tool
-        run: |
-          mkdir -p .dependency/spec
-          curl -fsSL https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz -o .dependency/spec.tgz
-          echo "f3311f6e20069667486e753e8669e7f7787f197f47e4a94e14207a066c2db32c  .dependency/spec.tgz" | sha256sum -c -
-          tar -xzf .dependency/spec.tgz -C .dependency/spec --strip-components=1
-          test -z "$(find .dependency/spec -type l -print -quit)"
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86
+        with:
+          package_json_file: package.json
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version-file: .dependency/spec/package.json
-      - run: node .dependency/spec/bin/validate.mjs registry-verify plugins
+          node-version-file: .node-version
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: make verify

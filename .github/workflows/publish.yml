@@ -19,16 +19,15 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Install the immutable Registry tool
-        run: |
-          mkdir -p .dependency/spec
-          curl -fsSL https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz -o .dependency/spec.tgz
-          echo "f3311f6e20069667486e753e8669e7f7787f197f47e4a94e14207a066c2db32c  .dependency/spec.tgz" | sha256sum -c -
-          tar -xzf .dependency/spec.tgz -C .dependency/spec --strip-components=1
-          test -z "$(find .dependency/spec -type l -print -quit)"
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86
+        with:
+          package_json_file: package.json
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
-          node-version-file: .dependency/spec/package.json
+          node-version-file: .node-version
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: make verify
       - name: Derive the deterministic Registry identity
         id: identity
         run: |
@@ -52,9 +51,8 @@ jobs:
         env:
           SOKSAK_REGISTRY_ED25519_SEED: ${{ secrets.SOKSAK_REGISTRY_ED25519_SEED }}
         run: |
-          tool=.dependency/spec/bin/validate.mjs
-          node "$tool" registry-build plugins --id official --sequence "${{ steps.identity.outputs.sequence }}" --issued-at "${{ steps.identity.outputs.issued }}" --expires-at "${{ steps.identity.outputs.expires }}" --out "$RUNNER_TEMP/unsigned.json"
-          node "$tool" registry-authenticate "$RUNNER_TEMP/unsigned.json" --out "$RUNNER_TEMP/registry.json"
+          make build REGISTRY_SEQUENCE="${{ steps.identity.outputs.sequence }}" REGISTRY_ISSUED_AT="${{ steps.identity.outputs.issued }}" REGISTRY_EXPIRES_AT="${{ steps.identity.outputs.expires }}" REGISTRY_OUT="$RUNNER_TEMP/unsigned.json"
+          make authenticate REGISTRY_IN="$RUNNER_TEMP/unsigned.json" REGISTRY_OUT="$RUNNER_TEMP/registry.json"
           test "$(jq -r .signature.keyId "$RUNNER_TEMP/registry.json")" = c20999a2363b111b542847cfe55ccf83
       - name: Create least-privilege publication token
         id: release-token
@@ -67,4 +65,4 @@ jobs:
       - name: Publish the only Registry asset
         env:
           SOKSAK_RELEASE_TOKEN: ${{ steps.release-token.outputs.token }}
-        run: node .dependency/spec/bin/validate.mjs registry-publish "$RUNNER_TEMP/registry.json" --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"
+        run: pnpm exec soksak-validate registry-publish "$RUNNER_TEMP/registry.json" --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"
