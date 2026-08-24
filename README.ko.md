@@ -12,3 +12,17 @@ Registry byte, 서명 키, parser, publisher 구현은 이 저장소에 두지 �
 root를 내장한다.
 
 [docs/REGISTRY.ko.md](docs/REGISTRY.ko.md)를 참고한다.
+
+## 명령과 dependency 소유권
+
+```sh
+make verify
+```
+
+정확한 환경과 immutable spec validation package는 `.node-version`,
+`package.json#packageManager`, `pnpm-lock.yaml`이 소유한다. `make build`는 sequence·시간·output을
+명시적으로 받고, `make authenticate`는 입력·출력과 호출자가 주입한 signing seed를 받는다.
+GitHub Actions는 tag 발견, secret, credential, publication만 소유한다. Registry는 release train의
+마지막 consumer다. 변경된 spec이 immutable해진 뒤 HTTPS dependency를 갱신하고 clean install과
+전체 release chain을 검증한 다음, plugin·Sidecar·Kit·spec source를 다시 빌드하지 않고 인증된
+Registry byte를 공개한다.

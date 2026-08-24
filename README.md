@@ -12,3 +12,17 @@ authenticates `registry.json`, and publishes it as the only asset of an owner-en
 implementations are not stored here. Core embeds the public trust root.
 
 See [docs/REGISTRY.md](docs/REGISTRY.md).
+
+## Command and dependency ownership
+
+```sh
+make verify
+```
+
+`.node-version`, `package.json#packageManager`, and `pnpm-lock.yaml` own the exact environment and
+immutable spec validation package. `make build` accepts explicit sequence/time/output inputs, and
+`make authenticate` accepts explicit input/output plus the signing seed from the caller. GitHub
+Actions owns tag discovery, secrets, credentials, and publication only. Registry is the last release
+train consumer: after the changed spec is immutable, this repository updates its HTTPS dependency,
+passes the full clean-install chain, builds authenticated bytes, and publishes without rebuilding
+any plugin, Sidecar, Kit, or spec source.
