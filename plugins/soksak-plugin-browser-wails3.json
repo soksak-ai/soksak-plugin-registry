@@ -1,7 +1,4 @@
 {
   "id": "soksak-plugin-browser-wails3",
-  "version": "0.0.6",
-  "url": "https://github.com/soksak-ai/soksak-plugin-browser-wails3/releases/download/v0.0.6/release.json",
-  "size": 1325,
-  "sha256": "1058e564bd2e619d9b819262e72e7a002e24654f599199db6ac569ab7c1b0760"
+  "version": "0.0.6"
 }

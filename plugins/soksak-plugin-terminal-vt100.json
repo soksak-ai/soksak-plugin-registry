@@ -1,7 +1,4 @@
 {
   "id": "soksak-plugin-terminal-vt100",
-  "version": "0.0.15",
-  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-vt100/releases/download/v0.0.15/release.json",
-  "size": 2238,
-  "sha256": "43737c8b0fa4088c5e71462bde92e4b57103e8be55977df083f02daee1ad74f9"
+  "version": "0.0.15"
 }

@@ -7,6 +7,6 @@
   },
   "packageManager": "pnpm@11.22.0",
   "devDependencies": {
-    "@soksak-ai/plugin-spec": "https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.29/soksak-ai-plugin-spec-0.0.29.tgz"
+    "@soksak-ai/plugin-spec": "0.0.33"
   }
 }

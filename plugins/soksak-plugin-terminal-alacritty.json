@@ -1,7 +1,4 @@
 {
   "id": "soksak-plugin-terminal-alacritty",
-  "version": "0.0.15",
-  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-alacritty/releases/download/v0.0.15/release.json",
-  "size": 2278,
-  "sha256": "29b5adacba5fb3132e0b8805dcf43161dab81896a3b362b68d47e6c331147020"
+  "version": "0.0.15"
 }

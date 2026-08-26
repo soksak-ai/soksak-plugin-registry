@@ -27,7 +27,7 @@ jobs:
           node-version-file: .node-version
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
-      - run: make verify
+      - run: make verify REGISTRY=https://registry.npmjs.org/
       - name: Derive the deterministic Registry identity
         id: identity
         run: |
@@ -51,8 +51,8 @@ jobs:
         env:
           SOKSAK_REGISTRY_ED25519_SEED: ${{ secrets.SOKSAK_REGISTRY_ED25519_SEED }}
         run: |
-          make build REGISTRY_SEQUENCE="${{ steps.identity.outputs.sequence }}" REGISTRY_ISSUED_AT="${{ steps.identity.outputs.issued }}" REGISTRY_EXPIRES_AT="${{ steps.identity.outputs.expires }}" REGISTRY_OUT="$RUNNER_TEMP/unsigned.json"
-          make authenticate REGISTRY_IN="$RUNNER_TEMP/unsigned.json" REGISTRY_OUT="$RUNNER_TEMP/registry.json"
+          make build REGISTRY=https://registry.npmjs.org/ REGISTRY_SEQUENCE="${{ steps.identity.outputs.sequence }}" REGISTRY_ISSUED_AT="${{ steps.identity.outputs.issued }}" REGISTRY_EXPIRES_AT="${{ steps.identity.outputs.expires }}" REGISTRY_OUT="$RUNNER_TEMP/unsigned.json"
+          make authenticate REGISTRY=https://registry.npmjs.org/ REGISTRY_IN="$RUNNER_TEMP/unsigned.json" REGISTRY_OUT="$RUNNER_TEMP/registry.json"
           test "$(jq -r .signature.keyId "$RUNNER_TEMP/registry.json")" = c20999a2363b111b542847cfe55ccf83
       - name: Create least-privilege publication token
         id: release-token

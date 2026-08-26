@@ -1,7 +1,4 @@
 {
   "id": "soksak-plugin-terminal-ghostty",
-  "version": "0.0.16",
-  "url": "https://github.com/soksak-ai/soksak-plugin-terminal-ghostty/releases/download/v0.0.16/release.json",
-  "size": 2258,
-  "sha256": "2eb4648b81d6a404471e66c91881d81c8d156121fb4cebd7fb260ce2fe75968b"
+  "version": "0.0.16"
 }
