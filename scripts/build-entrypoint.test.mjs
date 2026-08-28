@@ -18,6 +18,12 @@ test("Registry owns one dependency and Make command graph", () => {
   }
 });
 
+test("preflight judges the repository-selected pnpm", () => {
+  const preflight = read("scripts/check-build-environment.sh");
+  assert.equal(/pnpm_executable|pnpmExecutable/.test(preflight), false);
+  assert.match(preflight, /cd "\$root" && pnpm --version/);
+});
+
 test("Registry workflows inject owners and do not reinstall the spec manually", () => {
   for (const path of [".github/workflows/verify.yml", ".github/workflows/publish.yml"]) {
     const workflow = read(path);
