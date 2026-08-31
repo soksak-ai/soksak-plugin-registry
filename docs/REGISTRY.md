@@ -38,6 +38,7 @@ from the release document: Core walks `runtimeDependencies` from each release do
 authenticate` signs the index. The signing seed exists only as a GitHub secret. The public key is
 embedded in Core, outside the downloaded Registry.
 
-The `soksak-spec` package is declared by exact version in `package.json` and pinned by integrity in
-`pnpm-lock.yaml`; the package registry is the `REGISTRY` make argument. The repository contains no
-generated Registry file and no independent signing, parsing, or resolving code.
+The `soksak-spec` package is declared by its exact owner-enforced immutable release asset URL in
+`package.json` and pinned by integrity in `pnpm-lock.yaml`; the package registry is the `REGISTRY`
+make argument. The repository contains no generated Registry file and no independent signing,
+parsing, or resolving code.

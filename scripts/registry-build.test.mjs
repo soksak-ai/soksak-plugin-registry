@@ -8,7 +8,7 @@ import test from "node:test";
 import { pathToFileURL } from "node:url";
 
 const root = join(import.meta.dirname, "..");
-const validate = join(root, "node_modules/@soksak-ai/plugin-spec/bin/validate.mjs");
+const validate = join(root, "node_modules/@soksak/soksak-spec/bin/validate.mjs");
 const stub = pathToFileURL(join(root, "scripts/github-fetch-stub.mjs")).href;
 
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");

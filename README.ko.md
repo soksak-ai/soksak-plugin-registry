@@ -19,10 +19,12 @@ parser, publisher 구현은 이 저장소에 두지 않는다. Core가 public tr
 
 ## 명령과 dependency 소유권
 
-이 패키지는 `@soksak-ai/plugin-spec`에 의존하므로, install을 수행하는 모든 `make` 호출은 make
-명령줄의 `REGISTRY`를 요구한다. 패키지가 `https://registry.npmjs.org`에 게시된 뒤에도 같다. 환경
-변수로 전달된 값은 거부된다. Makefile은 `package.json`에서 이 요구를 읽고, 없으면
-`REGISTRY required: this package depends on @soksak-ai/plugin-spec`으로 거부한다.
+이 패키지는 `package.json`에 선언한 정확한 불변 `@soksak/soksak-spec` release asset에 의존하므로,
+install을 수행하는 모든 `make` 호출은 make 명령줄의 `REGISTRY`를 요구한다. 환경 변수로 전달된 값은
+거부된다. Makefile은 `package.json`에서 이 요구를 읽고, 없으면
+`REGISTRY required: this package depends on @soksak/soksak-spec`으로 거부한다. Spec package는
+owner-enforced immutable release URL에서 받고 lockfile integrity로 검증한다. Public npm의 가용성은
+validator 정체성에 포함되지 않는다.
 
 빌드 입력의 정체성은 `REGISTRY`가 아니라 `pnpm-lock.yaml`의 integrity다. pnpm은 content-addressable
 store에 없는 integrity의 패키지만 `REGISTRY`에서 받으므로, 같은 기계에서 같은 lockfile을 다시
@@ -33,7 +35,7 @@ make verify REGISTRY=http://host:port/
 ```
 
 정확한 환경과 immutable spec validation package는 `.node-version`,
-`package.json#packageManager`, `pnpm-lock.yaml`이 소유한다. `make build`는 sequence·시간·output을
+`package.json#packageManager`, 정확한 release URL, `pnpm-lock.yaml`이 소유한다. `make build`는 sequence·시간·output을
 명시적으로 받고, `make authenticate`는 입력·출력과 호출자가 주입한 signing seed를 받는다.
 GitHub Actions는 tag 발견, secret, credential, publication만 소유한다. Publication workflow는
 수동 호출 전용이다. Push workflow는 그 credential을 받을 수 없고 Registry tag·Release·asset을

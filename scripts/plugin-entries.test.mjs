@@ -3,7 +3,7 @@ import { mkdtempSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
-import { parseDependencyIntent } from "@soksak-ai/plugin-spec";
+import { parseDependencyIntent } from "@soksak/soksak-spec";
 
 const root = join(import.meta.dirname, "..");
 

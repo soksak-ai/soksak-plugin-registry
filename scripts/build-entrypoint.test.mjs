@@ -9,7 +9,7 @@ test("Registry owns one dependency and Make command graph", () => {
   const manifest = JSON.parse(read("package.json"));
   assert.equal(read(".node-version").trim(), manifest.engines.node);
   assert.match(manifest.packageManager, /^pnpm@\d+[.]\d+[.]\d+$/);
-  assert.deepEqual(Object.keys(manifest.devDependencies), ["@soksak-ai/plugin-spec"]);
+  assert.deepEqual(Object.keys(manifest.devDependencies), ["@soksak/soksak-spec"]);
   for (const target of ["preflight", "prepare", "build", "verify", "authenticate"]) {
     assert.match(makefile, new RegExp(`^${target}:`, "m"));
   }
@@ -24,13 +24,13 @@ test("preflight judges the repository-selected pnpm", () => {
   assert.match(preflight, /cd "\$root" && pnpm --version/);
 });
 
-test("Registry workflows inject owners and do not reinstall the spec manually", () => {
+test("Registry workflows use the repository-declared immutable validator and do not reinstall it", () => {
   for (const path of [".github/workflows/verify.yml", ".github/workflows/publish.yml"]) {
     const workflow = read(path);
     assert.match(workflow, /node-version-file: [.]node-version/);
     assert.match(workflow, /package_json_file: package[.]json/);
     assert.match(workflow, /make (?:verify|build|authenticate)/);
-    for (const bypass of ["curl -fsSL https://github.com/soksak-ai/soksak-spec", ".dependency/spec/bin/validate.mjs"]) {
+    for (const bypass of ["curl -fsSL https://github.com/soksak-ai/soksak-spec", ".dependency/spec/bin/validate.mjs", "PATH="]) {
       assert.equal(workflow.includes(bypass), false, `${path} bypasses package ownership through ${bypass}`);
     }
   }

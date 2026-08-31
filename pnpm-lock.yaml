@@ -8,17 +8,18 @@ importers:
 
   .:
     devDependencies:
-      '@soksak-ai/plugin-spec':
-        specifier: 0.0.33
-        version: 0.0.33
+      '@soksak/soksak-spec':
+        specifier: https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.52/soksak-soksak-spec-0.0.52.tgz
+        version: https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.52/soksak-soksak-spec-0.0.52.tgz
 
 packages:
 
-  '@soksak-ai/plugin-spec@0.0.33':
-    resolution: {integrity: sha512-VTGHVzn2CE5XolqE62GK9fXngq3lhnXvz9wZRYWMn+bh7uSEkEzxJCR2YqnSZPtK1+9lUMAzDMoyWvcOZ7syTw==}
+  '@soksak/soksak-spec@https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.52/soksak-soksak-spec-0.0.52.tgz':
+    resolution: {integrity: sha512-SCKkrmcaWTeJHqO31IB3qcOuSfOnjHtIxwuCA9+XfCIU+NNIFjd30NpQOyyoCUG+JK82raicbvQ9+KxfaRg9ew==, tarball: https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.52/soksak-soksak-spec-0.0.52.tgz}
+    version: 0.0.52
     engines: {node: 26.7.0}
     hasBin: true
 
 snapshots:
 
-  '@soksak-ai/plugin-spec@0.0.33': {}
+  '@soksak/soksak-spec@https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.52/soksak-soksak-spec-0.0.52.tgz': {}

@@ -18,19 +18,27 @@ const scopedDependencies = () => {
   return found;
 };
 
-test("package.json declares the spec package by exact version", () => {
+test("package.json declares one exact immutable Spec validator release asset", () => {
   const found = scopedDependencies();
-  assert.deepEqual(found.map(([section, name]) => `${section}.${name}`), ["devDependencies.@soksak-ai/plugin-spec"]);
-  for (const [section, name, spec] of found) assert.match(spec, /^\d+\.\d+\.\d+$/, `${section}.${name}`);
+  assert.deepEqual(found.map(([section, name]) => `${section}.${name}`), ["devDependencies.@soksak/soksak-spec"]);
+  for (const [section, name, spec] of found) {
+    assert.match(
+      spec,
+      /^https:\/\/github\.com\/soksak-ai\/soksak-spec\/releases\/download\/v(\d+\.\d+\.\d+)\/soksak-soksak-spec-\1\.tgz$/,
+      `${section}.${name}`,
+    );
+  }
 });
 
-test("pnpm-lock.yaml resolves the spec package by integrity without a tarball URL", () => {
-  assert.equal(/github\.com\/soksak-ai\/soksak-spec/.test(lockfile), false, "lockfile pins a GitHub tarball");
+test("pnpm-lock.yaml binds the declared validator asset to exact integrity", () => {
   const resolutions = new Map(
-    [...lockfile.matchAll(/^  '(@soksak(?:-ai)?\/[^@']+@[^'(]+)':\n    resolution: \{([^}]*)\}/gm)].map(([, key, resolution]) => [key, resolution]),
+    [...lockfile.matchAll(/^  '(@soksak(?:-ai)?\/[^@']+@[^']+)':\n    resolution: \{([^}]*)\}/gm)].map(([, key, resolution]) => [key, resolution]),
   );
   assert.deepEqual([...resolutions.keys()].sort(), scopedDependencies().map(([, name, spec]) => `${name}@${spec}`).sort());
-  for (const [key, resolution] of resolutions) assert.match(resolution, /^integrity: sha512-[A-Za-z0-9+/=]+$/, key);
+  for (const [key, resolution] of resolutions) {
+    assert.match(resolution, /tarball: https:\/\/github\.com\/soksak-ai\/soksak-spec\/releases\/download\/v\d+\.\d+\.\d+\/soksak-soksak-spec-\d+\.\d+\.\d+\.tgz/, key);
+    assert.match(resolution, /integrity: sha512-[A-Za-z0-9+/=]+/, key);
+  }
   for (const [, name, spec] of scopedDependencies()) {
     assert.match(lockfile, new RegExp(`^      '${name}':\\n        specifier: ${spec.replaceAll(".", "[.]")}\\n`, "m"), name);
   }
@@ -74,8 +82,8 @@ test("Makefile installs from a command-line REGISTRY with the scoped registry fl
   refused(run(["authenticate"], { REGISTRY: "http://127.0.0.1:4873" }), /REGISTRY from the environment is refused/);
 });
 
-test("Makefile requires REGISTRY on the command line because the package depends on @soksak-ai", () => {
-  const dependency = /REGISTRY required: this package depends on @soksak-ai\/plugin-spec/;
+test("Makefile requires REGISTRY on the command line because the package has a Soksak dependency", () => {
+  const dependency = /REGISTRY required: this package depends on @soksak\/soksak-spec/;
   refused(run(["prepare"]), dependency);
   refused(run(["build"]), dependency);
   refused(run(["verify"]), dependency);
@@ -96,7 +104,7 @@ test("README documents the REGISTRY requirement verbatim", () => {
   for (const name of ["README.md", "README.ko.md"]) {
     const readme = readFileSync(join(root, name), "utf8");
     assert.ok(readme.includes("make verify REGISTRY=http://host:port/"), name);
-    assert.ok(readme.includes("REGISTRY required: this package depends on @soksak-ai/plugin-spec"), name);
+    assert.ok(readme.includes("REGISTRY required: this package depends on @soksak/soksak-spec"), name);
     assert.doesNotMatch(readme, /^make (prepare|build|verify|authenticate)\b(?!.*REGISTRY=)/m, name);
   }
 });

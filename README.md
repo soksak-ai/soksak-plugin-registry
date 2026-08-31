@@ -22,11 +22,12 @@ See [docs/REGISTRY.md](docs/REGISTRY.md).
 
 ## Command and dependency ownership
 
-The package depends on `@soksak-ai/plugin-spec`, so every `make` invocation that installs requires
-`REGISTRY` on the make command line, `https://registry.npmjs.org` included once the package is
-published there. A value from the environment is refused. The Makefile reads the requirement from
-`package.json` and refuses `REGISTRY required: this package depends on @soksak-ai/plugin-spec` when
-it is absent.
+The package depends on the exact immutable `@soksak/soksak-spec` release asset declared in
+`package.json`, so every `make` invocation that installs requires `REGISTRY` on the make command
+line. A value from the environment is refused. The Makefile reads the requirement from
+`package.json` and refuses `REGISTRY required: this package depends on @soksak/soksak-spec` when it
+is absent. The Spec package is fetched from its owner-enforced immutable release URL and verified
+against the lockfile integrity; public npm availability is not part of the validator identity.
 
 The build input is identified by the `pnpm-lock.yaml` integrity, not by `REGISTRY`. pnpm fetches
 from `REGISTRY` only a package whose integrity its content-addressable store does not already hold,
@@ -37,8 +38,8 @@ so a second install of the same lockfile on the same machine reads the store and
 make verify REGISTRY=http://host:port/
 ```
 
-`.node-version`, `package.json#packageManager`, and `pnpm-lock.yaml` own the exact environment and
-immutable spec validation package. `make build` accepts explicit sequence/time/output inputs, and
+`.node-version`, `package.json#packageManager`, the exact release URL, and `pnpm-lock.yaml` own the
+environment and immutable spec validation package. `make build` accepts explicit sequence/time/output inputs, and
 `make authenticate` accepts explicit input/output plus the signing seed from the caller. GitHub
 Actions owns tag discovery, secrets, credentials, and publication only. The publication workflow is
 manual-only; a push workflow cannot receive those credentials or mutate Registry tags, Releases,

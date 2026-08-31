@@ -36,6 +36,6 @@ entry `{id, version, size, sha256}`를 쓴다. 인덱스는 release 문서의 �
 Core가 각 release 문서에서 `runtimeDependencies`를 걷는다. `make authenticate`가 인덱스를 서명한다.
 Signing seed는 GitHub secret에만 있고 public key는 다운로드 Registry 밖의 Core에 내장된다.
 
-`soksak-spec` package는 `package.json`이 정확한 version으로 선언하고 `pnpm-lock.yaml`이 integrity로
-고정한다. Package registry는 make 인자 `REGISTRY`다. 저장소에는 생성 Registry 파일이나 별도
-signer·parser·resolver 구현을 두지 않는다.
+`soksak-spec` package는 `package.json`이 owner-enforced immutable release asset의 정확한 URL로
+선언하고 `pnpm-lock.yaml`이 integrity로 고정한다. Package registry는 make 인자 `REGISTRY`다.
+저장소에는 생성 Registry 파일이나 별도 signer·parser·resolver 구현을 두지 않는다.
