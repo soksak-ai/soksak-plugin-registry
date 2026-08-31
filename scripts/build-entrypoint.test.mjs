@@ -43,6 +43,7 @@ test("Registry publication is explicit and a main push only verifies", () => {
 
   const verify = read(".github/workflows/verify.yml");
   const verifyTrigger = verify.slice(verify.indexOf("on:\n") + "on:\n".length, verify.indexOf("permissions:\n"));
+  assert.match(verifyTrigger, /^  workflow_dispatch:$/m);
   assert.match(verifyTrigger, /^  pull_request:\n    paths: \["plugins\/\*\*"\]$/m);
   assert.match(verifyTrigger, /^  push:\n    branches: \[main\]\n    paths: \["plugins\/\*\*"\]$/m);
   assert.match(verify, /- name: Require one plugin entry change\n        if: github[.]event_name == 'pull_request'/);
