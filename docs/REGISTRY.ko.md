@@ -19,11 +19,17 @@ Entry는 dependency 의도다. id와 version 외에는 없다. `url`, `size`, `s
 검증한다. Source checkout, branch, `latest`, package registry fallback, 저장소 topology 발견은
 금지한다.
 
+Pull request workflow는 entry 하나 변경 계약과 전체 release closure를 검증한다. Main push는 전체
+Registry 검증만 다시 실행한다. 이 workflow에는 read-only contents 권한만 있고 signing seed,
+publication token, tag 변경, Release 변경, asset upload 경로가 없다.
+
 ## 게시
 
-main 게시 시각은 exact commit timestamp에서 파생한다. 같은 commit을 다시 실행하면 같은 sequence를
-재사용하고 동일한 인증 byte를 다시 만든다. 새 commit은 가장 높은 immutable `registry-N` Release를
-`N+1`로 올린다. 첫 plugins-only Registry는 기존 signed sequence 10을 이어 sequence 11이다.
+Publication은 push의 부수 효과가 아니다. 운영자가 검증된 commit을 대상으로 publication workflow를
+명시적으로 dispatch한다. 게시 시각은 그 exact commit timestamp에서 파생한다. 같은 commit을 다시
+실행하면 같은 sequence를 재사용하고 동일한 인증 byte를 다시 만든다. 새 commit은 가장 높은
+immutable `registry-N` Release를 `N+1`로 올린다. 첫 plugins-only Registry는 기존 signed sequence
+10을 이어 sequence 11이다.
 
 `make build`는 모든 entry를 읽고, 도출한 위치에서 release 문서를 내려받고, 내려받은 byte로 인덱스
 entry `{id, version, size, sha256}`를 쓴다. 인덱스는 release 문서의 다른 내용을 복사하지 않는다.

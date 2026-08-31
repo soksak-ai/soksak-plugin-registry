@@ -2,6 +2,9 @@ name: verify-plugin-entry
 on:
   pull_request:
     paths: ["plugins/**"]
+  push:
+    branches: [main]
+    paths: ["plugins/**"]
 permissions:
   contents: read
 jobs:
@@ -13,6 +16,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Require one plugin entry change
+        if: github.event_name == 'pull_request'
         env:
           BASE: ${{ github.event.pull_request.base.sha }}
           HEAD: ${{ github.event.pull_request.head.sha }}

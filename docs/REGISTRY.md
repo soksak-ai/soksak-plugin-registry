@@ -20,12 +20,17 @@ size, SHA-256, kind, ID, version, manifest, artifact matrix, and conformance evi
 derived location. Source checkouts, branches, `latest`, package registry fallback, and repository
 topology discovery are forbidden.
 
+The pull-request workflow enforces the one-entry change and verifies its complete release closure.
+A push to main reruns the full Registry verification only. It has read-only contents permission and
+has no signing seed, publication token, tag mutation, Release mutation, or asset upload path.
+
 ## Publication
 
-Main publication derives time from the exact commit timestamp. If the same commit is run again it
-reuses the same sequence and recreates identical authenticated bytes. A new commit advances the
-highest immutable `registry-N` release to `N+1`. The first plugins-only Registry continues the old
-signed sequence 10 at sequence 11.
+Publication is never a push side effect. An operator explicitly dispatches the publication workflow
+for a validated commit. Publication derives time from that exact commit timestamp. If the same
+commit is run again it reuses the same sequence and recreates identical authenticated bytes. A new
+commit advances the highest immutable `registry-N` release to `N+1`. The first plugins-only Registry
+continues the old signed sequence 10 at sequence 11.
 
 `make build` reads every entry, fetches the release document at the derived location, and writes
 the index entry `{id, version, size, sha256}` from the fetched bytes. The index copies nothing else

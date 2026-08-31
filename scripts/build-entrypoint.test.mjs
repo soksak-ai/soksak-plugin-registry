@@ -35,3 +35,18 @@ test("Registry workflows inject owners and do not reinstall the spec manually", 
     }
   }
 });
+
+test("Registry publication is explicit and a main push only verifies", () => {
+  const publish = read(".github/workflows/publish.yml");
+  const publishTrigger = publish.slice(publish.indexOf("on:\n") + "on:\n".length, publish.indexOf("concurrency:\n"));
+  assert.equal(publishTrigger.trim(), "workflow_dispatch:");
+
+  const verify = read(".github/workflows/verify.yml");
+  const verifyTrigger = verify.slice(verify.indexOf("on:\n") + "on:\n".length, verify.indexOf("permissions:\n"));
+  assert.match(verifyTrigger, /^  pull_request:\n    paths: \["plugins\/\*\*"\]$/m);
+  assert.match(verifyTrigger, /^  push:\n    branches: \[main\]\n    paths: \["plugins\/\*\*"\]$/m);
+  assert.match(verify, /- name: Require one plugin entry change\n        if: github[.]event_name == 'pull_request'/);
+  for (const publicationSurface of ["actions/create-github-app-token", "registry-publish", "SOKSAK_REGISTRY_ED25519_SEED"]) {
+    assert.equal(verify.includes(publicationSurface), false, `verify workflow exposes ${publicationSurface}`);
+  }
+});

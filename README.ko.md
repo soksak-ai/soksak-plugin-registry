@@ -7,12 +7,13 @@
 Release 위치는 도출하며 기록하지 않는다. `{id, version}`의 release 문서는
 `https://github.com/soksak-ai/<id>/releases/download/v<version>/release.json`이다. PR은 변경 entry를
 검증하고, 도출한 위치에서 release 문서를 읽고, 정확한 `soksak-spec` package로 전체 전이 release
-chain을 검증한다. main 병합 후에는 모든 entry를 결정적으로 서명 인덱스 `registry.json`으로
-합성한다. 인덱스의 plugin reference `{id, version, size, sha256}`는 내려받은 release 문서의 크기와
-SHA-256만 담는다. 인덱스는 `runtimeDependencies`를 복사하지 않는다. Core가 각 release 문서에서
-closure를 걷기 때문이다. 인덱스를 인증하여 owner-enforced immutable `registry-<sequence>` GitHub
-Release의 유일한 asset으로 게시한다. 생성된 Registry byte, 서명 키, parser, publisher 구현은 이
-저장소에 두지 않는다. Core가 public trust root를 내장한다.
+chain을 검증한다. main push는 전체 검증을 반복할 뿐 게시하지 않는다. 검증된 commit을 대상으로
+publication workflow를 명시적으로 dispatch해야 모든 entry를 결정적으로 서명 인덱스
+`registry.json`으로 합성한다. 인덱스의 plugin reference `{id, version, size, sha256}`는 내려받은
+release 문서의 크기와 SHA-256만 담는다. 인덱스는 `runtimeDependencies`를 복사하지 않는다. Core가
+각 release 문서에서 closure를 걷기 때문이다. 인덱스를 인증하여 owner-enforced immutable
+`registry-<sequence>` GitHub Release의 유일한 asset으로 게시한다. 생성된 Registry byte, 서명 키,
+parser, publisher 구현은 이 저장소에 두지 않는다. Core가 public trust root를 내장한다.
 
 [docs/REGISTRY.ko.md](docs/REGISTRY.ko.md)를 참고한다.
 
@@ -34,7 +35,8 @@ make verify REGISTRY=http://host:port/
 정확한 환경과 immutable spec validation package는 `.node-version`,
 `package.json#packageManager`, `pnpm-lock.yaml`이 소유한다. `make build`는 sequence·시간·output을
 명시적으로 받고, `make authenticate`는 입력·출력과 호출자가 주입한 signing seed를 받는다.
-GitHub Actions는 tag 발견, secret, credential, publication만 소유한다. Registry는 release train의
-마지막 consumer다. 변경된 spec이 immutable해진 뒤 정확한 version을 갱신하고 clean install과
-전체 release chain을 검증한 다음, plugin·Sidecar·Kit·spec source를 다시 빌드하지 않고 인증된
-Registry byte를 공개한다.
+GitHub Actions는 tag 발견, secret, credential, publication만 소유한다. Publication workflow는
+수동 호출 전용이다. Push workflow는 그 credential을 받을 수 없고 Registry tag·Release·asset을
+변경할 수 없다. Registry는 release train의 마지막 consumer다. 변경된 spec이 immutable해진 뒤
+정확한 version을 갱신하고 clean install과 전체 release chain을 검증한 다음,
+plugin·Sidecar·Kit·spec source를 다시 빌드하지 않고 인증된 Registry byte를 공개한다.
