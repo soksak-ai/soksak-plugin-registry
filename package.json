@@ -5,7 +5,7 @@
   "engines": {
     "node": "26.7.0"
   },
-  "packageManager": "pnpm@11.22.0",
+  "packageManager": "pnpm@11.24.0",
   "devDependencies": {
     "@soksak/soksak-spec": "https://github.com/soksak-ai/soksak-spec/releases/download/v0.0.52/soksak-soksak-spec-0.0.52.tgz"
   }
