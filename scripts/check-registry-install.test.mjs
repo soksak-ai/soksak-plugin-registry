@@ -18,25 +18,31 @@ const scopedDependencies = () => {
   return found;
 };
 
-test("package.json declares one exact immutable Spec validator release asset", () => {
+// One exact version, resolved through the registry the Makefile already requires for every scoped
+// install. A range, a tag or a URL is refused.
+//
+// It was a GitHub release asset URL, and that URL was deleted on 2026-09-03 along with the release
+// it hung on — the install stopped resolving and nothing here said why. An exact version through
+// REGISTRY is pinned the same way and does not depend on a release surviving.
+//
+// What the shape has to hold either way is that the resolution cannot move: the lockfile carries
+// the integrity, and the test below is what checks it.
+test("package.json declares one exact Spec validator version", () => {
   const found = scopedDependencies();
   assert.deepEqual(found.map(([section, name]) => `${section}.${name}`), ["devDependencies.@soksak/soksak-spec"]);
   for (const [section, name, spec] of found) {
-    assert.match(
-      spec,
-      /^https:\/\/github\.com\/soksak-ai\/soksak-spec\/releases\/download\/v(\d+\.\d+\.\d+)\/soksak-soksak-spec-\1\.tgz$/,
-      `${section}.${name}`,
-    );
+    assert.match(spec, /^\d+\.\d+\.\d+$/, `${section}.${name}`);
   }
 });
 
-test("pnpm-lock.yaml binds the declared validator asset to exact integrity", () => {
+test("pnpm-lock.yaml binds the declared validator version to exact integrity", () => {
   const resolutions = new Map(
     [...lockfile.matchAll(/^  '(@soksak(?:-ai)?\/[^@']+@[^']+)':\n    resolution: \{([^}]*)\}/gm)].map(([, key, resolution]) => [key, resolution]),
   );
   assert.deepEqual([...resolutions.keys()].sort(), scopedDependencies().map(([, name, spec]) => `${name}@${spec}`).sort());
   for (const [key, resolution] of resolutions) {
-    assert.match(resolution, /tarball: https:\/\/github\.com\/soksak-ai\/soksak-spec\/releases\/download\/v\d+\.\d+\.\d+\/soksak-soksak-spec-\d+\.\d+\.\d+\.tgz/, key);
+    // The integrity is the whole binding. A resolution naming a location and no digest is a
+    // resolution that can be answered with different bytes tomorrow.
     assert.match(resolution, /integrity: sha512-[A-Za-z0-9+/=]+/, key);
   }
   for (const [, name, spec] of scopedDependencies()) {

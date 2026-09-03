@@ -22,12 +22,16 @@ See [docs/REGISTRY.md](docs/REGISTRY.md).
 
 ## Command and dependency ownership
 
-The package depends on the exact immutable `@soksak/soksak-spec` release asset declared in
-`package.json`, so every `make` invocation that installs requires `REGISTRY` on the make command
-line. A value from the environment is refused. The Makefile reads the requirement from
-`package.json` and refuses `REGISTRY required: this package depends on @soksak/soksak-spec` when it
-is absent. The Spec package is fetched from its owner-enforced immutable release URL and verified
-against the lockfile integrity; public npm availability is not part of the validator identity.
+The package depends on one exact `@soksak/soksak-spec` version declared in `package.json`, so
+every `make` invocation that installs requires `REGISTRY` on the make command line. A value from
+the environment is refused. The Makefile reads the requirement from `package.json` and refuses
+`REGISTRY required: this package depends on @soksak/soksak-spec` when it is absent. The Spec
+package is resolved through that registry and verified against the lockfile integrity; public npm
+availability is not part of the validator identity.
+
+It was pinned to a GitHub release asset URL until 2026-09-03, when that release was deleted and
+the install stopped resolving with nothing here to say why. A release is a location and can go; the
+lockfile integrity is what makes the build input exact, and that is unchanged.
 
 The build input is identified by the `pnpm-lock.yaml` integrity, not by `REGISTRY`. pnpm fetches
 from `REGISTRY` only a package whose integrity its content-addressable store does not already hold,
